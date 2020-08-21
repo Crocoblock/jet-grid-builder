@@ -1,0 +1,140 @@
+.jgb_item-container {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	border-color: #eee;
+}
+
+.jgb_item {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	// Permalink
+	&-permalink {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 9;
+
+		.elementor-editor-active & {
+			visibility: hidden;
+			width: 0;
+			height: 0;
+		}
+	}
+
+	// Thumbnail
+	&-thumb {
+		overflow: hidden;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	// Body
+	&-body {
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+		border-color: #eee;
+		color: #fff;
+		background-color: #4b505e;
+
+		>* {
+			margin: 5px 0;
+		}
+	}
+
+	// Title
+	&-title {
+		padding: 0;
+		font-size: 18px;
+		font-weight: 700;
+	}
+
+	// Content
+	&-description {
+		font-size: 12px;
+	}
+
+	// Meta
+	&-meta {
+		@include indent;
+		font-size: 10px;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+
+	// Date
+	&-date {
+		display: inline-block;
+
+		&-prefix:not(:empty) {
+			margin-right: 3px;
+		}
+	}
+
+	// Author
+	&-author {
+		display: inline-block;
+
+		&-prefix:not(:empty) {
+			margin-right: 3px;
+		}
+	}
+
+	// Divider
+	&-divider {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 0;
+		line-height: 0;
+
+		&-separator {
+			display: inline-block;
+			border-top-color: rgba(#eee, .35);
+		}
+	}
+
+	// Type
+	&-type {
+		display: inline-block;
+		margin: 0;
+		padding: 5px 10px;
+		font-size: 12px;
+		line-height: 1;
+		letter-spacing: 1px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: #fff;
+		border-radius: $border-radius;
+		background-color: $primary;
+	}
+
+	&-type-wrap {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 15px 15px 0;
+		z-index: 3;
+
+		font-size: 0;
+		line-height: 0;
+	}
+
+	// No Thumbnail
+	&.jgb_no-thumbnail &-type-wrap {
+		margin: 0 !important;
+		position: static;
+	}
+
+	&.jgb_no-thumbnail &-type {
+		margin-bottom: 25px;
+	}
+}

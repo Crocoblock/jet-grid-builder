@@ -1,0 +1,14 @@
+.jgb_grid-builder {
+	.jgb_grid-container {
+		position: relative;
+		overflow: hidden;
+		transition: min-height ease-out 0.15s;
+	}
+
+	.jgb_grid-box {
+		position: absolute;
+		box-sizing: border-box;
+		transition: transform ease-out 0.1s, width ease-out 0.1s, height ease-out 0.1s;
+		z-index: 1;
+	}
+}

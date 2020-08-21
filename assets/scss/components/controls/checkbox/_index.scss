@@ -1,0 +1,50 @@
+.jgb_checkbox {
+	position: relative;
+
+	&-label {
+		display: flex;
+		align-items: center;
+	}
+
+	&-checkmark {
+		position: relative;
+		height: 14px;
+		width: 14px;
+		flex-shrink: 0;
+		margin-right: 8px;
+		color: $link-color-hover;
+		border: 1px solid $link-color;
+		box-sizing: initial;
+
+		&::after {
+			content: '\e908';
+			font-family: 'icomoon';
+			display: none;
+			position: absolute;
+			left: 1px;
+			top: 0;
+			font-size: 13px;
+			line-height: 14px;
+		}
+	}
+
+	&-text {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&-input {
+		cursor: pointer;
+		position: absolute;
+		opacity: 0;
+		height: 0;
+		width: 0;
+
+		&:checked~.jgb_checkbox-checkmark {
+			&:after {
+				display: block;
+			}
+		}
+	}
+}

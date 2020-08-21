@@ -1,0 +1,22 @@
+#thumbnail-field {
+	.attachment {
+		float: none;
+		width: 156px;
+		padding: 0px;
+		margin-bottom: 10px;
+	}
+
+	#thumbnail[value=""] {
+
+		&~.attachment,
+		&~.remove-term-thumbnail {
+			display: none;
+		}
+	}
+
+	#thumbnail:not([value=""]) {
+		&~.add-term-thumbnail {
+			display: none;
+		}
+	}
+}

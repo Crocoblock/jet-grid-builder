@@ -1,0 +1,24 @@
+.jgb_item {
+	&-content-overlay {
+		justify-content: flex-end;
+		z-index: 1;
+	}
+
+	// Body
+	&-content-overlay &-body {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	&-content-overlay:not(.jgb_no-thumbnail) &-body {
+		background-color: rgba(#000, .5);
+	}
+
+	// No Thumbnail
+	&-content-overlay.jgb_no-thumbnail &-body {
+		position: static;
+		height: 100%;
+	}
+}

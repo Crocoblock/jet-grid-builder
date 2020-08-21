@@ -1,0 +1,230 @@
+//Breakpoint
+@mixin breakpoint($point) {
+	@media (max-width: $point) {
+		@content;
+	}
+}
+
+
+// Indent
+@mixin indent($indent: 10px, $child-selector: '> *') {
+	#{$child-selector} {
+		margin-right: $indent;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+// link
+@mixin link($hover: false) {
+	@include button-clear;
+	@include user-select-off;
+	cursor: pointer;
+	display: inline-block;
+	color: $link-color;
+	font-weight: 500;
+	transition: all $hover-transitions;
+
+	@if $hover==true {
+		padding-left: 8px;
+		padding-right: 8px;
+
+		&.active,
+		&:hover {
+			color: $invert-text;
+			background-color: $link-color;
+		}
+	}
+
+	@else {
+
+		&.active,
+		&:hover {
+			color: $link-color-hover;
+		}
+	}
+
+	&:disabled {
+		cursor: default;
+	}
+}
+
+// Default Title
+@mixin default-title {
+	margin: 0;
+	color: #23282d;
+	font-family: $admin-font-family;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+// Button Clear
+@mixin button-clear {
+	padding: 0;
+	border: none;
+	background: none;
+}
+
+@mixin btn-default() {
+	cursor: pointer;
+	border-radius: 3px;
+	padding: 0 12px 2px;
+	font-size: 13px;
+	line-height: 28px;
+	font-family: $admin-font-family;
+	font-weight: 400;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin btn() {
+	@include btn-default;
+	color: #fff;
+	border: 1px solid #0073aa;
+	background-color: #0085ba;
+	text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+
+	&:hover {
+		color: #fff;
+		border-color: #006799;
+		background-color: #008ec2;
+	}
+}
+
+@mixin btn-secondary() {
+	@include btn-default;
+	color: #23282d;
+	border: 1px solid #cecece;
+	background-color: #fafafa;
+
+	&:hover {
+		color: #23282d;
+		border-color: #b7b7b7;
+		background-color: #f5f5f5;
+	}
+}
+
+// User select off
+@mixin user-select-off {
+	-webkit-touch-callout: none;
+	// iOS Safari
+	-webkit-user-select: none;
+	// Safari
+	-khtml-user-select: none;
+	// Konqueror HTML
+	-moz-user-select: none;
+	// Firefox
+	-ms-user-select: none;
+	// Internet Explorer/Edge
+	user-select: none;
+	// Non-prefixed version, currently
+	// supported by Chrome and Opera
+}
+
+// Dashicons
+@mixin dashicons {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	line-height: 1;
+	font-family: dashicons;
+	text-decoration: inherit;
+	font-weight: 400;
+	font-style: normal;
+	vertical-align: top;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+
+
+
+
+
+
+// Grid indent
+@mixin grid-indent($indent: 15px, $child-indent-type: 'padding', $child-selector: '> *') {
+	margin-left: - $indent;
+	margin-right: - $indent;
+
+	#{$child-selector} {
+		#{$child-indent-type}-left: $indent;
+		#{$child-indent-type}-right: $indent;
+	}
+}
+
+// Space between
+@mixin flex-space-betweent {
+	display: flex;
+	justify-content: space-between;
+}
+
+// bg Clear
+@mixin bg-clear {
+	outline: none;
+	border: none;
+	box-shadow: none;
+
+	&,
+	&:hover,
+	&:focus {
+		background: none;
+	}
+}
+
+// Button 
+@mixin button($padding: 6px 18px) {
+	@include user-select-off;
+	cursor: pointer;
+	display: inline-block;
+	padding: $padding;
+	text-align: center;
+	color: $invert-text;
+	border-radius: $border-radius;
+	background-color: $primary;
+	transition: all $hover-transitions;
+
+	&:hover {
+		color: $invert-text;
+		background-color: $link-color-hover;
+	}
+}
+
+// Default Typography
+@mixin default-typography {
+	font-family: $admin-font-family;
+	font-size: 12px;
+	line-height: 1.4em;
+	font-weight: normal;
+}
+
+// button preloader
+@mixin button-preloader() {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	width: 1.5em;
+	height: 1.5em;
+	margin-left: -.75em;
+	margin-top: -.75em;
+	border: currentColor .25em solid;
+
+	border-left-color: transparent;
+	border-radius: 50%;
+	animation: button-preloader-rotating .85s linear infinite;
+}
+
+@keyframes button-preloader-rotating {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}

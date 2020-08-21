@@ -1,0 +1,54 @@
+.jgb_spinner-dots-spin-scale {
+	position: relative;
+	width: 1.4em;
+	height: 1.4em;
+
+	>div {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		&:last-child {
+			transform: rotate(90deg);
+		}
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			top: -0.125em;
+			left: -0.125em;
+			width: 0.25em;
+			height: 0.25em;
+			background-color: currentColor;
+			border-radius: 100%;
+			animation: jgb_spinner-dots-spin-scale-animation 3s ease-in-out infinite -1.5s;
+		}
+
+		&:after {
+			animation-delay: 0s;
+		}
+	}
+}
+
+@keyframes jgb_spinner-dots-spin-scale-animation {
+	0% {
+		transform-origin: 50% -50%;
+		transform: rotate(0);
+	}
+
+	50% {
+		transform-origin: 50% -50%;
+		transform: rotate(360deg);
+	}
+
+	50.00001% {
+		transform-origin: 50% 150%;
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform-origin: 50% 150%;
+		transform: rotate(360deg);
+	}
+}

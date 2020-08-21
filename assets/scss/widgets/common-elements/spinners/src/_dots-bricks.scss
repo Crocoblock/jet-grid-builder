@@ -1,0 +1,157 @@
+.jgb_spinner-dots-bricks {
+	position: relative;
+	width: 1em;
+	height: 1em;
+
+	>div {
+		position: absolute;
+		width: 0.4em;
+		height: 0.4em;
+		background-color: currentColor;
+		border-radius: 100%;
+
+		&:nth-child(1) {
+			top: 0.6em;
+			left: 0;
+			animation: dotBricks-1 2s infinite ease;
+		}
+
+		&:nth-child(2) {
+			top: 0;
+			left: 0;
+			animation: dotBricks-2 2s infinite ease;
+		}
+
+		&:nth-child(3) {
+			top: 0;
+			left: 0.6em;
+			animation: dotBricks-3 2s infinite ease;
+		}
+	}
+}
+
+@keyframes dotBricks-1 {
+	16.667% {
+		top: 0.6em;
+		left: 0;
+	}
+
+	25% {
+		top: 0;
+		left: 0;
+	}
+
+	41.667% {
+		top: 0;
+		left: 0;
+	}
+
+	50% {
+		top: 0;
+		left: 0.6em;
+	}
+
+	66.666% {
+		top: 0;
+		left: 0.6em;
+	}
+
+	75% {
+		top: 0.6em;
+		left: 0.6em;
+	}
+
+	91.667% {
+		top: 0.6em;
+		left: 0.6em;
+	}
+
+	100% {
+		top: 0.6em;
+		left: 0;
+	}
+}
+
+@keyframes dotBricks-2 {
+	8.333% {
+		top: 0;
+		left: 0;
+	}
+
+	16.667% {
+		top: 0;
+		left: 0.6em;
+	}
+
+	33.333% {
+		top: 0;
+		left: 0.6em;
+	}
+
+	41.667% {
+		top: 0.6em;
+		left: 0.6em;
+	}
+
+	58.333% {
+		top: 0.6em;
+		left: 0.6em;
+	}
+
+	66.666% {
+		top: 0.6em;
+		left: 0;
+	}
+
+	83.333% {
+		top: 0.6em;
+		left: 0;
+	}
+
+	91.667% {
+		top: 0;
+		left: 0;
+	}
+}
+
+@keyframes dotBricks-3 {
+	0% {
+		top: 0;
+		left: 0.6em;
+	}
+
+	8.333% {
+		top: 0.6em;
+		left: 0.6em;
+	}
+
+	25% {
+		top: 0.6em;
+		left: 0.6em;
+	}
+
+	33.333% {
+		top: 0.6em;
+		left: 0;
+	}
+
+	50% {
+		top: 0.6em;
+		left: 0;
+	}
+
+	58.333% {
+		top: 0;
+		left: 0;
+	}
+
+	75% {
+		top: 0;
+		left: 0;
+	}
+
+	83.333% {
+		top: 0;
+		left: 0.6em;
+	}
+}

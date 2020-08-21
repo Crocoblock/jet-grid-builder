@@ -1,0 +1,154 @@
+.jgb-modal-open {
+	padding-right: 17px;
+	overflow-y: hidden;
+}
+
+.jgb-modal {
+	position: fixed;
+	z-index: 998;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: left;
+	background-color: rgba(0, 0, 0, .7);
+	transition: opacity .3s ease;
+
+	&_btn {
+		@include btn;
+	}
+
+	&_secondary {
+		@include btn-secondary;
+	}
+
+	button {
+		cursor: pointer;
+	}
+
+	&_wrapper {
+		width: calc(100% - 35px*2);
+		max-width: 980px;
+		margin: 35px;
+
+		.fullscreen & {
+			max-width: none;
+			width: calc(100% - 30px*2);
+			height: calc(100% - 30px*2);
+			margin: 30px;
+		}
+	}
+
+	&_container {
+		position: relative;
+		height: 100%;
+		background-color: #fff;
+		box-shadow: 0 5px 15px rgba(0, 0, 0, .7);
+		transition: all .3s ease;
+	}
+
+	&_header {
+		position: relative;
+		overflow: hidden;
+		height: 54px;
+		padding: 13px 20px 15px;
+		border-bottom: 1px solid #ddd;
+		background-color: #fcfcfc;
+
+		& &_title {
+			@include default-title;
+			font-size: 22px;
+		}
+	}
+
+	&_footer {
+		height: 63px;
+		display: flex;
+		justify-content: flex-end;
+		overflow: hidden;
+		padding: 15px;
+		border-top: 1px solid #e5e5e5;
+		background-color: #fcfcfc;
+
+		>button {
+			margin-left: 5px;
+		}
+	}
+
+	&_body {
+		overflow: hidden;
+		height: calc(100vh - 187px);
+
+		.fullscreen & {
+			height: calc(100vh - 177px);
+		}
+	}
+
+	// Pagination
+	.jgb_pagination {
+
+		&_prev,
+		&_next,
+		&_page-link,
+		&_more {
+			@include btn-secondary();
+		}
+
+		&_prev:before,
+		&_next:after {
+			@include dashicons;
+			line-height: 32px;
+		}
+
+		&_prev {
+			&:before {
+				content: "\f341";
+			}
+		}
+
+		&_next {
+			&:after {
+				content: "\f345";
+			}
+		}
+
+		&_item.active .jgb_pagination_page-link {
+			color: #fff;
+			border: 1px solid #0073aa;
+			background-color: #0085ba;
+			text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+		}
+
+		&_prev,
+		&_next,
+		&_more,
+		&_page-link {
+			&.jgb_disabled {
+				cursor: default;
+				opacity: .5;
+
+				&:hover {
+					color: #23282d;
+					border: 1px solid #cecece;
+					background-color: #fafafa;
+				}
+			}
+		}
+	}
+}
+
+// animation styles
+.jgb-modal-transition {
+	&-enter {
+		opacity: 0;
+	}
+
+	&-leave-active {
+		opacity: 0;
+	}
+
+	&-enter .jgb-modal_container,
+	&-leave-active .jgb-modal_container {}
+}

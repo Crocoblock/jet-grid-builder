@@ -1,0 +1,44 @@
+.jgb_spinner-wordpress {
+	width: 1em;
+	height: 1em;
+	position: relative;
+
+	>div {
+		width: 1em;
+		height: 1em;
+		border-radius: 100%;
+	}
+
+	>div:nth-child(1) {
+		background-color: currentColor;
+	}
+
+	>div:nth-child(2) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		animation: jgb_spinner-wordpress 1s linear infinite;
+
+		&:before {
+			content: '';
+			position: relative;
+			display: block;
+			top: 0.18em;
+			left: 0.18em;
+			width: 0.3em;
+			height: 0.3em;
+			border-radius: 100%;
+			background-color: #fff;
+		}
+	}
+}
+
+@keyframes jgb_spinner-wordpress {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}

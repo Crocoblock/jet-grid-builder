@@ -1,0 +1,39 @@
+.jgb_item {
+
+	// Thumbnail
+	&-default &-thumb {
+		position: relative;
+	}
+
+	// Body
+	&-default &-body {
+		flex-grow: 1;
+		padding: 30px;
+	}
+}
+
+
+// Posts Grid Builder Widget
+.jgb_grid-builder {
+	.jgb_item {
+
+		// Thumbnail
+		&-thumb {
+			flex-grow: 1;
+		}
+
+		// Body
+		&-body {
+			flex-grow: unset;
+		}
+
+		// No Thumbnail
+		&.jgb_no-thumbnail {
+
+			// Body
+			.jgb_item-body {
+				height: 100%;
+			}
+		}
+	}
+}

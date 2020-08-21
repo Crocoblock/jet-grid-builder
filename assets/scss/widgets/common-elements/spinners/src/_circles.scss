@@ -1,0 +1,84 @@
+.jgb_spinner-circle-clip-growing,
+.jgb_spinner-circle-clip,
+.jgb_spinner-circle {
+
+	width: 1em;
+	height: 1em;
+
+	div,
+	svg {
+		width: 1em;
+		height: 1em;
+		animation: jgb_spinner-circle-rotate-animation 1s linear infinite;
+	}
+}
+
+
+.jgb_spinner-circle-clip-growing {
+	svg {
+		animation-duration: 2.5s;
+
+		.path {
+			stroke-linecap: round;
+			stroke: currentColor;
+			animation: jgb_spinner-circle-clip-growing-dash-animation 2s ease-in-out infinite;
+		}
+	}
+}
+
+.jgb_spinner-circle-clip {
+	div {
+		border: 0.1em solid currentColor;
+		border-left: 0.1em solid transparent;
+		border-radius: 50%;
+	}
+}
+
+.jgb_spinner-circle {
+	position: relative;
+
+	div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 50%;
+
+		&:nth-child(1) {
+			border: 0.1em solid currentColor;
+			opacity: .15;
+			animation: none;
+		}
+
+		&:nth-child(2) {
+			border: 0.1em solid transparent;
+			border-top: 0.1em solid currentColor;
+		}
+	}
+}
+
+@keyframes jgb_spinner-circle-rotate-animation {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes jgb_spinner-circle-clip-growing-dash-animation {
+	0% {
+		stroke-dasharray: 1, 150;
+		stroke-dashoffset: 0;
+	}
+
+	50% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -35;
+	}
+
+	100% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -124;
+	}
+}

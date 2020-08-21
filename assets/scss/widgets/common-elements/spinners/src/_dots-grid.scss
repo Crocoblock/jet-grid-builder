@@ -1,0 +1,138 @@
+.jgb_spinner-dots-grid-pulse,
+.jgb_spinner-dots-grid-beat {
+	overflow: hidden;
+	width: 1em;
+	height: 1em;
+	margin-left: 0.015em;
+
+	>div {
+		display: block;
+		float: left;
+		background-color: currentColor;
+		width: 0.273em;
+		height: 0.273em;
+		margin: 0.03em;
+		border-radius: 100%;
+	}
+}
+
+.jgb_spinner-dots-grid-pulse {
+	>div {
+		&:nth-child(1) {
+			animation: jgb_spinner-dots-grid-pulse-animation 1.3219s ease 0.521899s infinite normal none running;
+		}
+
+		&:nth-child(2) {
+			animation: jgb_spinner-dots-grid-pulse-animation 0.625121s ease -0.174879s infinite normal none running;
+		}
+
+		&:nth-child(3) {
+			animation: jgb_spinner-dots-grid-pulse-animation 1.1615s ease 0.361498s infinite normal none running;
+		}
+
+		&:nth-child(4) {
+			animation: jgb_spinner-dots-grid-pulse-animation 0.873932s ease 0.0739321s infinite normal none running;
+		}
+
+		&:nth-child(5) {
+			animation: jgb_spinner-dots-grid-pulse-animation 0.738649s ease -0.061351s infinite normal none running;
+		}
+
+		&:nth-child(6) {
+			animation: jgb_spinner-dots-grid-pulse-animation 0.655116s ease -0.144884s infinite normal none running;
+		}
+
+		&:nth-child(7) {
+			animation: jgb_spinner-dots-grid-pulse-animation 1.35589s ease 0.555895s infinite normal none running;
+		}
+
+		&:nth-child(8) {
+			animation: jgb_spinner-dots-grid-pulse-animation 0.869173s ease 0.0691732s infinite normal none running;
+		}
+
+		&:nth-child(9) {
+			animation: jgb_spinner-dots-grid-pulse-animation 1.14823s ease 0.34823s infinite normal none running;
+		}
+	}
+}
+
+.jgb_spinner-dots-grid-beat {
+	>div {
+		animation-name: jgb_spinner-dots-grid-beat-animation;
+		animation-iteration-count: infinite;
+		animation-delay: 0;
+
+		&:nth-child(1) {
+			animation-delay: 0.44s;
+			animation-duration: 1.27s;
+		}
+
+		&:nth-child(2) {
+			animation-delay: 0.2s;
+			animation-duration: 1.52s;
+		}
+
+		&:nth-child(3) {
+			animation-delay: 0.14s;
+			animation-duration: 0.61s;
+		}
+
+		&:nth-child(4) {
+			animation-delay: 0.15s;
+			animation-duration: 0.82s;
+		}
+
+		&:nth-child(5) {
+			animation-delay: -0.01s;
+			animation-duration: 1.24s;
+		}
+
+		&:nth-child(6) {
+			animation-delay: -0.07s;
+			animation-duration: 1.35s;
+		}
+
+		&:nth-child(7) {
+			animation-delay: 0.29s;
+			animation-duration: 1.44s;
+		}
+
+		&:nth-child(8) {
+			animation-delay: 0.63s;
+			animation-duration: 1.19s;
+		}
+
+		&:nth-child(9) {
+			animation-delay: -0.18s;
+			animation-duration: 1.48s;
+		}
+	}
+}
+
+
+
+@keyframes jgb_spinner-dots-grid-pulse-animation {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(0.5);
+		opacity: 0.7;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes jgb_spinner-dots-grid-beat-animation {
+	50% {
+		opacity: 0.35;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

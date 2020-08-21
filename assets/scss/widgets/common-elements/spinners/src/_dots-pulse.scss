@@ -1,0 +1,98 @@
+.jgb_spinner-dots-pulse,
+.jgb_spinner-dots-elastic {
+	position: relative;
+	width: 1em;
+	height: 0.45em;
+
+	>div {
+		position: absolute;
+		top: 0.1em;
+		width: 0.25em;
+		height: 0.25em;
+		background-color: currentColor;
+		border-radius: 100%;
+
+		&:nth-child(1) {
+			left: 0;
+		}
+
+		&:nth-child(2) {
+			left: 0.375em;
+		}
+
+		&:nth-child(3) {
+			left: 0.75em;
+		}
+	}
+}
+
+.jgb_spinner-dots-pulse {
+	>div {
+		&:nth-child(1) {
+			animation: jgb_spinner-dots-pulse-animation 0.75s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.12s infinite normal both running;
+		}
+
+		&:nth-child(2) {
+			animation: jgb_spinner-dots-pulse-animation 0.75s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.24s infinite normal both running;
+		}
+
+		&:nth-child(3) {
+			animation: jgb_spinner-dots-pulse-animation 0.75s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.36s infinite normal both running;
+		}
+	}
+}
+
+@keyframes jgb_spinner-dots-pulse-animation {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	45% {
+		transform: scale(0);
+		opacity: 0.7;
+	}
+
+	80% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.jgb_spinner-dots-elastic {
+	>div {
+		&:nth-child(1) {
+			animation: jgb_spinner-dots-elastic-animation 0.9s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.12s infinite normal both running;
+		}
+
+		&:nth-child(2) {
+			animation: jgb_spinner-dots-elastic-animation 0.9s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.24s infinite normal both running;
+		}
+
+		&:nth-child(3) {
+			animation: jgb_spinner-dots-elastic-animation 0.9s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.36s infinite normal both running;
+		}
+	}
+}
+
+@keyframes jgb_spinner-dots-elastic-animation {
+	0% {
+		transform: scale(1, 1);
+	}
+
+	25% {
+		transform: scale(1, 1.6);
+	}
+
+	50% {
+		transform: scale(1, .7);
+	}
+
+	75% {
+		transform: scale(1, 1);
+	}
+
+	100% {
+		transform: scale(1, 1);
+	}
+}

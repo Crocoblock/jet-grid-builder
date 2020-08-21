@@ -1,0 +1,43 @@
+.jgb_spinner-dots-carousel {
+	overflow: hidden;
+	width: 1em;
+	height: 0.45em;
+
+	>div {
+		position: relative;
+		left: -10em;
+		top: 0.1em;
+		width: 0.25em;
+		height: 0.25em;
+		border-radius: 100%;
+
+		box-shadow:
+			10em 0 0 0 currentColor,
+			10.375em 0 0 0 currentColor,
+			10.75em 0 0 0 currentColor;
+		animation: jgb_spinner-dots-carousel-animation 1.5s infinite linear;
+	}
+}
+
+@keyframes jgb_spinner-dots-carousel-animation {
+	0% {
+		box-shadow:
+			10em 0 0 -1px currentColor,
+			10.375em 0 0 1px currentColor,
+			10.75em 0 0 -1px currentColor;
+	}
+
+	50% {
+		box-shadow:
+			10.75em 0 0 -1px currentColor,
+			10em 0 0 -1px currentColor,
+			10.375em 0 0 1px currentColor;
+	}
+
+	100% {
+		box-shadow:
+			10.375em 0 0 1px currentColor,
+			10.75em 0 0 -1px currentColor,
+			10em 0 0 -1px currentColor;
+	}
+}

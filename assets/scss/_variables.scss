@@ -1,0 +1,39 @@
+// Structure
+$border-radius: 5px;
+
+// Colors
+$primary: #6ec1e4;
+
+$dark: #000;
+$white: #fff;
+$grey: #f9f9f9;
+
+$text: #919191;
+$invert-text: #fff;
+
+$link-color: $primary;
+$link-color-hover: lighten($link-color, 10%);
+
+$border: #eee;
+
+$success-color: #67C23A;
+$warning-color: #EB9E05;
+$danger-color: #a00;
+
+// Transitions
+$hover-transitions: 300ms ease-in-out;
+$move-transitions: 500ms ease-in-out;
+$leave-transitions: 500ms ease-in;
+
+// typography
+$font-family: Roboto, Arial, Helvetica, Verdana, sans-serif;
+$admin-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+
+// Posts Selector Modal Colors
+$psm-primary: #0073aa;
+$psm-passive: #ccc;
+$psm-title-color: #23282d;
+$psm-text-color: #32373c;
+$psm-link-color: #0073aa;
+$psm-link-hover-color: $psm-title-color;
+$psm-border: #eee;

@@ -1,0 +1,51 @@
+.jgb_spinner-lines-pulse {
+	width: 1em;
+	height: 1em;
+	overflow: hidden;
+
+	>div {
+		float: left;
+		border-radius: 0.06em;
+		width: 0.12em;
+		height: 1em;
+		margin: 0 0.05em;
+		background-color: currentColor;
+		animation-fill-mode: both;
+		animation: jgb_spinner-lines-pulse 0.9s -0.6s infinite cubic-bezier(0.85, 0.25, 0.37, 0.85);
+
+		&:nth-child(1) {
+			margin-left: 0;
+		}
+
+		&:nth-child(2) {
+			animation-delay: -0.4s !important;
+		}
+
+		&:nth-child(4) {
+			animation-delay: -0.4s !important;
+		}
+
+		&:nth-child(1) {
+			animation-delay: -0.2s !important;
+		}
+
+		&:nth-child(5) {
+			margin-right: 0;
+			animation-delay: -0.2s !important;
+		}
+	}
+}
+
+@keyframes jgb_spinner-lines-pulse {
+	0% {
+		transform: scaley(1);
+	}
+
+	50% {
+		transform: scaley(0.4);
+	}
+
+	100% {
+		transform: scaley(1);
+	}
+}

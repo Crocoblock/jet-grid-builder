@@ -1,0 +1,45 @@
+.jgb_item-container.jgb_item-loading {
+	position: relative;
+
+	&:after,
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		border-radius: 50%;
+		z-index: 999;
+	}
+
+	&:after {
+		margin-top: -20px;
+		margin-left: -20px;
+		width: 40px;
+		height: 40px;
+		border: 5px solid rgba(21, 187, 240, .3);
+		border-top-color: #15bbf0;
+		animation: spin 1s ease-in-out infinite;
+
+	}
+
+	&:before {
+		margin-top: -27px;
+		margin-left: -27px;
+		width: 54px;
+		height: 54px;
+		background-color: #fff;
+		box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
+	}
+
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	@-webkit-keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+}

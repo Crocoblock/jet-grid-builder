@@ -1,0 +1,427 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Posts Grid Builder for Elementor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-05 22:41+0300\n"
+"PO-Revision-Date: 2019-05-04 09:59+0200\n"
+"Last-Translator: Serj Kozlov <serjko87@gmail.com>\n"
+"Language-Team: Bitempl\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__;__;_x;esc_html_e;esc_html__;esc_attr_e;"
+"esc_attr__;_x:1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.0.7\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: _dev\n"
+
+#: includes/elementor-manager.php:57 includes/widgets/posts-grid.php:16
+msgid "Posts Grid Builder"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:56
+msgid "Full"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:64
+msgid "Grid"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:80
+msgid "Posts"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:82
+msgid "Add Posts"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:91
+msgid "Vertical Compact"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:93 includes/widgets/posts-grid.php:145
+msgid "True"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:94 includes/widgets/posts-grid.php:146
+msgid "False"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:105
+msgid "Gutter"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:118
+msgid "Number of columns"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:131
+msgid "Row Height (px)"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:143
+msgid "loading Spinner"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:155
+msgid "Spinner Type"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:158
+msgid "Circle clip growing"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:159
+msgid "Circle clip"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:160
+msgid "Circle"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:161
+msgid "Lines wave"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:162
+msgid "Lines pulse"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:163
+msgid "Lines pulse rapid"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:164
+msgid "Cube grid"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:165
+msgid "Cube folding"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:166
+msgid "Wordpress"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:167
+msgid "Hash"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:168
+msgid "Dots grid pulse"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:169
+msgid "Dots grid beat"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:170
+msgid "Dots circle"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:171
+msgid "Dots pulse"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:172
+msgid "Dots elastic"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:173
+msgid "Dots carousel"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:174
+msgid "Dots windmill"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:175
+msgid "Dots triangle path"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:176
+msgid "Dots bricks"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:177
+msgid "Dots fire"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:178
+msgid "Dots rotate"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:179
+msgid "Dots bouncing"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:180
+msgid "Dots chasing"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:181
+msgid "Dots propagate"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:182
+msgid "Dots spin scale"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:196 includes/widgets/posts-grid.php:368
+msgid "Item"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:204 includes/widgets/posts-grid.php:782
+msgid "Style"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:207
+msgid "Style 1"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:208
+msgid "Style 2"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:209
+msgid "Style 3"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:218
+msgid "Thumbnail"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:220 includes/widgets/posts-grid.php:246
+#: includes/widgets/posts-grid.php:287 includes/widgets/posts-grid.php:310
+#: includes/widgets/posts-grid.php:342 includes/widgets/posts-grid.php:355
+msgid "Yes"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:221 includes/widgets/posts-grid.php:247
+#: includes/widgets/posts-grid.php:288 includes/widgets/posts-grid.php:311
+#: includes/widgets/posts-grid.php:343 includes/widgets/posts-grid.php:356
+msgid "No"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:231
+msgid "Thumbnail Size"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:244 includes/widgets/posts-grid.php:532
+msgid "Title"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:257 includes/widgets/posts-grid.php:608
+msgid "Description"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:260
+msgid "Auto"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:261
+msgid "Content"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:262
+msgid "Excerpt"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:272
+msgid "Words count"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:285
+msgid "Author"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:298
+msgid "Author Prefix"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:300
+msgid "By"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:308
+msgid "Date"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:321
+msgid "Date Prefix"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:323
+msgid "Posted"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:331
+msgid "Date Format"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:340 includes/widgets/posts-grid.php:762
+msgid "Divider"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:353 includes/widgets/posts-grid.php:886
+msgid "Post Type"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:376 includes/widgets/posts-grid.php:478
+#: includes/widgets/posts-grid.php:907 includes/widgets/posts-grid.php:1139
+msgid "Padding"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:396 includes/widgets/posts-grid.php:498
+#: includes/widgets/posts-grid.php:927 includes/widgets/posts-grid.php:1159
+msgid "Border Radius"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:409 includes/widgets/posts-grid.php:511
+msgid "Background"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:419 includes/widgets/posts-grid.php:521
+#: includes/widgets/posts-grid.php:951 includes/widgets/posts-grid.php:1172
+msgid "Box Shadow"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:428
+msgid "Image Opacity"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:447
+msgid "Image CSS Filters"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:458
+msgid "Content Body"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:466 includes/widgets/posts-grid.php:540
+#: includes/widgets/posts-grid.php:616 includes/widgets/posts-grid.php:695
+#: includes/widgets/posts-grid.php:770 includes/widgets/posts-grid.php:894
+msgid "Margin"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:552 includes/widgets/posts-grid.php:628
+#: includes/widgets/posts-grid.php:707 includes/widgets/posts-grid.php:960
+msgid "Text Color"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:580 includes/widgets/posts-grid.php:655
+#: includes/widgets/posts-grid.php:734 includes/widgets/posts-grid.php:858
+#: includes/widgets/posts-grid.php:988
+msgid "Alignment"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:584 includes/widgets/posts-grid.php:659
+#: includes/widgets/posts-grid.php:738 includes/widgets/posts-grid.php:862
+#: includes/widgets/posts-grid.php:992
+msgid "Left"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:588 includes/widgets/posts-grid.php:663
+#: includes/widgets/posts-grid.php:742 includes/widgets/posts-grid.php:866
+#: includes/widgets/posts-grid.php:996
+msgid "Center"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:592 includes/widgets/posts-grid.php:667
+#: includes/widgets/posts-grid.php:746 includes/widgets/posts-grid.php:870
+#: includes/widgets/posts-grid.php:1000
+msgid "Right"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:671
+msgid "Justified"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:687
+msgid "Meta"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:785
+msgid "Solid"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:786
+msgid "Double"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:787
+msgid "Dotted"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:788
+msgid "Dashed"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:800
+msgid "Weight"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:820
+msgid "Color"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:831
+msgid "Width"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:939
+msgid "Background Color"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:1016
+msgid "Content Order"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:1025
+msgid "Title Order"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:1040
+msgid "Description Order"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:1055
+msgid "Divider Order"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:1070
+msgid "Meta Order"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:1087
+msgid "Loading Spinner"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:1099
+msgid "Spinner Color"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:1110
+msgid "Spinner Size"
+msgstr ""
+
+#: includes/widgets/posts-grid.php:1128
+msgid "Spinner background"
+msgstr ""
+
+#: posts-grid-builder.php:44
+msgid ""
+"Posts Grid Builder for Elementor requires PHP version 5.4+, plugin is "
+"currently NOT ACTIVE."
+msgstr ""
+
+#: posts-grid-builder.php:60
+msgid ""
+"Posts Grid Builder for Elementor requires WordPress version 4.6+. Because "
+"you are using an earlier version, the plugin is currently NOT ACTIVE."
+msgstr ""

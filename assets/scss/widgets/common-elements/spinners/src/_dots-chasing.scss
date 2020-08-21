@@ -1,0 +1,52 @@
+.jgb_spinner-dots-chasing {
+	width: 1em;
+	height: 1em;
+
+	>div {
+		position: relative;
+		top: -0.1em;
+		width: 100%;
+		height: 100%;
+		animation: jgb_spinner-dots-chasing-rotate-animation 1.75s infinite linear;
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			width: 0.6em;
+			height: 0.6em;
+			background-color: currentColor;
+			border-radius: 100%;
+			animation: jgb_spinner-dots-chasing-animation 2s infinite ease-in-out;
+		}
+
+		&:before {
+			top: 0;
+		}
+
+		&:after {
+			top: 0.4em;
+			animation-delay: -1s;
+		}
+	}
+}
+
+@keyframes jgb_spinner-dots-chasing-rotate-animation {
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+@keyframes jgb_spinner-dots-chasing-animation {
+	0% {
+		transform: scale(0);
+	}
+
+	to {
+		transform: scale(0);
+	}
+
+	50% {
+		transform: scale(.8);
+	}
+}

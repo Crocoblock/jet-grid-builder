@@ -1,0 +1,84 @@
+.jgb_spinner-dots-triangle-path {
+	position: relative;
+	width: 1em;
+	height: 1em;
+
+	>div {
+		animation-fill-mode: both;
+		position: absolute;
+		width: 0.25em;
+		height: 0.25em;
+		border-radius: 100%;
+		background-color: currentColor;
+
+		&:nth-child(1) {
+			top: 0.75em;
+			animation-name: jgb_spinner-dots-triangle-path-1-animation;
+			animation-delay: 0;
+			animation-duration: 2s;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: infinite;
+		}
+
+		&:nth-child(2) {
+			left: 0.375em;
+			animation-name: jgb_spinner-dots-triangle-path-2-animation;
+			animation-delay: 0;
+			animation-duration: 2s;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: infinite;
+		}
+
+		&:nth-child(3) {
+			top: 0.75em;
+			left: 0.75em;
+			animation-name: jgb_spinner-dots-triangle-path-3-animation;
+			animation-delay: 0;
+			animation-duration: 2s;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: infinite;
+		}
+	}
+}
+
+@keyframes jgb_spinner-dots-triangle-path-1-animation {
+	33% {
+		transform: translate(0.375em, -0.75em);
+	}
+
+	66% {
+		transform: translate(0.75em);
+	}
+
+	to {
+		transform: translate(0);
+	}
+}
+
+@keyframes jgb_spinner-dots-triangle-path-2-animation {
+	33% {
+		transform: translate(0.375em, 0.75em);
+	}
+
+	66% {
+		transform: translate(-0.375em, 0.75em);
+	}
+
+	to {
+		transform: translate(0);
+	}
+}
+
+@keyframes jgb_spinner-dots-triangle-path-3-animation {
+	33% {
+		transform: translate(-0.75em);
+	}
+
+	66% {
+		transform: translate(-0.375em, -0.75em);
+	}
+
+	to {
+		transform: translate(0);
+	}
+}

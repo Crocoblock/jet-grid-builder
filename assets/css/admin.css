@@ -1,0 +1,1 @@
+#thumbnail-field .attachment{float:none;width:156px;padding:0px;margin-bottom:10px}#thumbnail-field #thumbnail[value=""] ~ .attachment,#thumbnail-field #thumbnail[value=""] ~ .remove-term-thumbnail{display:none}#thumbnail-field #thumbnail:not([value=""]) ~ .add-term-thumbnail{display:none}

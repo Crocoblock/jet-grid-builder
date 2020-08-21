@@ -1,0 +1,161 @@
+.jgb_spinner-dots-propagate {
+	position: relative;
+	width: 2em;
+	height: 0.45em;
+
+	>div {
+		position: absolute;
+		top: 0.1em;
+		left: 0.875em;
+		width: 0.25em;
+		height: 0.25em;
+		background-color: currentColor;
+		border-radius: 100%;
+
+		&:nth-child(1) {
+			animation: jgb_spinner-dots-propagate-1-animation 1.5s ease 0s infinite normal forwards running;
+		}
+
+		&:nth-child(2) {
+			animation: jgb_spinner-dots-propagate-2-animation 1.5s ease 0s infinite normal forwards running;
+		}
+
+		&:nth-child(3) {
+			animation: jgb_spinner-dots-propagate-3-animation 1.5s ease 0s infinite normal forwards running;
+		}
+
+		&:nth-child(4) {
+			animation: jgb_spinner-dots-propagate-4-animation 1.5s ease 0s infinite normal forwards running;
+		}
+
+		&:nth-child(5) {
+			animation: jgb_spinner-dots-propagate-5-animation 1.5s ease 0s infinite normal forwards running;
+		}
+
+		&:nth-child(6) {
+			animation: jgb_spinner-dots-propagate-6-animation 1.5s ease 0s infinite normal forwards running;
+		}
+	}
+}
+
+@keyframes jgb_spinner-dots-propagate-1-animation {
+	25% {
+		transform: scale(0.75);
+		left: 0.7em;
+	}
+
+	50% {
+		transform: scale(0.6);
+		left: 0.35em;
+	}
+
+	75% {
+		transform: scale(0.5);
+		left: 0em;
+	}
+
+	95% {
+		transform: scale(1);
+		left: 0.875em;
+	}
+}
+
+@keyframes jgb_spinner-dots-propagate-2-animation {
+	25% {
+		transform: scale(0.75);
+		left: 0.7em;
+	}
+
+	50% {
+		transform: scale(0.6);
+		left: 0.35em;
+	}
+
+	75% {
+		transform: scale(0.6);
+		left: 0.35em;
+	}
+
+	95% {
+		transform: scale(1);
+		left: 0.875em;
+	}
+}
+
+@keyframes jgb_spinner-dots-propagate-3-animation {
+	25% {
+		transform: scale(0.75);
+		left: 0.7em;
+	}
+
+	75% {
+		transform: scale(0.75);
+		left: 0.7em;
+	}
+
+	95% {
+		transform: scale(1);
+		left: 0.875em;
+	}
+}
+
+@keyframes jgb_spinner-dots-propagate-4-animation {
+	25% {
+		transform: scale(0.75);
+		left: 1.05em;
+	}
+
+	75% {
+		transform: scale(0.75);
+		left: 1.05em;
+	}
+
+	95% {
+		transform: scale(1);
+		left: 0.875em;
+	}
+}
+
+@keyframes jgb_spinner-dots-propagate-5-animation {
+	25% {
+		transform: scale(0.75);
+		left: 1.05em;
+	}
+
+	50% {
+		transform: scale(0.6);
+		left: 1.4em;
+	}
+
+	75% {
+		transform: scale(0.6);
+		left: 1.4em;
+	}
+
+	95% {
+		transform: scale(1);
+		left: 0.875em;
+	}
+}
+
+@keyframes jgb_spinner-dots-propagate-6-animation {
+	25% {
+		transform: scale(0.75);
+		left: 1.05em;
+	}
+
+	50% {
+		transform: scale(0.6);
+		left: 1.4em;
+	}
+
+	75% {
+		transform: scale(0.5);
+		left: 1.75em;
+	}
+
+	95% {
+		transform: scale(1);
+		left: 0.875em;
+	}
+}

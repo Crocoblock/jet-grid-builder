@@ -1,0 +1,48 @@
+.jgb_spinner-dots-fire {
+	position: relative;
+	overflow: hidden;
+	width: 0.45em;
+	height: 1em;
+
+	>div {
+		position: absolute;
+		left: 0.1em;
+		top: 0.75em;
+		transform: scale(0);
+		width: 0.25em;
+		height: 0.25em;
+		border-radius: 100%;
+		background-color: currentColor;
+		animation: jgb_spinner-dots-fire-animation 1.5s infinite linear;
+
+		&:nth-child(1) {
+			animation-delay: -.85s;
+		}
+
+		&:nth-child(2) {
+			animation-delay: -1.85s;
+		}
+
+		&:nth-child(3) {
+			animation-delay: -2.85s;
+		}
+	}
+}
+
+
+@keyframes jgb_spinner-dots-fire-animation {
+	1% {
+		top: 0.75em;
+		transform: scale(0);
+	}
+
+	50% {
+		top: 0.375em;
+		transform: scale(1);
+	}
+
+	100% {
+		top: 0;
+		transform: scale(0);
+	}
+}

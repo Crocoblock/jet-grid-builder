@@ -1,0 +1,39 @@
+.jgb_spinner-dots-windmill {
+	position: relative;
+	width: 1em;
+	height: 1em;
+	animation: 1s jgb_spinner-dots-windmill-animation linear infinite;
+
+	>div {
+		position: absolute;
+		width: 0.4em;
+		height: 0.4em;
+		background-color: currentColor;
+		border-radius: 100%;
+
+		&:nth-child(1) {
+			top: 0;
+			left: 0.3em;
+		}
+
+		&:nth-child(2) {
+			bottom: 0.07em;
+			left: 0em;
+		}
+
+		&:nth-child(3) {
+			bottom: 0.07em;
+			right: 0em;
+		}
+	}
+}
+
+@keyframes jgb_spinner-dots-windmill-animation {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}

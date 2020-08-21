@@ -1,0 +1,35 @@
+.jgb_item {
+	&-term {
+		justify-content: flex-end;
+		z-index: 1;
+	}
+
+	// Body
+	&-term &-body {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	&-term:not(.jgb_no-thumbnail) &-body {
+		background-color: rgba(#000, .5);
+	}
+
+	// No Thumbnail
+	&-term.jgb_no-thumbnail &-body {
+		position: static;
+		height: 100%;
+	}
+
+	// Posts Count
+	&-posts-count {
+		font-size: 10px;
+		font-weight: 400;
+		text-transform: uppercase;
+
+		&-prefix {
+			margin-right: 3px;
+		}
+	}
+}

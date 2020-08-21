@@ -1,0 +1,28 @@
+.jgb_item.jgb_item-post-content {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: 100%;
+
+	.jgb_item {
+		&-thumb {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			overflow: hidden;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			z-index: 1;
+		}
+
+		&-body {
+			position: relative;
+			z-index: 5;
+			background: none;
+		}
+	}
+}

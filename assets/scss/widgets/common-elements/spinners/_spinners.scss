@@ -1,0 +1,37 @@
+.jgb_spinner {
+	display: inline-block;
+	font-size: 40px;
+	color: $primary;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	box-sizing: content-box;
+	z-index: 999;
+}
+
+// Posts/Terms Grid Builder widget
+.elementor-editor-active {
+	.jgb_posts-grid-builder-container,
+	.jgb_terms-grid-builder-container {
+		.jgb_spinner {
+			display: none;
+		}
+
+		.jgb_loading ~ .jgb_spinner {
+			display: inline-block;
+		}
+	}
+}
+
+// editor show preloader on style change
+.jgb_show-preloader {
+	.jgb_spinner {
+		position: relative !important;
+		display: inline-block !important;
+	}
+
+	&.jgb_posts-grid-builder-container .jgb_grid-builder,
+	&.jgb_terms-grid-builder-container .jgb_grid-builder {
+		display: none;
+	}
+}

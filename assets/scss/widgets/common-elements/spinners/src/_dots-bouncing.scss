@@ -1,0 +1,43 @@
+.jgb_spinner-dots-bouncing {
+	position: relative;
+	width: 1em;
+	height: 0.55em;
+
+	>div {
+		position: absolute;
+		top: 0.3em;
+		width: 0.25em;
+		height: 0.25em;
+		background-color: currentColor;
+		border-radius: 100%;
+
+		&:nth-child(1) {
+			left: 0;
+			animation: jgb_spinner-dots-bouncing-animation .6s -.14s infinite ease-in-out
+		}
+
+		&:nth-child(2) {
+			left: 0.375em;
+			animation: jgb_spinner-dots-bouncing-animation .6s -.07s infinite ease-in-out
+		}
+
+		&:nth-child(3) {
+			left: 0.75em;
+			animation: jgb_spinner-dots-bouncing-animation .6s 0s infinite ease-in-out
+		}
+	}
+}
+
+@keyframes jgb_spinner-dots-bouncing-animation {
+	33% {
+		transform: translateY(0)
+	}
+
+	66% {
+		transform: translateY(-100%)
+	}
+
+	to {
+		transform: translateY(-15%)
+	}
+}

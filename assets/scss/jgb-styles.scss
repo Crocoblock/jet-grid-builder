@@ -1,0 +1,38 @@
+// Variables
+@import "variables";
+
+// Mixins
+@import "mixins";
+
+// Icons
+@import "../icons/icomoon/icomoon.css";
+
+// Components
+@import "components/index";
+
+// Modules
+@import "modules/pagination/index";
+
+// Spinner
+@import "widgets/common-elements/spinners/index";
+
+// Items
+@import "widgets/common-elements/items/index";
+
+// Widgets
+@import "widgets/grid-builder/frontend/index";
+@import "widgets/grid-builder/editor/index";
+
+// Item Spinner
+@import "widgets/common-elements/items/item-spinner";
+
+.jgb_notice {
+	padding: 20px;
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+	color: #6d7882;
+	border: 2px solid #d30c5c;
+	background-color: #f9f9f9;
+	box-shadow: 0 2px 6px rgba(211, 12, 92, .2);
+}
