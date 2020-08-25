@@ -22,10 +22,15 @@ define( 'JET_GRID_BUILDER__FILE__', __FILE__ );
 define( 'JET_GRID_BUILDER_PLUGIN_BASE', plugin_basename( JET_GRID_BUILDER__FILE__ ) );
 define( 'JET_GRID_BUILDER_PATH', plugin_dir_path( JET_GRID_BUILDER__FILE__ ) );
 define( 'JET_GRID_BUILDER_URL', plugins_url( '/', JET_GRID_BUILDER__FILE__ ) );
+
 //Other constants
 $upload_dir = wp_upload_dir();
-define( 'UPLOAD_BASE_DIR', str_replace( "\\", "/", $upload_dir['basedir'] ) );
-define( 'UPLOAD_BASE_URL', $upload_dir['baseurl'] );
+if ( ! defined( 'UPLOAD_BASE_DIR' ) ) {
+	define( 'UPLOAD_BASE_DIR', str_replace( "\\", "/", $upload_dir['basedir'] ) );
+}
+if ( ! defined( 'UPLOAD_BASE_URL' ) ) {
+	define( 'UPLOAD_BASE_URL', $upload_dir['baseurl'] );
+}
 
 if ( ! version_compare( PHP_VERSION, '5.4', '>=' ) ) {
 	add_action( 'admin_notices', 'jet_grid_builder_fail_php_version' );
