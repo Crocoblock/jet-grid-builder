@@ -6,7 +6,7 @@
 $this->start_controls_section(
 	'term_content_body_style_section',
 	[
-		'label' => esc_html__( 'Term Item: Content Body', 'jet-grid-builder' ),
+		'label' => esc_html__( 'Term Item: Content Body', 'jet-grid-builder-preview' ),
 		'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 		'condition' => [
 			'items_type' => 'default'
@@ -17,7 +17,7 @@ $this->start_controls_section(
 $this->add_responsive_control(
 	'content_body_margin',
 	[
-		'label'      => esc_html__( 'Margin', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Margin', 'jet-grid-builder-preview' ),
 		'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 		'size_units' => [ 'px', '%' ],
 		'selectors'  => [
@@ -29,7 +29,7 @@ $this->add_responsive_control(
 $this->add_responsive_control(
 	'content_body_padding',
 	[
-		'label'      => esc_html__( 'Padding', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Padding', 'jet-grid-builder-preview' ),
 		'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 		'size_units' => [ 'px', '%' ],
 		'selectors'  => [
@@ -49,7 +49,7 @@ $this->add_group_control(
 $this->add_control(
 	'content_body_border_radius',
 	[
-		'label'      => esc_html__( 'Border Radius', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Border Radius', 'jet-grid-builder-preview' ),
 		'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 		'size_units' => [ 'px', '%' ],
 		'selectors'  => [
@@ -62,7 +62,7 @@ $this->add_group_control(
 	\Elementor\Group_Control_Background::get_type(),
 	[
 		'name'  => 'content_body_background',
-		'label' => esc_html__( 'Background', 'jet-grid-builder' ),
+		'label' => esc_html__( 'Background', 'jet-grid-builder-preview' ),
 		'types' => [ 'classic', 'gradient' ],
 		'fields_options' => [
 			'color' => [

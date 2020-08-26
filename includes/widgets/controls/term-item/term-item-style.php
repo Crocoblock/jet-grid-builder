@@ -6,7 +6,7 @@
 $this->start_controls_section(
 	'term_style_section',
 	[
-		'label' => esc_html__( 'Term Item', 'jet-grid-builder' ),
+		'label' => esc_html__( 'Term Item', 'jet-grid-builder-preview' ),
 		'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 	]
 );
@@ -14,19 +14,19 @@ $this->start_controls_section(
 $this->add_control(
 	'term_content_vertical_align',
 	array(
-		'label'   => __( 'Content Align', 'jet-grid-builder' ),
+		'label'   => __( 'Content Align', 'jet-grid-builder-preview' ),
 		'type'    => \Elementor\Controls_Manager::CHOOSE,
 		'options'     => array(
 			'flex-start' => array(
-				'title' => esc_html__( 'Top', 'jet-grid-builder' ),
+				'title' => esc_html__( 'Top', 'jet-grid-builder-preview' ),
 				'icon'  => 'eicon-v-align-top',
 			),
 			'center' => array(
-				'title' => esc_html__( 'Middle', 'jet-grid-builder' ),
+				'title' => esc_html__( 'Middle', 'jet-grid-builder-preview' ),
 				'icon'  => 'eicon-v-align-middle',
 			),
 			'flex-end' => array(
-				'title' => esc_html__( 'Bottom', 'jet-grid-builder' ),
+				'title' => esc_html__( 'Bottom', 'jet-grid-builder-preview' ),
 				'icon'  => 'eicon-v-align-bottom',
 			),
 		),
@@ -42,7 +42,7 @@ $this->add_control(
 $this->add_responsive_control(
 	'term_padding',
 	[
-		'label'      => esc_html__( 'Padding', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Padding', 'jet-grid-builder-preview' ),
 		'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 		'size_units' => [ 'px', '%' ],
 		'selectors'  => [
@@ -62,7 +62,7 @@ $this->add_group_control(
 $this->add_control(
 	'term_border_radius',
 	[
-		'label'      => esc_html__( 'Border Radius', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Border Radius', 'jet-grid-builder-preview' ),
 		'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 		'size_units' => [ 'px', '%' ],
 		'selectors'  => [
@@ -75,7 +75,7 @@ $this->add_group_control(
 	\Elementor\Group_Control_Background::get_type(),
 	[
 		'name'     => 'term_background',
-		'label'    => esc_html__( 'Background', 'jet-grid-builder' ),
+		'label'    => esc_html__( 'Background', 'jet-grid-builder-preview' ),
 		'types'    => [ 'classic', 'gradient' ],
 		'selector' => '{{WRAPPER}} .jgb_item-container',
 	]
@@ -85,7 +85,7 @@ $this->add_group_control(
 	\Elementor\Group_Control_Box_Shadow::get_type(),
 	[
 		'name'     => 'term_shadow',
-		'label'    => esc_html__( 'Box Shadow', 'jet-grid-builder' ),
+		'label'    => esc_html__( 'Box Shadow', 'jet-grid-builder-preview' ),
 		'selector' => '{{WRAPPER}} .jgb_item-container'
 	]
 );
@@ -93,7 +93,7 @@ $this->add_group_control(
 $this->add_control(
 	'term_image_opacity',
 	[
-		'label' => esc_html__( 'Image Opacity', 'jet-grid-builder' ),
+		'label' => esc_html__( 'Image Opacity', 'jet-grid-builder-preview' ),
 		'type'  => \Elementor\Controls_Manager::SLIDER,
 		'range' => [
 			'px' => [
@@ -111,7 +111,7 @@ $this->add_control(
 $this->add_group_control(
 	\Elementor\Group_Control_Css_Filter::get_type(),
 	[
-		'label'    => esc_html__( 'Image CSS Filters', 'jet-grid-builder' ),
+		'label'    => esc_html__( 'Image CSS Filters', 'jet-grid-builder-preview' ),
 		'name'     => 'term_image_css_filters',
 		'selector' => '{{WRAPPER}} .jgb_item-thumb'
 	]

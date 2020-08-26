@@ -6,7 +6,7 @@
 $this->start_controls_section(
 	'loading_spinner_section',
 	[
-		'label'      => esc_html__( 'Loading Spinner', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Loading Spinner', 'jet-grid-builder-preview' ),
 		'tab'        => \Elementor\Controls_Manager::TAB_STYLE,
 		'show_label' => false,
 		'condition'  => [
@@ -18,7 +18,7 @@ $this->start_controls_section(
 $this->add_control(
 	'loading_spinner_color',
 	[
-		'label'  => esc_html__( 'Spinner Color', 'jet-grid-builder' ),
+		'label'  => esc_html__( 'Spinner Color', 'jet-grid-builder-preview' ),
 		'type'   => \Elementor\Controls_Manager::COLOR,
 		'scheme' => [
 			'type'  => \Elementor\Scheme_Color::get_type(),
@@ -33,7 +33,7 @@ $this->add_control(
 $this->add_control(
 	'loading_spinner_size',
 	[
-		'label' => esc_html__( 'Spinner Size', 'jet-grid-builder' ),
+		'label' => esc_html__( 'Spinner Size', 'jet-grid-builder-preview' ),
 		'type'  => \Elementor\Controls_Manager::SLIDER,
 		'range' => [
 			'px' => [
@@ -51,7 +51,7 @@ $this->add_control(
 $this->add_control(
 	'loading_spinner_background',
 	[
-		'label'     => esc_html__( 'Spinner background', 'jet-grid-builder' ),
+		'label'     => esc_html__( 'Spinner background', 'jet-grid-builder-preview' ),
 		'type'      => \Elementor\Controls_Manager::COLOR,
 		'selectors' => [
 			'{{WRAPPER}} .jgb_spinner' => 'background-color: {{VALUE}};',
@@ -62,7 +62,7 @@ $this->add_control(
 $this->add_responsive_control(
 	'loading_spinner_padding',
 	[
-		'label'      => esc_html__( 'Padding', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Padding', 'jet-grid-builder-preview' ),
 		'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 		'size_units' => [ 'px', '%' ],
 		'selectors'  => [
@@ -82,7 +82,7 @@ $this->add_group_control(
 $this->add_control(
 	'loading_spinner_border_radius',
 	[
-		'label'      => esc_html__( 'Border Radius', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Border Radius', 'jet-grid-builder-preview' ),
 		'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 		'size_units' => [ 'px', '%' ],
 		'selectors'  => [
@@ -95,7 +95,7 @@ $this->add_group_control(
 	\Elementor\Group_Control_Box_Shadow::get_type(),
 	[
 		'name'     => 'loading_spinner_shadow',
-		'label'    => esc_html__( 'Box Shadow', 'jet-grid-builder' ),
+		'label'    => esc_html__( 'Box Shadow', 'jet-grid-builder-preview' ),
 		'selector' => '{{WRAPPER}} .jgb_spinner'
 	]
 );

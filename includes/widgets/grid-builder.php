@@ -1,7 +1,7 @@
 <?php
-namespace Posts_Grid_Builder\Widgets;
+namespace Posts_Grid_Builder_Preview\Widgets;
 
-use Posts_Grid_Builder\Plugin;
+use Posts_Grid_Builder_Preview\Plugin;
 
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -9,11 +9,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Grid_Builder extends \Elementor\Widget_Base {
 
 	public function get_name() {
-		return 'posts-grid-builder';
+		return 'posts-grid-builder-preview';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Posts Grid Builder', 'jet-grid-builder' );
+		return esc_html__( 'Posts Grid Builder Preview', 'jet-grid-builder-preview' );
 	}
 
 	public function get_icon() {
@@ -21,22 +21,22 @@ class Grid_Builder extends \Elementor\Widget_Base {
 	}
 
 	public function get_categories() {
-		return array( 'jet-grid-builder' );
+		return array( 'jet-grid-builder-preview' );
 	}
 
 	public function get_script_depends() {
-		return array( 'jgb-posts-grid-builder-script' );
+		return array( 'jgb-posts-grid-builder-script-preview' );
 	}
 
 	public function get_style_depends() {
-		return array( 'jgb-styles' );
+		return array( 'jgb-styles-preview' );
 	}
 
 	protected function _register_controls() {
 		$this->start_controls_section(
 			'grid_section',
 			[
-				'label' => esc_html__( 'Grid', 'jet-grid-builder' ),
+				'label' => esc_html__( 'Grid', 'jet-grid-builder-preview' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -52,9 +52,9 @@ class Grid_Builder extends \Elementor\Widget_Base {
 		$this->add_control(
 			'posts',
 			[
-				'label'       => esc_html__( 'Posts', 'jet-grid-builder' ),
+				'label'       => esc_html__( 'Posts', 'jet-grid-builder-preview' ),
 				'type'        => \Elementor\Controls_Manager::BUTTON,
-				'text'        => '<i class="eicon-plus"></i>' . esc_html__( 'Add Posts', 'jet-grid-builder' ),
+				'text'        => '<i class="eicon-plus"></i>' . esc_html__( 'Add Posts', 'jet-grid-builder-preview' ),
 				'event'       => 'jgb:post:add',
 				'render_type' => 'none'
 			]
@@ -63,10 +63,10 @@ class Grid_Builder extends \Elementor\Widget_Base {
 		$this->add_control(
 			'vertical_compact',
 			[
-				'label'        => esc_html__( 'Vertical Compact', 'jet-grid-builder' ),
+				'label'        => esc_html__( 'Vertical Compact', 'jet-grid-builder-preview' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'True', 'jet-grid-builder' ),
-				'label_off'    => esc_html__( 'False', 'jet-grid-builder' ),
+				'label_on'     => esc_html__( 'True', 'jet-grid-builder-preview' ),
+				'label_off'    => esc_html__( 'False', 'jet-grid-builder-preview' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
 				'separator'    => 'before',
@@ -77,7 +77,7 @@ class Grid_Builder extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'gutter',
 			[
-				'label'       => esc_html__( 'Gutter', 'jet-grid-builder' ),
+				'label'       => esc_html__( 'Gutter', 'jet-grid-builder-preview' ),
 				'type'        => \Elementor\Controls_Manager::NUMBER,
 				'min'         => 0,
 				'max'         => 50,
@@ -90,7 +90,7 @@ class Grid_Builder extends \Elementor\Widget_Base {
 		$this->add_control(
 			'colNum',
 			[
-				'label'       => esc_html__( 'Number of columns', 'jet-grid-builder' ),
+				'label'       => esc_html__( 'Number of columns', 'jet-grid-builder-preview' ),
 				'type'        => \Elementor\Controls_Manager::NUMBER,
 				'min'         => 3,
 				'max'         => 50,
@@ -103,7 +103,7 @@ class Grid_Builder extends \Elementor\Widget_Base {
 		$this->add_control(
 			'items_type',
 			array(
-				'label'   => __( 'Items Type', 'jet-grid-builder' ),
+				'label'   => __( 'Items Type', 'jet-grid-builder-preview' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'default',
 				'options' => Plugin::instance()->get_items_type_options(),
@@ -115,7 +115,7 @@ class Grid_Builder extends \Elementor\Widget_Base {
 			$this->add_control(
 				'jetengine_listing_id',
 				array(
-					'label'   => __( 'Listing', 'jet-grid-builder' ),
+					'label'   => __( 'Listing', 'jet-grid-builder-preview' ),
 					'type'    => \Elementor\Controls_Manager::SELECT,
 					'default' => '',
 					'options' => Plugin::instance()->get_jet_engine_listings_options(),
@@ -130,11 +130,11 @@ class Grid_Builder extends \Elementor\Widget_Base {
 		$this->add_control(
 			'item_style',
 			[
-				'label'   => esc_html__( 'Item Style', 'jet-grid-builder' ),
+				'label'   => esc_html__( 'Item Style', 'jet-grid-builder-preview' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
-					'default'         => esc_html__( 'Standard', 'jet-grid-builder' ),
-					'content-overlay' => esc_html__( 'Content Overlay', 'jet-grid-builder' )
+					'default'         => esc_html__( 'Standard', 'jet-grid-builder-preview' ),
+					'content-overlay' => esc_html__( 'Content Overlay', 'jet-grid-builder-preview' )
 				],
 				'default' => 'default',
 				'condition' => [
@@ -150,7 +150,7 @@ class Grid_Builder extends \Elementor\Widget_Base {
 				$this->add_control(
 					'woo_items_type',
 					array(
-						'label'   => __( 'Woo Items Type', 'jet-grid-builder' ),
+						'label'   => __( 'Woo Items Type', 'jet-grid-builder-preview' ),
 						'type'    => \Elementor\Controls_Manager::SELECT,
 						'default' => 'default',
 						'options' => Plugin::instance()->get_woo_items_type_options(),
@@ -160,7 +160,7 @@ class Grid_Builder extends \Elementor\Widget_Base {
 				$this->add_control(
 					'jet_woo_builder_archive_id',
 					array(
-						'label'   => __( 'JetWooBuilder Template', 'jet-grid-builder' ),
+						'label'   => __( 'JetWooBuilder Template', 'jet-grid-builder-preview' ),
 						'type'    => \Elementor\Controls_Manager::SELECT,
 						'default' => '',
 						'options' => Plugin::instance()->get_jet_woo_builder_archive_options(),
@@ -185,11 +185,11 @@ class Grid_Builder extends \Elementor\Widget_Base {
 			$this->add_control(
 				'woo_item_style',
 				[
-					'label'   => esc_html__( 'Woo Item Style', 'jet-grid-builder' ),
+					'label'   => esc_html__( 'Woo Item Style', 'jet-grid-builder-preview' ),
 					'type'    => \Elementor\Controls_Manager::SELECT,
 					'options' => [
-						'default'         => esc_html__( 'Standard', 'jet-grid-builder' ),
-						'content-overlay' => esc_html__( 'Content Overlay', 'jet-grid-builder' )
+						'default'         => esc_html__( 'Standard', 'jet-grid-builder-preview' ),
+						'content-overlay' => esc_html__( 'Content Overlay', 'jet-grid-builder-preview' )
 					],
 					'default' => 'default',
 					'condition' => [
@@ -308,7 +308,7 @@ class Grid_Builder extends \Elementor\Widget_Base {
 		if ( $items_type === 'jetengine_listing' && !$settings['jetengine_listing_id'] ) {
 			printf(
 				'<div class="jgb_notice">%s</div>',
-				__( 'Please choose JetEngine listing', 'jet-grid-builder' )
+				__( 'Please choose JetEngine listing', 'jet-grid-builder-preview' )
 			);
 
 			return;
@@ -317,7 +317,7 @@ class Grid_Builder extends \Elementor\Widget_Base {
 		if ( $woo_items_type === 'jet_woo_builder_archive' && !$settings['jet_woo_builder_archive_id'] ) {
 			printf(
 				'<div class="jgb_notice">%s</div>',
-				__( 'Please choose JetWooBuilder archive template', 'jet-grid-builder' )
+				__( 'Please choose JetWooBuilder archive template', 'jet-grid-builder-preview' )
 			);
 
 			return;

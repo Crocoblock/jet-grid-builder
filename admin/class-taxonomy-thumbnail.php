@@ -1,5 +1,5 @@
 <?php
-namespace Posts_Grid_Builder;
+namespace Posts_Grid_Builder_Preview;
 
 /**
  * Taxonomy Thumbnail class
@@ -112,7 +112,7 @@ class Taxonomy_Thumbnail {
 					</th>
 					<td>
 						<div id="thumbnail-field">
-							<input id="thumbnail" class="hidden" type="number" name="jgb_term_thumbnail_id" value="<?php echo $thumbnail_id; ?>" autocomplete="off" title="<?php esc_attr_e( 'Indicate an image ID', 'jet-grid-builder' ); ?>" />
+							<input id="thumbnail" class="hidden" type="number" name="jgb_term_thumbnail_id" value="<?php echo $thumbnail_id; ?>" autocomplete="off" title="<?php esc_attr_e( 'Indicate an image ID', 'jet-grid-builder-preview' ); ?>" />
 							<div class="attachment">
 								<div class="attachment-preview">
 									<div class="thumbnail">
@@ -122,8 +122,8 @@ class Taxonomy_Thumbnail {
 									</div>
 								</div>
 							</div>
-							<button type="button" class="add-term-thumbnail button button-large" id="thumbnail-button"><?php echo __( 'Set a thumbnail', 'jet-grid-builder' ); ?></button>
-							<button type="button" class="remove-term-thumbnail button button-large"><?php echo __( 'Remove thumbnail', 'jet-grid-builder' ); ?></button>
+							<button type="button" class="add-term-thumbnail button button-large" id="thumbnail-button"><?php echo __( 'Set a thumbnail', 'jet-grid-builder-preview' ); ?></button>
+							<button type="button" class="remove-term-thumbnail button button-large"><?php echo __( 'Remove thumbnail', 'jet-grid-builder-preview' ); ?></button>
 						</div>
 					</td>
 				</tr>
@@ -143,7 +143,7 @@ class Taxonomy_Thumbnail {
 			'jgb-taxonomy-thumbnail-style',
 			Plugin::instance()->assets_url( 'css/admin.css' ),
 			false,
-			JET_GRID_BUILDER_VERSION
+			JET_GRID_BUILDER_PREVIEW_VERSION
 		);
 
 		// JS.
@@ -155,7 +155,7 @@ class Taxonomy_Thumbnail {
 				'jquery',
 				'media-editor'
 			),
-			JET_GRID_BUILDER_VERSION,
+			JET_GRID_BUILDER_PREVIEW_VERSION,
 			true
 		);
 	}

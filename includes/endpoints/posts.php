@@ -1,7 +1,7 @@
 <?php
-namespace Posts_Grid_Builder\Endpoints;
+namespace Posts_Grid_Builder_Preview\Endpoints;
 
-use Posts_Grid_Builder\Plugin;
+use Posts_Grid_Builder_Preview\Plugin;
 use Elementor\Plugin as Elementor;
 
 // If this file is called directly, abort.

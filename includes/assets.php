@@ -1,5 +1,5 @@
 <?php
-namespace Posts_Grid_Builder;
+namespace Posts_Grid_Builder_Preview;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -38,14 +38,23 @@ class Assets {
 				'jgb-polyfills',
 				Plugin::instance()->assets_url( 'js/polyfills.js' ),
 				array(),
-				JET_GRID_BUILDER_VERSION
+				JET_GRID_BUILDER_PREVIEW_VERSION
 			);
 
 		wp_register_style(
-			'jgb-styles',
-			Plugin::instance()->assets_url( 'css/jgb-styles.css' ),
+			'jgb-editor-styles-preview',
+			Plugin::instance()->assets_url( 'css/jgb-editor-styles-preview.css' ),
 			false,
-			JET_GRID_BUILDER_VERSION
+			JET_GRID_BUILDER_PREVIEW_VERSION
+		);
+
+		wp_register_style(
+			'jgb-styles-preview',
+			Plugin::instance()->assets_url( 'css/jgb-styles-preview.css' ),
+			array(
+				'jgb-editor-styles-preview'
+			),
+			JET_GRID_BUILDER_PREVIEW_VERSION
 		);
 
 		wp_register_script(
@@ -57,7 +66,7 @@ class Assets {
 		);
 
 		wp_register_script(
-			'jgb-posts-grid-builder-script',
+			'jgb-posts-grid-builder-script-preview',
 			\Elementor\Plugin::$instance->preview->is_preview_mode()
 				? Plugin::instance()->assets_url( 'js/posts-grid-builder-editor.js' )
 				: Plugin::instance()->assets_url( 'js/posts-grid-builder-front.js' ),
@@ -65,12 +74,12 @@ class Assets {
 				'elementor-frontend',
 				'vue'
 			),
-			JET_GRID_BUILDER_VERSION,
+			JET_GRID_BUILDER_PREVIEW_VERSION,
 			true
 		);
 
 		wp_register_script(
-			'jgb-terms-grid-builder-script',
+			'jgb-terms-grid-builder-script-preview',
 			\Elementor\Plugin::$instance->preview->is_preview_mode()
 				? Plugin::instance()->assets_url( 'js/terms-grid-builder-editor.js' )
 				: Plugin::instance()->assets_url( 'js/terms-grid-builder-front.js' ),
@@ -79,7 +88,7 @@ class Assets {
 				'vue',
 				'swiper'
 			),
-			JET_GRID_BUILDER_VERSION,
+			JET_GRID_BUILDER_PREVIEW_VERSION,
 			true
 		);
 
@@ -107,24 +116,24 @@ class Assets {
 		);
 
 		wp_enqueue_style(
-			'jgb-editor-styles',
-			Plugin::instance()->assets_url( 'css/jgb-editor-styles.css' ),
+			'jgb-editor-styles-preview',
+			Plugin::instance()->assets_url( 'css/jgb-editor-styles-preview.css' ),
 			false,
-			JET_GRID_BUILDER_VERSION
+			JET_GRID_BUILDER_PREVIEW_VERSION
 		);
 
 		wp_enqueue_script(
-			'jgb-editor',
+			'jgb-editor-preview',
 			Plugin::instance()->assets_url( 'js/editor.js' ),
 			array(
 				'elementor-editor',
 				'vue'
 			),
-			JET_GRID_BUILDER_VERSION,
+			JET_GRID_BUILDER_PREVIEW_VERSION,
 			true
 		);
 
-		wp_localize_script( 'jgb-editor', 'jgbSettings', array(
+		wp_localize_script( 'jgb-editor-preview', 'jgbSettings', array(
 			'api' => array(
 				'endpoints' => Plugin::instance()->api->get_endpoints_urls(),
 			),

@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: JetGridBuilder
+ * Plugin Name: JetGridBuilder PREVIEW
  * Description: The First Grid Builder for WordPress
  * Plugin URI:  https://crocoblock.com/plugins/
  * Version:     1.0.0
  * Author:      Crocoblock
  * Author URI:  https://crocoblock.com/
- * Text Domain: jet-grid-builder
+ * Text Domain: jet-grid-builder-preview
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path: /languages
@@ -17,11 +17,11 @@ if ( ! defined( 'WPINC' ) ) {
 	die();
 }
 
-define( 'JET_GRID_BUILDER_VERSION', '1.0.0' );
-define( 'JET_GRID_BUILDER__FILE__', __FILE__ );
-define( 'JET_GRID_BUILDER_PLUGIN_BASE', plugin_basename( JET_GRID_BUILDER__FILE__ ) );
-define( 'JET_GRID_BUILDER_PATH', plugin_dir_path( JET_GRID_BUILDER__FILE__ ) );
-define( 'JET_GRID_BUILDER_URL', plugins_url( '/', JET_GRID_BUILDER__FILE__ ) );
+define( 'JET_GRID_BUILDER_PREVIEW_VERSION', '1.0.0' );
+define( 'JET_GRID_BUILDER_PREVIEW__FILE__', __FILE__ );
+define( 'JET_GRID_BUILDER_PREVIEW_PLUGIN_BASE', plugin_basename( JET_GRID_BUILDER_PREVIEW__FILE__ ) );
+define( 'JET_GRID_BUILDER_PREVIEW_PATH', plugin_dir_path( JET_GRID_BUILDER_PREVIEW__FILE__ ) );
+define( 'JET_GRID_BUILDER_PREVIEW_URL', plugins_url( '/', JET_GRID_BUILDER_PREVIEW__FILE__ ) );
 
 //Other constants
 $upload_dir = wp_upload_dir();
@@ -33,13 +33,13 @@ if ( ! defined( 'UPLOAD_BASE_URL' ) ) {
 }
 
 if ( ! version_compare( PHP_VERSION, '5.4', '>=' ) ) {
-	add_action( 'admin_notices', 'jet_grid_builder_fail_php_version' );
+	add_action( 'admin_notices', 'jet_grid_builder_preview_fail_php_version' );
 } elseif ( ! version_compare( get_bloginfo( 'version' ), '4.6', '>=' ) ) {
-	add_action( 'admin_notices', 'jet_grid_builder_fail_wp_version' );
+	add_action( 'admin_notices', 'jet_grid_builder_preview_fail_wp_version' );
 } else {
-	require( JET_GRID_BUILDER_PATH . 'includes/plugin.php' );
+	require( JET_GRID_BUILDER_PREVIEW_PATH . 'includes/plugin.php' );
 	if ( is_admin() ) {
-		require( JET_GRID_BUILDER_PATH . 'admin/class-taxonomy-thumbnail.php' );
+		require( JET_GRID_BUILDER_PREVIEW_PATH . 'admin/class-taxonomy-thumbnail.php' );
 	}
 }
 
@@ -52,8 +52,8 @@ if ( ! version_compare( PHP_VERSION, '5.4', '>=' ) ) {
  *
  * @return void
  */
-function jet_grid_builder_fail_php_version() {
-	$message      = esc_html__( 'Jet Grid Builder requires PHP version 5.4+, plugin is currently NOT ACTIVE.', 'jet-grid-builder' );
+function jet_grid_builder_preview_fail_php_version() {
+	$message      = esc_html__( 'Jet Grid Builder requires PHP version 5.4+, plugin is currently NOT ACTIVE.', 'jet-grid-builder-preview' );
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 }
@@ -67,9 +67,9 @@ function jet_grid_builder_fail_php_version() {
  *
  * @return void
  */
-function jet_grid_builder_fail_wp_version() {
+function jet_grid_builder_preview_fail_wp_version() {
 
-	$message = esc_html__( 'Jet Grid Builder requires WordPress version 4.6+. Because you are using an earlier version, the plugin is currently NOT ACTIVE.', 'jet-grid-builder' );
+	$message = esc_html__( 'Jet Grid Builder requires WordPress version 4.6+. Because you are using an earlier version, the plugin is currently NOT ACTIVE.', 'jet-grid-builder-preview' );
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 

@@ -6,7 +6,7 @@
 $this->start_controls_section(
 	'term_description_style_section',
 	[
-		'label' => esc_html__( 'Term Item: Description', 'jet-grid-builder' ),
+		'label' => esc_html__( 'Term Item: Description', 'jet-grid-builder-preview' ),
 		'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 		'condition' => [
 			'items_type' => 'default'
@@ -17,7 +17,7 @@ $this->start_controls_section(
 $this->add_responsive_control(
 	'description_margin',
 	[
-		'label'      => esc_html__( 'Margin', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Margin', 'jet-grid-builder-preview' ),
 		'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 		'size_units' => [ 'px', '%' ],
 		'selectors'  => [
@@ -29,7 +29,7 @@ $this->add_responsive_control(
 $this->add_control(
 	'description_color',
 	[
-		'label'     => esc_html__( 'Text Color', 'jet-grid-builder' ),
+		'label'     => esc_html__( 'Text Color', 'jet-grid-builder-preview' ),
 		'type'      => \Elementor\Controls_Manager::COLOR,
 		'selectors' => [
 			'{{WRAPPER}} .jgb_item-description' => 'color: {{VALUE}};',
@@ -48,23 +48,23 @@ $this->add_group_control(
 $this->add_responsive_control(
 	'description_align',
 	[
-		'label'   => esc_html__( 'Alignment', 'jet-grid-builder' ),
+		'label'   => esc_html__( 'Alignment', 'jet-grid-builder-preview' ),
 		'type'    => \Elementor\Controls_Manager::CHOOSE,
 		'options' => [
 			'left' => [
-				'title' => esc_html__( 'Left', 'jet-grid-builder' ),
+				'title' => esc_html__( 'Left', 'jet-grid-builder-preview' ),
 				'icon'  => 'fa fa-align-left',
 			],
 			'center' => [
-				'title' => esc_html__( 'Center', 'jet-grid-builder' ),
+				'title' => esc_html__( 'Center', 'jet-grid-builder-preview' ),
 				'icon'  => 'fa fa-align-center',
 			],
 			'right' => [
-				'title' => esc_html__( 'Right', 'jet-grid-builder' ),
+				'title' => esc_html__( 'Right', 'jet-grid-builder-preview' ),
 				'icon'  => 'fa fa-align-right',
 			],
 			'justify' => [
-				'title' => esc_html__( 'Justified', 'jet-grid-builder' ),
+				'title' => esc_html__( 'Justified', 'jet-grid-builder-preview' ),
 				'icon'  => 'fa fa-align-justify',
 			],
 		],

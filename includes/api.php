@@ -1,5 +1,5 @@
 <?php
-namespace Posts_Grid_Builder;
+namespace Posts_Grid_Builder_Preview;
 
 /**
  * API controller class

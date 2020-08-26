@@ -6,7 +6,7 @@ import widgetPreloaderChangeStyle from 'includes/widget-preloader-change-style.j
 	"use strict";
 
 	const termsGridBuilderEditorInit = () => {
-		elementorFrontend.hooks.addAction('frontend/element_ready/terms-grid-builder.default', $scope => {
+		elementorFrontend.hooks.addAction('frontend/element_ready/terms-grid-builder-preview.default', $scope => {
 
 			const elementId = $scope.data('model-cid'),
 				elementSettingsModel = elementorFrontend.config.elements.data[elementId],

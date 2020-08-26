@@ -1,5 +1,5 @@
 <?php
-namespace Posts_Grid_Builder\Endpoints;
+namespace Posts_Grid_Builder_Preview\Endpoints;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

@@ -10,16 +10,14 @@
 }
 
 // Posts/Terms Grid Builder widget
-.elementor-editor-active {
-	.jgb_posts-grid-builder-container,
-	.jgb_terms-grid-builder-container {
-		.jgb_spinner {
-			display: none;
-		}
+.jgb_posts-grid-builder-container,
+.jgb_terms-grid-builder-container {
+	.jgb_spinner {
+		display: none;
+	}
 
-		.jgb_loading ~ .jgb_spinner {
-			display: inline-block;
-		}
+	.jgb_loading ~ .jgb_spinner {
+		display: inline-block;
 	}
 }
 

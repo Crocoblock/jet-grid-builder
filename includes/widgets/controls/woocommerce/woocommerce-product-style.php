@@ -7,7 +7,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->start_controls_section(
 		'woocommerce_style_section',
 		[
-			'label'      => esc_html__( 'Woocommerce Product', 'jet-grid-builder' ),
+			'label'      => esc_html__( 'Woocommerce Product', 'jet-grid-builder-preview' ),
 			'tab'        => \Elementor\Controls_Manager::TAB_STYLE,
 			'show_label' => false,
 			'condition' => [
@@ -19,7 +19,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_responsive_control(
 		'woocommerce_thumbnail_margin',
 		[
-			'label'      => esc_html__( 'Thumbnail Offset', 'jet-grid-builder' ),
+			'label'      => esc_html__( 'Thumbnail Offset', 'jet-grid-builder-preview' ),
 			'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px' ],
 			'selectors'  => [
@@ -33,14 +33,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->start_controls_tab(
 		'woocommerce_title_normal',
 		[
-			'label' => __( 'Normal', 'jet-grid-builder' ),
+			'label' => __( 'Normal', 'jet-grid-builder-preview' ),
 		]
 	);
 
 	$this->add_control(
 		'woocommerce_title_color',
 		[
-			'label'  => esc_html__( 'Title Color', 'jet-grid-builder' ),
+			'label'  => esc_html__( 'Title Color', 'jet-grid-builder-preview' ),
 			'type'   => \Elementor\Controls_Manager::COLOR,
 			'scheme' => [
 				'type'  => \Elementor\Scheme_Color::get_type(),
@@ -57,14 +57,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->start_controls_tab(
 		'woocommerce_title_hover',
 		[
-			'label' => __( 'Hover', 'jet-grid-builder' ),
+			'label' => __( 'Hover', 'jet-grid-builder-preview' ),
 		]
 	);
 
 	$this->add_control(
 		'woocommerce_title_hover_color',
 		[
-			'label'     => esc_html__( 'Title Color', 'jet-grid-builder' ),
+			'label'     => esc_html__( 'Title Color', 'jet-grid-builder-preview' ),
 			'type'      => \Elementor\Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .jgb_woocommerce-item .jgb_item-title a:hover' => 'color: {{VALUE}};',
@@ -79,7 +79,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_control(
 		'woocommerce_stars_rating_controls',
 		[
-			'label'     => __( 'Woocommerce Stars Rating Options', 'jet-grid-builder' ),
+			'label'     => __( 'Woocommerce Stars Rating Options', 'jet-grid-builder-preview' ),
 			'type'      => \Elementor\Controls_Manager::HEADING,
 			'separator' => 'before',
 		]
@@ -88,7 +88,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_responsive_control(
 		'woocommerce_stars_rating_margin',
 		[
-			'label'      => esc_html__( 'Stars Margin', 'jet-grid-builder' ),
+			'label'      => esc_html__( 'Stars Margin', 'jet-grid-builder-preview' ),
 			'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [
@@ -100,7 +100,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_control(
 		'woocommerce_stars_rating_color',
 		[
-			'label'     => esc_html__( 'Stars Color', 'jet-grid-builder' ),
+			'label'     => esc_html__( 'Stars Color', 'jet-grid-builder-preview' ),
 			'type'      => \Elementor\Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .jgb_product-stars-rating-star' => 'color: {{VALUE}};',
@@ -111,7 +111,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_control(
 		'woocommerce_stars_rating_size',
 		[
-			'label' => esc_html__( 'Stars Size', 'jet-grid-builder' ),
+			'label' => esc_html__( 'Stars Size', 'jet-grid-builder-preview' ),
 			'type'  => \Elementor\Controls_Manager::SLIDER,
 			'range' => [
 				'px' => [
@@ -129,19 +129,19 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_responsive_control(
 		'woocommerce_stars_rating_align',
 		[
-			'label'   => esc_html__( 'Alignment', 'jet-grid-builder' ),
+			'label'   => esc_html__( 'Alignment', 'jet-grid-builder-preview' ),
 			'type'    => \Elementor\Controls_Manager::CHOOSE,
 			'options' => [
 				'flex-start' => [
-					'title' => esc_html__( 'Left', 'jet-grid-builder' ),
+					'title' => esc_html__( 'Left', 'jet-grid-builder-preview' ),
 					'icon'  => 'fa fa-align-left',
 				],
 				'center' => [
-					'title' => esc_html__( 'Center', 'jet-grid-builder' ),
+					'title' => esc_html__( 'Center', 'jet-grid-builder-preview' ),
 					'icon'  => 'fa fa-align-center',
 				],
 				'flex-end' => [
-					'title' => esc_html__( 'Right', 'jet-grid-builder' ),
+					'title' => esc_html__( 'Right', 'jet-grid-builder-preview' ),
 					'icon'  => 'fa fa-align-right',
 				],
 			],
@@ -155,7 +155,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_control(
 		'woocommerce_categories_controls',
 		[
-			'label'     => __( 'Woocommerce Categories Options', 'jet-grid-builder' ),
+			'label'     => __( 'Woocommerce Categories Options', 'jet-grid-builder-preview' ),
 			'type'      => \Elementor\Controls_Manager::HEADING,
 			'separator' => 'before',
 		]
@@ -164,7 +164,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_responsive_control(
 		'woocommerce_categories_margin',
 		[
-			'label'      => esc_html__( 'Categories Margin', 'jet-grid-builder' ),
+			'label'      => esc_html__( 'Categories Margin', 'jet-grid-builder-preview' ),
 			'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [
@@ -176,7 +176,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_group_control(
 		\Elementor\Group_Control_Typography::get_type(),
 		[
-			'label'    => esc_html__( 'Categories Typography', 'jet-grid-builder' ),
+			'label'    => esc_html__( 'Categories Typography', 'jet-grid-builder-preview' ),
 			'name'     => 'woocommerce_categories_typography',
 			'selector' => '{{WRAPPER}} .jgb_product-category',
 		]
@@ -187,14 +187,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->start_controls_tab(
 		'woocommerce_categories_normal',
 		[
-			'label' => __( 'Normal', 'jet-grid-builder' ),
+			'label' => __( 'Normal', 'jet-grid-builder-preview' ),
 		]
 	);
 
 	$this->add_control(
 		'woocommerce_categories_color',
 		[
-			'label'     => esc_html__( 'Color', 'jet-grid-builder' ),
+			'label'     => esc_html__( 'Color', 'jet-grid-builder-preview' ),
 			'type'      => \Elementor\Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .jgb_product-category' => 'color: {{VALUE}};',
@@ -207,14 +207,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->start_controls_tab(
 		'woocommerce_categories_hover',
 		[
-			'label' => __( 'Hover', 'jet-grid-builder' ),
+			'label' => __( 'Hover', 'jet-grid-builder-preview' ),
 		]
 	);
 
 	$this->add_control(
 		'woocommerce_categories_hover_color',
 		[
-			'label'  => esc_html__( 'Color', 'jet-grid-builder' ),
+			'label'  => esc_html__( 'Color', 'jet-grid-builder-preview' ),
 			'type'   => \Elementor\Controls_Manager::COLOR,
 			'scheme' => [
 				'type'  => \Elementor\Scheme_Color::get_type(),
@@ -233,19 +233,19 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_responsive_control(
 		'woocommerce_categories_align',
 		[
-			'label'   => esc_html__( 'Alignment', 'jet-grid-builder' ),
+			'label'   => esc_html__( 'Alignment', 'jet-grid-builder-preview' ),
 			'type'    => \Elementor\Controls_Manager::CHOOSE,
 			'options' => [
 				'left' => [
-					'title' => esc_html__( 'Left', 'jet-grid-builder' ),
+					'title' => esc_html__( 'Left', 'jet-grid-builder-preview' ),
 					'icon'  => 'fa fa-align-left',
 				],
 				'center' => [
-					'title' => esc_html__( 'Center', 'jet-grid-builder' ),
+					'title' => esc_html__( 'Center', 'jet-grid-builder-preview' ),
 					'icon'  => 'fa fa-align-center',
 				],
 				'right' => [
-					'title' => esc_html__( 'Right', 'jet-grid-builder' ),
+					'title' => esc_html__( 'Right', 'jet-grid-builder-preview' ),
 					'icon'  => 'fa fa-align-right',
 				],
 			],
@@ -258,7 +258,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_control(
 		'woocommerce_price_controls',
 		[
-			'label'     => __( 'Woocommerce Price Options', 'jet-grid-builder' ),
+			'label'     => __( 'Woocommerce Price Options', 'jet-grid-builder-preview' ),
 			'type'      => \Elementor\Controls_Manager::HEADING,
 			'separator' => 'before',
 		]
@@ -267,7 +267,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_responsive_control(
 		'woocommerce_price_margin',
 		[
-			'label'      => esc_html__( 'Price Margin', 'jet-grid-builder' ),
+			'label'      => esc_html__( 'Price Margin', 'jet-grid-builder-preview' ),
 			'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [
@@ -279,7 +279,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_group_control(
 		\Elementor\Group_Control_Typography::get_type(),
 		[
-			'label'    => esc_html__( 'Price Typography', 'jet-grid-builder' ),
+			'label'    => esc_html__( 'Price Typography', 'jet-grid-builder-preview' ),
 			'name'     => 'woocommerce_price_typography',
 			'selector' => '{{WRAPPER}} .jgb_product-price',
 		]
@@ -288,7 +288,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_control(
 		'woocommerce_price_color',
 		[
-			'label'     => esc_html__( 'Price Color', 'jet-grid-builder' ),
+			'label'     => esc_html__( 'Price Color', 'jet-grid-builder-preview' ),
 			'type'      => \Elementor\Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .jgb_product-price' => 'color: {{VALUE}};',
@@ -299,7 +299,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_group_control(
 		\Elementor\Group_Control_Typography::get_type(),
 		[
-			'label'    => esc_html__( 'Sale Typography', 'jet-grid-builder' ),
+			'label'    => esc_html__( 'Sale Typography', 'jet-grid-builder-preview' ),
 			'name'     => 'woocommerce_sale_typography',
 			'selector' => '{{WRAPPER}} .jgb_product-price del',
 		]
@@ -308,7 +308,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_control(
 		'woocommerce_sale_color',
 		[
-			'label'     => esc_html__( 'Sale Color', 'jet-grid-builder' ),
+			'label'     => esc_html__( 'Sale Color', 'jet-grid-builder-preview' ),
 			'type'      => \Elementor\Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .jgb_product-price del' => 'color: {{VALUE}};',
@@ -319,19 +319,19 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_responsive_control(
 		'woocommerce_price_align',
 		[
-			'label'   => esc_html__( 'Alignment', 'jet-grid-builder' ),
+			'label'   => esc_html__( 'Alignment', 'jet-grid-builder-preview' ),
 			'type'    => \Elementor\Controls_Manager::CHOOSE,
 			'options' => [
 				'left' => [
-					'title' => esc_html__( 'Left', 'jet-grid-builder' ),
+					'title' => esc_html__( 'Left', 'jet-grid-builder-preview' ),
 					'icon'  => 'fa fa-align-left',
 				],
 				'center' => [
-					'title' => esc_html__( 'Center', 'jet-grid-builder' ),
+					'title' => esc_html__( 'Center', 'jet-grid-builder-preview' ),
 					'icon'  => 'fa fa-align-center',
 				],
 				'right' => [
-					'title' => esc_html__( 'Right', 'jet-grid-builder' ),
+					'title' => esc_html__( 'Right', 'jet-grid-builder-preview' ),
 					'icon'  => 'fa fa-align-right',
 				],
 			],
@@ -344,7 +344,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_control(
 		'woocommerce_add_to_cart_controls',
 		[
-			'label'     => __( 'Woocommerce Add To Cart Options', 'jet-grid-builder' ),
+			'label'     => __( 'Woocommerce Add To Cart Options', 'jet-grid-builder-preview' ),
 			'type'      => \Elementor\Controls_Manager::HEADING,
 			'separator' => 'before',
 		]
@@ -353,7 +353,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_responsive_control(
 		'woocommerce_add_to_cart_margin',
 		[
-			'label'      => esc_html__( 'Margin', 'jet-grid-builder' ),
+			'label'      => esc_html__( 'Margin', 'jet-grid-builder-preview' ),
 			'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [
@@ -365,7 +365,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_responsive_control(
 		'woocommerce_add_to_cart_padding',
 		[
-			'label'      => esc_html__( 'Padding', 'jet-grid-builder' ),
+			'label'      => esc_html__( 'Padding', 'jet-grid-builder-preview' ),
 			'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [
@@ -385,7 +385,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_control(
 		'woocommerce_add_to_cart_border_radius',
 		[
-			'label'      => esc_html__( 'Border Radius', 'jet-grid-builder' ),
+			'label'      => esc_html__( 'Border Radius', 'jet-grid-builder-preview' ),
 			'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [
@@ -407,14 +407,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->start_controls_tab(
 		'woocommerce_add_to_cart_normal',
 		[
-			'label' => __( 'Normal', 'jet-grid-builder' ),
+			'label' => __( 'Normal', 'jet-grid-builder-preview' ),
 		]
 	);
 
 	$this->add_control(
 		'woocommerce_add_to_cart_color',
 		[
-			'label'     => esc_html__( 'Text Color', 'jet-grid-builder' ),
+			'label'     => esc_html__( 'Text Color', 'jet-grid-builder-preview' ),
 			'type'      => \Elementor\Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .jgb_product-add-to-cart .add_to_cart_button' => 'color: {{VALUE}};',
@@ -425,7 +425,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_control(
 		'woocommerce_add_to_cart_background',
 		[
-			'label'  => esc_html__( 'Background Color', 'jet-grid-builder' ),
+			'label'  => esc_html__( 'Background Color', 'jet-grid-builder-preview' ),
 			'type'   => \Elementor\Controls_Manager::COLOR,
 			'scheme' => [
 				'type'  => \Elementor\Scheme_Color::get_type(),
@@ -442,14 +442,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->start_controls_tab(
 		'woocommerce_add_to_cart_hover',
 		[
-			'label' => __( 'Hover', 'jet-grid-builder' ),
+			'label' => __( 'Hover', 'jet-grid-builder-preview' ),
 		]
 	);
 
 	$this->add_control(
 		'woocommerce_add_to_cart_hover_color',
 		[
-			'label'  => esc_html__( 'Text Color', 'jet-grid-builder' ),
+			'label'  => esc_html__( 'Text Color', 'jet-grid-builder-preview' ),
 			'type'   => \Elementor\Controls_Manager::COLOR,
 			'scheme' => [
 				'type'  => \Elementor\Scheme_Color::get_type(),
@@ -464,7 +464,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_control(
 		'woocommerce_add_to_cart_hover_background',
 		[
-			'label'     => esc_html__( 'Background Color', 'jet-grid-builder' ),
+			'label'     => esc_html__( 'Background Color', 'jet-grid-builder-preview' ),
 			'type'      => \Elementor\Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .jgb_product-add-to-cart .add_to_cart_button:hover' => 'background-color: {{VALUE}};',
@@ -479,19 +479,19 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$this->add_responsive_control(
 		'woocommerce_add_to_cart_align',
 		[
-			'label'   => esc_html__( 'Alignment', 'jet-grid-builder' ),
+			'label'   => esc_html__( 'Alignment', 'jet-grid-builder-preview' ),
 			'type'    => \Elementor\Controls_Manager::CHOOSE,
 			'options' => [
 				'flex-start' => [
-					'title' => esc_html__( 'Left', 'jet-grid-builder' ),
+					'title' => esc_html__( 'Left', 'jet-grid-builder-preview' ),
 					'icon'  => 'fa fa-align-left',
 				],
 				'center' => [
-					'title' => esc_html__( 'Center', 'jet-grid-builder' ),
+					'title' => esc_html__( 'Center', 'jet-grid-builder-preview' ),
 					'icon'  => 'fa fa-align-center',
 				],
 				'flex-end' => [
-					'title' => esc_html__( 'Right', 'jet-grid-builder' ),
+					'title' => esc_html__( 'Right', 'jet-grid-builder-preview' ),
 					'icon'  => 'fa fa-align-right',
 				],
 			],

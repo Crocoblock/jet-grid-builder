@@ -292,7 +292,9 @@ export default {
 		updateOption(key, value) {
 			if (value !== this.getSettingValue(key)) {
 				this.elementSettingsModel.set(key, value);
-				elementor.saver.setFlagEditorChange(true);
+
+				if (window.elementor)
+					elementor.saver.setFlagEditorChange(true);
 			}
 		},
 

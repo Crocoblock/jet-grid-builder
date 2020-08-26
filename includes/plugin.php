@@ -1,5 +1,5 @@
 <?php
-namespace Posts_Grid_Builder;
+namespace Posts_Grid_Builder_Preview;
 
 use Jet_Engine_CX_Loader;
 
@@ -98,7 +98,7 @@ class Plugin {
 	 */
 	public function lang() {
 
-		load_plugin_textdomain( 'jet-grid-builder', false, JET_GRID_BUILDER_PATH . 'languages' );
+		load_plugin_textdomain( 'jet-grid-builder-preview', false, JET_GRID_BUILDER_PREVIEW_PATH . 'languages' );
 
 	}
 
@@ -110,7 +110,7 @@ class Plugin {
 	 */
 	public function assets_url( $file = '' ) {
 
-		return JET_GRID_BUILDER_URL . 'assets/' . $file;
+		return JET_GRID_BUILDER_PREVIEW_URL . 'assets/' . $file;
 
 	}
 
@@ -122,7 +122,7 @@ class Plugin {
 	 */
 	public function plugin_path( $file = '' ) {
 
-		return JET_GRID_BUILDER_PATH . $file;
+		return JET_GRID_BUILDER_PREVIEW_PATH . $file;
 
 	}
 
@@ -243,7 +243,7 @@ class Plugin {
 			$result[ $term->slug ] = $term->name;
 		}
 
-		$result = array( 'all' => esc_html__( 'All', 'jet-grid-builder' ) ) + $result;
+		$result = array( 'all' => esc_html__( 'All', 'jet-grid-builder-preview' ) ) + $result;
 
 		return $result;
 
@@ -274,7 +274,7 @@ class Plugin {
 			}
 		}
 
-		return array_merge( array( 'full' => esc_html__( 'Full', 'jet-grid-builder' ), ), $result );
+		return array_merge( array( 'full' => esc_html__( 'Full', 'jet-grid-builder-preview' ), ), $result );
 
 	}
 
@@ -319,12 +319,12 @@ class Plugin {
 	public function get_items_type_options() {
 
 		$items_type_options = [
-			'default'      => esc_html__( 'Default', 'jet-grid-builder' ),
-			'post_content' => esc_html__( 'Post Content', 'jet-grid-builder' ),
+			'default'      => esc_html__( 'Default', 'jet-grid-builder-preview' ),
+			'post_content' => esc_html__( 'Post Content', 'jet-grid-builder-preview' ),
 		];
 
 		if ( class_exists( 'Jet_Engine' ) ) {
-			$items_type_options['jetengine_listing'] = esc_html__( 'JetEngine Listing', 'jet-grid-builder' );
+			$items_type_options['jetengine_listing'] = esc_html__( 'JetEngine Listing', 'jet-grid-builder-preview' );
 		}
 
 		return $items_type_options;
@@ -334,11 +334,11 @@ class Plugin {
 	public function get_woo_items_type_options() {
 
 		$woo_items_type_options = [
-			'default'      => esc_html__( 'Default', 'jet-grid-builder' )
+			'default'      => esc_html__( 'Default', 'jet-grid-builder-preview' )
 		];
 
 		if ( class_exists( 'Jet_Woo_Builder' ) ) {
-			$woo_items_type_options['jet_woo_builder_archive'] = esc_html__( 'JetWooBuilder Archive', 'jet-grid-builder' );
+			$woo_items_type_options['jet_woo_builder_archive'] = esc_html__( 'JetWooBuilder Archive', 'jet-grid-builder-preview' );
 		}
 
 		return $woo_items_type_options;
@@ -435,16 +435,16 @@ class Plugin {
 	 */
 	private function autoloader( $class ) {
 
-		if ( false === strpos( $class, 'Posts_Grid_Builder' ) ) {
+		if ( false === strpos( $class, 'Posts_Grid_Builder_Preview' ) ) {
 			return;
 		}
 
 		$class = str_replace( '\\', DIRECTORY_SEPARATOR, $class );
-		$class = str_replace( 'Posts_Grid_Builder', 'includes', $class );
+		$class = str_replace( 'Posts_Grid_Builder_Preview', 'includes', $class );
 		$class = str_replace( '_', '-', $class );
 		$class = strtolower( $class );
 
-		$file = JET_GRID_BUILDER_PATH . DIRECTORY_SEPARATOR . $class . '.php';
+		$file = JET_GRID_BUILDER_PREVIEW_PATH . DIRECTORY_SEPARATOR . $class . '.php';
 
 		if ( file_exists( $file ) ) {
 			require $file;

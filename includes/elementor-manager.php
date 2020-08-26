@@ -1,5 +1,5 @@
 <?php
-namespace Posts_Grid_Builder;
+namespace Posts_Grid_Builder_Preview;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -48,12 +48,12 @@ class Elementor_Manager {
 	public function register_category() {
 
 		$elements_manager = \Elementor\Plugin::instance()->elements_manager;
-		$cat              = 'jet-grid-builder';
+		$cat              = 'jet-grid-builder-preview';
 
 		$elements_manager->add_category(
 			$cat,
 			array(
-				'title' => esc_html__( 'Jet Grid Builder', 'jet-grid-builder' ),
+				'title' => esc_html__( 'Jet Grid Builder Preview', 'jet-grid-builder-preview' ),
 				'icon'  => 'font',
 			),
 			1

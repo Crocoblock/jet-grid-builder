@@ -10,7 +10,7 @@ import { postsSelectionModal, termsSelectionModal } from 'modules/selection-moda
 
 	// Posts Selector Data Init
 	function initPostsSelectorData() {
-		if (postsSelectorDataInited || !window.elementorFrontend.isEditMode()) {
+		if (postsSelectorDataInited) {
 			return;
 		}
 
@@ -21,7 +21,7 @@ import { postsSelectionModal, termsSelectionModal } from 'modules/selection-moda
 
 	// Terms Selector Data Init
 	function initTermsSelectorData() {
-		if (termsSelectorDataInited || !window.elementorFrontend.isEditMode()) {
+		if (termsSelectorDataInited) {
 			return;
 		}
 

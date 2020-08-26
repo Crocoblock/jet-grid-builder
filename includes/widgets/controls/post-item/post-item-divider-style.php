@@ -6,7 +6,7 @@
 $this->start_controls_section(
 	'post_divider_style_section',
 	[
-		'label' => esc_html__( 'Post Item: Divider', 'jet-grid-builder' ),
+		'label' => esc_html__( 'Post Item: Divider', 'jet-grid-builder-preview' ),
 		'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 		'condition' => [
 			'items_type' => 'default'
@@ -17,7 +17,7 @@ $this->start_controls_section(
 $this->add_responsive_control(
 	'divider_margin',
 	[
-		'label'      => esc_html__( 'Margin', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Margin', 'jet-grid-builder-preview' ),
 		'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 		'size_units' => [ 'px', '%' ],
 		'selectors'  => [
@@ -29,13 +29,13 @@ $this->add_responsive_control(
 $this->add_control(
 	'divider_style',
 	[
-		'label'   => esc_html__( 'Style', 'jet-grid-builder' ),
+		'label'   => esc_html__( 'Style', 'jet-grid-builder-preview' ),
 		'type'    => \Elementor\Controls_Manager::SELECT,
 		'options' => [
-			'solid'  => esc_html__( 'Solid', 'jet-grid-builder' ),
-			'double' => esc_html__( 'Double', 'jet-grid-builder' ),
-			'dotted' => esc_html__( 'Dotted', 'jet-grid-builder' ),
-			'dashed' => esc_html__( 'Dashed', 'jet-grid-builder' ),
+			'solid'  => esc_html__( 'Solid', 'jet-grid-builder-preview' ),
+			'double' => esc_html__( 'Double', 'jet-grid-builder-preview' ),
+			'dotted' => esc_html__( 'Dotted', 'jet-grid-builder-preview' ),
+			'dashed' => esc_html__( 'Dashed', 'jet-grid-builder-preview' ),
 		],
 		'default'   => 'solid',
 		'selectors' => [
@@ -47,7 +47,7 @@ $this->add_control(
 $this->add_control(
 	'divider_weight',
 	[
-		'label'   => esc_html__( 'Weight', 'jet-grid-builder' ),
+		'label'   => esc_html__( 'Weight', 'jet-grid-builder-preview' ),
 		'type'    => \Elementor\Controls_Manager::SLIDER,
 		'default' => [
 			'size' => 1,
@@ -67,7 +67,7 @@ $this->add_control(
 $this->add_control(
 	'divider_color',
 	[
-		'label' => esc_html__( 'Color', 'jet-grid-builder' ),
+		'label' => esc_html__( 'Color', 'jet-grid-builder-preview' ),
 		'type'  => \Elementor\Controls_Manager::COLOR,
 		'selectors' => [
 			'{{WRAPPER}} .jgb_item-divider-separator' => 'border-top-color: {{VALUE}};',
@@ -78,7 +78,7 @@ $this->add_control(
 $this->add_responsive_control(
 	'divider_width',
 	[
-		'label'      => esc_html__( 'Width', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Width', 'jet-grid-builder-preview' ),
 		'type'       => \Elementor\Controls_Manager::SLIDER,
 		'size_units' => [ '%', 'px' ],
 		'range' => [
@@ -105,19 +105,19 @@ $this->add_responsive_control(
 $this->add_responsive_control(
 	'divider_align',
 	[
-		'label'   => esc_html__( 'Alignment', 'jet-grid-builder' ),
+		'label'   => esc_html__( 'Alignment', 'jet-grid-builder-preview' ),
 		'type'    => \Elementor\Controls_Manager::CHOOSE,
 		'options' => [
 			'left' => [
-				'title' => esc_html__( 'Left', 'jet-grid-builder' ),
+				'title' => esc_html__( 'Left', 'jet-grid-builder-preview' ),
 				'icon'  => 'fa fa-align-left',
 			],
 			'center' => [
-				'title' => esc_html__( 'Center', 'jet-grid-builder' ),
+				'title' => esc_html__( 'Center', 'jet-grid-builder-preview' ),
 				'icon'  => 'fa fa-align-center',
 			],
 			'right' => [
-				'title' => esc_html__( 'Right', 'jet-grid-builder' ),
+				'title' => esc_html__( 'Right', 'jet-grid-builder-preview' ),
 				'icon'  => 'fa fa-align-right',
 			],
 		],
