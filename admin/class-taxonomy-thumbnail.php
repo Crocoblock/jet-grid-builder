@@ -5,9 +5,10 @@ namespace Posts_Grid_Builder_Preview;
  * Taxonomy Thumbnail class
  */
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
+if ( ! defined( 'WPINC' ) || class_exists( 'Taxonomy_Thumbnail' ) ) {
 	die;
 }
+
 /**
  * Define class
  */
@@ -27,6 +28,10 @@ class Taxonomy_Thumbnail {
 	
 	// Add the field to the term form.
 	public function add_field() {
+		if ( class_exists( 'Posts_Grid_Builder\\Taxonomy_Thumbnail' ) ) {
+			return;
+		}
+
 		global $taxnow;
 
 		$taxonomies = array_flip( $this->get_taxonomies() );
@@ -41,6 +46,10 @@ class Taxonomy_Thumbnail {
 
 	// Update term action
 	function update_term_thumbnail( $term_id ) {
+		if ( class_exists( 'Posts_Grid_Builder\\Taxonomy_Thumbnail' ) ) {
+			return;
+		}
+
 		if ( empty( $_POST['action'] ) || ( 'add-tag' !== $_POST['action'] && 'editedtag' !== $_POST['action'] ) ) {
 			return;
 		}
@@ -108,7 +117,7 @@ class Taxonomy_Thumbnail {
 			<tbody>
 				<tr class="form-field term-thumbnail-wrap">
 					<th scope="row">
-						<label for="thumbnail"><?php _e( 'Thumbnail' ); ?></label>
+						<label for="thumbnail"><?php _e( 'Thumbnail for Terms Grid Builder' ); ?></label>
 					</th>
 					<td>
 						<div id="thumbnail-field">

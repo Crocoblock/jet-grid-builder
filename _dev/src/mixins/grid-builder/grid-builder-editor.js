@@ -49,16 +49,13 @@ export default {
 		verticalCompact() {
 			let compact = this.getSettingValue('vertical_compact') === 'yes' ? true : false;
 
-			if (compact)
-				this.layoutUpdated(dndGridUtils.layoutBubbleUp(this.layout));
-
 			return compact;
 		},
 	},
 
 	watch: {
-		'verticalCompact': function (oldVal) {
-			if (oldVal) {
+		'verticalCompact': function (newVal) {
+			if (newVal) {
 				this.layoutUpdated(dndGridUtils.layoutBubbleUp(this.layout));
 			}
 		},
