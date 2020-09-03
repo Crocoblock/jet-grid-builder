@@ -6,7 +6,7 @@
 $this->start_controls_section(
 	'order_style_section',
 	[
-		'label'      => esc_html__( 'Term Item Elemements Order', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Term Item Elements Order', 'jet-grid-builder' ),
 		'tab'        => \Elementor\Controls_Manager::TAB_STYLE,
 		'show_label' => false,
 		'condition' => [
@@ -71,6 +71,21 @@ $this->add_control(
 		'step'      => 1,
 		'selectors' => [
 			'{{WRAPPER}} .jgb_item-posts-count' => 'order: {{VALUE}};',
+		]
+	]
+);
+
+$this->add_control(
+	'type_label_order',
+	[
+		'label'     => esc_html__( 'Type Label Order (is no thumbnail)', 'jet-grid-builder' ),
+		'type'      => \Elementor\Controls_Manager::NUMBER,
+		'default'   => 1,
+		'min'       => 0,
+		'max'       => 10,
+		'step'      => 1,
+		'selectors' => [
+			'{{WRAPPER}} .jgb_item-type-wrap' => 'order: {{VALUE}};',
 		]
 	]
 );

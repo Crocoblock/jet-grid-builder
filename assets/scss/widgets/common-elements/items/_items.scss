@@ -38,6 +38,7 @@
 
 	// Body
 	&-body {
+		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 		padding: 20px;
@@ -45,7 +46,7 @@
 		color: #fff;
 		background-color: #4b505e;
 
-		>* {
+		> * {
 			margin: 5px 0;
 		}
 	}
@@ -97,7 +98,7 @@
 
 		&-separator {
 			display: inline-block;
-			border-top-color: rgba(#eee, .35);
+			border-top-color: rgba(#eee, 0.35);
 		}
 	}
 
@@ -123,9 +124,6 @@
 		right: 0;
 		margin: 15px 15px 0;
 		z-index: 3;
-
-		font-size: 0;
-		line-height: 0;
 	}
 
 	// No Thumbnail

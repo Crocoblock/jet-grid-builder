@@ -1,6 +1,5 @@
 .elementor-editor-active {
 	.jgb_grid-builder {
-
 		.jgb_grid-container {
 			overflow: visible;
 		}
@@ -22,7 +21,6 @@
 				&.dragging,
 				&.resizing,
 				&:hover {
-
 					.resize-handle,
 					.jgb_overlay {
 						display: block;
@@ -45,7 +43,7 @@
 					border-color: transparent transparent #15bbf0 transparent;
 
 					&:before {
-						content: '';
+						content: "";
 						position: absolute;
 						top: 10px;
 						left: -10px;
@@ -118,6 +116,7 @@
 		}
 
 		.jgb_overlay {
+			pointer-events: none;
 			display: none;
 			position: absolute;
 			top: 0;
@@ -129,6 +128,7 @@
 
 			// Tools holder
 			&-toolset {
+				pointer-events: initial;
 				position: absolute;
 				display: flex;
 				list-style: none;
@@ -150,7 +150,7 @@
 					font-size: 11px;
 					line-height: 24px;
 					color: #fff;
-					transition: margin .3s, width .3s, font .3s;
+					transition: margin 0.3s, width 0.3s, font 0.3s;
 
 					&:hover {
 						background-color: #10bcf2;
@@ -212,7 +212,7 @@
 
 			&:hover {
 				background-color: #6d7882;
-				box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 2px rgba(0, 0, 0, .2);
+				box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
 			}
 		}
 	}

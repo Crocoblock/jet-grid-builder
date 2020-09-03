@@ -41,6 +41,9 @@ class Assets {
 				JET_GRID_BUILDER_VERSION
 			);
 
+		// enqueue dashicons
+		wp_enqueue_style( 'dashicons' );
+
 		wp_register_style(
 			'jgb-styles',
 			Plugin::instance()->assets_url( 'css/jgb-styles.css' ),

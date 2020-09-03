@@ -6,7 +6,7 @@
 $this->start_controls_section(
 	'order_style_section',
 	[
-		'label'      => esc_html__( 'Post Item Elemements Order', 'jet-grid-builder' ),
+		'label'      => esc_html__( 'Post Item Elements Order', 'jet-grid-builder' ),
 		'tab'        => \Elementor\Controls_Manager::TAB_STYLE,
 		'show_label' => false,
 		'condition' => [
@@ -75,7 +75,37 @@ $this->add_control(
 	]
 );
 
+$this->add_control(
+	'type_label_order',
+	[
+		'label'     => esc_html__( 'Type Label Order (is no thumbnail)', 'jet-grid-builder' ),
+		'type'      => \Elementor\Controls_Manager::NUMBER,
+		'default'   => 1,
+		'min'       => 0,
+		'max'       => 10,
+		'step'      => 1,
+		'selectors' => [
+			'{{WRAPPER}} .jgb_item-type-wrap' => 'order: {{VALUE}};',
+		]
+	]
+);
+
 if ( class_exists( 'WooCommerce' ) ) {
+	$this->add_control(
+		'woocommerce_rating_order',
+		[
+			'label'     => esc_html__( 'Woocommerce Rating Order', 'jet-grid-builder' ),
+			'type'      => \Elementor\Controls_Manager::NUMBER,
+			'default'   => 1,
+			'min'       => 0,
+			'max'       => 10,
+			'step'      => 1,
+			'selectors' => [
+				'{{WRAPPER}} .jgb_product-stars-rating' => 'order: {{VALUE}};',
+			]
+		]
+	);
+
 	$this->add_control(
 		'woocommerce_categories_order',
 		[

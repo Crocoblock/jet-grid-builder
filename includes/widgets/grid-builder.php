@@ -305,6 +305,11 @@ class Grid_Builder extends \Elementor\Widget_Base {
 		$loading_spinner = filter_var( $settings['loading_spinner'], FILTER_VALIDATE_BOOLEAN );
 		$container_class = 'jgb_posts-grid-builder-container';
 
+		if ( class_exists( 'Jet_Engine' ) ) {
+			wp_enqueue_script( 'jquery-slick' );
+			wp_enqueue_script( 'imagesloaded' );
+		}
+
 		if ( $items_type === 'jetengine_listing' && !$settings['jetengine_listing_id'] ) {
 			printf(
 				'<div class="jgb_notice">%s</div>',

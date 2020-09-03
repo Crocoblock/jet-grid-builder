@@ -36,7 +36,14 @@ class Post_Types extends Base {
 	public function excluded_post_types() {
 		return apply_filters( 'posts-grid-builder/api/post-types/exclude', array(
 			'attachment',
-			'elementor_library'
+			'elementor_library',
+			'jet-smart-filters',
+			'jet-engine',
+			'jet-theme-core',
+			'jet-engine-booking',
+			'jet-woo-builder',
+			'jet-popup',
+			'jet-menu'
 		) );
 	}
 

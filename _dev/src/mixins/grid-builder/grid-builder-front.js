@@ -55,13 +55,19 @@ export default {
 			} else {
 				this.initItems(items);
 			}
+
 		},
 
 		initItems(items) {
 			this.items = items;
 
 			this.loaded = true;
-			// remove preloader
+			this.removePreloader();
+
+			this.$nextTick(this.applyСustomMethods);
+		},
+
+		removePreloader() {
 			const preloaderEl = this.$el.parentElement.querySelector('.jgb_spinner');
 
 			if (preloaderEl) {

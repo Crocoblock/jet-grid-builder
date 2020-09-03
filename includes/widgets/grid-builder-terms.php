@@ -184,7 +184,7 @@ class Grid_Builder_Terms extends \Elementor\Widget_Base {
 		$result   = array();
 
 		// grid settings
-		$result['terms']                               = isset( $settings['terms'] ) ? $settings['terms'] : '!!!TERMS!!!';
+		$result['terms']                               = isset( $settings['terms'] ) ? $settings['terms'] : '';
 		$result['layout-data']                         = isset( $settings['layout-data'] ) ? $settings['layout-data'] : '';
 		$result['layout-data_tablet']                  = isset( $settings['layout-data_tablet'] ) ? $settings['layout-data_tablet'] : '';
 		$result['layout-data_mobile']                  = isset( $settings['layout-data_mobile'] ) ? $settings['layout-data_mobile'] : '';
@@ -232,6 +232,11 @@ class Grid_Builder_Terms extends \Elementor\Widget_Base {
 		$items_type      = isset( $settings['items_type'] ) ? $settings['items_type'] : 'default';
 		$loading_spinner = filter_var( $settings['loading_spinner'], FILTER_VALIDATE_BOOLEAN );
 		$container_class = 'jgb_terms-grid-builder-container';
+
+		if ( class_exists( 'Jet_Engine' ) ) {
+			wp_enqueue_script( 'jquery-slick' );
+			wp_enqueue_script( 'imagesloaded' );
+		}
 
 		if ( $items_type === 'jetengine_listing' && !$settings['jetengine_listing_id'] ) {
 			printf(

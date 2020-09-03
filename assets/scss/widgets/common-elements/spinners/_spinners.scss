@@ -9,6 +9,10 @@
 	z-index: 999;
 }
 
+.jgb_grid-builder.jgb_loading .jgb_grid-container {
+	display: none;
+}
+
 // Posts/Terms Grid Builder widget
 .elementor-editor-active {
 	.jgb_posts-grid-builder-container,

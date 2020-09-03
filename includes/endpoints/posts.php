@@ -96,13 +96,14 @@ class Posts extends Base {
 		$args = $request->get_params();
 
 		$query_args = array(
-			'post_type'      => $args['post_type'],
-			'posts_per_page' => $args['posts_per_page'],
-			'orderby'        => $args['orderby'],
-			'order'          => $args['order'],
-			'paged'          => $args['paged'],
-			'post__in'       => $args['post__in'],
-			'post__not_in'   => $args['post__not_in'],
+			'post_type'           => $args['post_type'],
+			'posts_per_page'      => $args['posts_per_page'],
+			'orderby'             => $args['orderby'],
+			'order'               => $args['order'],
+			'paged'               => $args['paged'],
+			'post__in'            => $args['post__in'],
+			'post__not_in'        => $args['post__not_in'],
+			'ignore_sticky_posts' => true
 		);
 
 		$this->thumbnail_size = $args['thumbnail_size'];

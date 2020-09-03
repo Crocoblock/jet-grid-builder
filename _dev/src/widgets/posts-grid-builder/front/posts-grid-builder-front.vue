@@ -28,6 +28,8 @@
 
 				if (!postsIDs) {
 					this.loaded = true;
+					this.removePreloader();
+
 					return;
 				}
 

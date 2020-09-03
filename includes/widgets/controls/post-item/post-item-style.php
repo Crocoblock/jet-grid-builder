@@ -16,6 +16,8 @@ $this->add_control(
 	array(
 		'label'   => __( 'Content Align', 'jet-grid-builder' ),
 		'type'    => \Elementor\Controls_Manager::CHOOSE,
+		'toggle'  => false,
+		'default' => 'flex-start',
 		'options'     => array(
 			'flex-start' => array(
 				'title' => esc_html__( 'Top', 'jet-grid-builder' ),

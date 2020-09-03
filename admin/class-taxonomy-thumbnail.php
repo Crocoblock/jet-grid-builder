@@ -108,7 +108,7 @@ class Taxonomy_Thumbnail {
 			<tbody>
 				<tr class="form-field term-thumbnail-wrap">
 					<th scope="row">
-						<label for="thumbnail"><?php _e( 'Thumbnail' ); ?></label>
+						<label for="thumbnail"><?php _e( 'Thumbnail for Terms Grid Builder' ); ?></label>
 					</th>
 					<td>
 						<div id="thumbnail-field">

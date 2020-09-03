@@ -94,6 +94,12 @@ export default {
 			if (jet_woo_builder_archive_id) requestArgs.jet_woo_builder_archive_id = jet_woo_builder_archive_id;
 
 			return requestArgs;
+		},
+
+		applyСustomMethods() {
+			if (this.getSettingValue('items_type') === 'jetengine_listing') {
+				window.JetEngine.widgetDynamicField(jQuery(this.$el));
+			}
 		}
 	}
 };
