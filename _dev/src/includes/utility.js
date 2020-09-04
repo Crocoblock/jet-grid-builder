@@ -16,6 +16,9 @@ export function preloadMedia(data, callback) {
 		loadedCout = 0;
 
 	data.forEach((item, index) => {
+		if (!item.thumbnail_data)
+			return;
+
 		if (item.thumbnail_data.file) {
 			let image = new Image();
 
@@ -31,6 +34,9 @@ export function preloadMedia(data, callback) {
 			}
 		}
 	});
+
+	if (total === 0)
+		callback(data);
 
 	function itemLoaded() {
 		loadedCout++;

@@ -18,15 +18,15 @@ $this->add_control(
 $this->add_control(
 	'loading_spinner_media',
 	[
-		'label'   => esc_html__( 'Show spinner until media loads', 'jet-grid-builder' ),
-		'type'    => \Elementor\Controls_Manager::SWITCHER,
+		'label'        => esc_html__( 'Show spinner until media loads', 'jet-grid-builder' ),
+		'description'  => esc_html__( 'Only for default items type', 'jet-grid-builder' ),
+		'type'         => \Elementor\Controls_Manager::SWITCHER,
 		'label_on'     => esc_html__( 'Yes', 'jet-grid-builder' ),
 		'label_off'    => esc_html__( 'No', 'jet-grid-builder' ),
 		'return_value' => 'true',
 		'default'      => '',
-		'condition' => [
+		'condition'    => [
 			'loading_spinner' => 'true',
-			'items_type'      => 'default'
 		],
 		'render_type'  => 'none'
 	]
