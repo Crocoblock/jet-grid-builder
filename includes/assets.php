@@ -17,7 +17,7 @@ class Assets {
 	public function __construct() {
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'plugin_assets' ) );
-		add_action( 'elementor/editor/before_enqueue_scripts', array( $this, 'editor_assets' ) );
+		add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'editor_assets' ) );
 
 	}
 
