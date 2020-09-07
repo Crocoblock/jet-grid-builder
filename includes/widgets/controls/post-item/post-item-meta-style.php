@@ -51,7 +51,7 @@ $this->add_responsive_control(
 		'label'   => esc_html__( 'Alignment', 'jet-grid-builder' ),
 		'type'    => \Elementor\Controls_Manager::CHOOSE,
 		'options' => [
-			'left' => [
+			'flex-start' => [
 				'title' => esc_html__( 'Left', 'jet-grid-builder' ),
 				'icon'  => 'fa fa-align-left',
 			],
@@ -59,14 +59,14 @@ $this->add_responsive_control(
 				'title' => esc_html__( 'Center', 'jet-grid-builder' ),
 				'icon'  => 'fa fa-align-center',
 			],
-			'right' => [
+			'flex-end' => [
 				'title' => esc_html__( 'Right', 'jet-grid-builder' ),
 				'icon'  => 'fa fa-align-right',
 			],
 		],
 		'selectors' => [
-			'{{WRAPPER}} .jgb_item-meta' => 'text-align: {{VALUE}};',
-		],
+			'{{WRAPPER}} .jgb_item-meta' => 'justify-content: {{VALUE}};',
+		]
 	]
 );
 

@@ -28,7 +28,7 @@
 
 				if (!postsIDs) {
 					this.loaded = true;
-					//this.removePreloader();
+					this.removePreloader();
 
 					return;
 				}
