@@ -2,7 +2,7 @@
 /**
  * Plugin Name: JetGridBuilder
  * Description: The First Grid Builder for WordPress
- * Plugin URI:  https://crocoblock.com/plugins/
+ * Plugin URI:  https://crocoblock.com/plugins/jetgridbuilder/
  * Version:     1.0.0
  * Author:      Crocoblock
  * Author URI:  https://crocoblock.com/
