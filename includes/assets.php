@@ -85,8 +85,7 @@ class Assets {
 				: Plugin::instance()->assets_url( 'js/terms-grid-builder-front.js' ),
 			array(
 				'elementor-frontend',
-				'vue',
-				'swiper'
+				'vue'
 			),
 			JET_GRID_BUILDER_PREVIEW_VERSION,
 			true
