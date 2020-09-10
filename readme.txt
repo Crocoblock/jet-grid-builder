@@ -12,6 +12,8 @@ JetGridBuilder plugin for Elementor helps to create wow-layouts on your website.
 
 == Description ==
 
+<a href="https://bit.ly/2RdFZac" target="_blank">JetGridBuilder plugin for Elementor</a> helps to create wow-layouts on your website. Forget about the inflexible limits of premade grids. Put your ideas in motion just by dragging the posts to the desired grid area.
+
 Form your Elementor grid gallery with blog posts, advertising banners, or shop products. You can create a layout with architecture projects, photographer portfolio, event posters, etc.
 
 **Unpacking the plugin, you will find 2 widgets inside:** 
@@ -19,7 +21,7 @@ Form your Elementor grid gallery with blog posts, advertising banners, or shop p
  - Post Grid Builder  
  - Terms Grid Builder
 
-No need to respect the row height, just place your posts in any order. Manually change the size, gutter, etc. Crocoblock promises the lightest code, most responsive design options, and the easiest user experience in the field.
+No need to respect the row height, just place your posts in any order. Manually change the size, gutter, etc. Crocoblock promises the lightest code, enjoyable user experience, and most responsive design options in the field.
 
 **The opportunities you get with JetGridBuilder:**
 
@@ -31,7 +33,7 @@ No need to respect the row height, just place your posts in any order. Manually 
  6. JetGridBuilder works in combo with [JetEngine](https://bit.ly/35ieZhY) plugin. Use the Listing Grid created with JetEngine as a source and all data and stylizations will be displayed instead of the default ones
  7. A great number of style settings for every page element
 
-We prepared an inspiring demo page, where you can play with the posts: adjust, move, delete or add them. Check out Elementor grid plugin —  JetGridBuilder — in action [https://crocoblock.com/plugins/jetgridbuilder/](https://crocoblock.com/plugins/jetgridbuilder/)
+We prepared an inspiring demo page, where you can play with the posts: adjust, move, delete or add them. Check out Elementor grid plugin —  JetGridBuilder — in action [https://crocoblock.com/plugins/jetgridbuilder/](https://bit.ly/2RdFZac)
 
 == Screenshots ==
 
