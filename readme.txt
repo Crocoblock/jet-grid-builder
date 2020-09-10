@@ -1,4 +1,4 @@
-=== JetGridBuilder ===
+﻿=== JetGridBuilder for Elementor ===
 Contributors: crocoblock
 =Tags: posts grid, custom post grid, grid, masonry layout, justify layout, elementor, elementor widget, elementor addon
 Requires at least: 5.4
@@ -35,10 +35,10 @@ We prepared an inspiring demo page, where you can play with the posts: adjust, m
 
 == Screenshots ==
 
-1. Drag and drop your widgets
-2. Add posts with user friendly interface
-3. Move your items anywhere you want
-4. Resize your items
+1. Move and resize your items
+2. Drag and drop your widgets
+3. Add posts with user friendly interface
+4. Move your items anywhere you want
 5. Deletet items directly from editor
 6. Control itmes layout and style
 7. Customize loading animation
