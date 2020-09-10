@@ -1,6 +1,6 @@
 === JetGridBuilder ===
 Contributors: crocoblock
-=Tags: posts grid, custom post grid, grid, masonry layout, justify layout, Elementor, 
+=Tags: posts grid, custom post grid, grid, masonry layout, justify layout, elementor, elementor widget, elementor addon
 Requires at least: 5.4
 Tested up to: 5.5.1
 Requires PHP: 7.2
@@ -31,4 +31,15 @@ No need to respect the row height, just place your posts in any order. Manually 
  6. JetGridBuilder works in combo with [JetEngine](https://bit.ly/35ieZhY) plugin. Use the Listing Grid created with JetEngine as a source and all data and stylizations will be displayed instead of the default ones
  7. A great number of style settings for every page element
 
-We prepared an inspiring demo page, where you can play with the posts: adjust, move, delete or add them. Check out Elementor grid plugin —  JetGridBuilder — in action [https://crocoblock.com/plugins/jetgridbuilder/](https://crocoblock.com/plugins/jetgridbuilder/) 
+We prepared an inspiring demo page, where you can play with the posts: adjust, move, delete or add them. Check out Elementor grid plugin —  JetGridBuilder — in action [https://crocoblock.com/plugins/jetgridbuilder/](https://crocoblock.com/plugins/jetgridbuilder/)
+
+== Screenshots ==
+
+1. Drag and drop your widgets
+2. Add posts with user friendly interface
+3. Move your items anywhere you want
+4. Resize your items
+5. Deletet items directly from editor
+6. Control itmes layout and style
+7. Customize loading animation
+8. Adjust items content
