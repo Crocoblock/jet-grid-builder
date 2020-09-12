@@ -1,4 +1,4 @@
-﻿=== JetGridBuilder for Elementor ===
+﻿=== JetGridBuilder — Grid Builder for Elementor ===
 Contributors: crocoblock
 =Tags: posts grid, custom post grid, grid, masonry layout, justify layout, elementor, elementor widget, elementor addon
 Requires at least: 5.4
