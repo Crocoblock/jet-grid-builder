@@ -131,7 +131,7 @@ class Terms extends Base {
 			'id'               => $term->term_id,
 			'permalink'        => get_term_link( $term->term_id ),
 			'thumbnail_data'   => Plugin::instance()->get_thumbnail_data( $thumb_id, $this->thumbnail_size ),
-			'term_title'       => $term->name,
+			'term_title'       => htmlspecialchars_decode( $term->name ),
 			'term_slug'        => $term->slug,
 			'term_count'       => $term->count,
 			'term_description' => $term->description,

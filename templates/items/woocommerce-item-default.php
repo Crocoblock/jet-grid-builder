@@ -9,11 +9,11 @@
 		:class="{'jgb_no-thumbnail':!thumbnailEnabled}"
 	>
 		<item-thumbnail v-if="thumbnailEnabled" :link="true" />
-		<div class="jgb_item-type-wrap" v-if="postTypeEnabled && thumbnailEnabled">
+		<div class="jgb_item-type-wrap" v-if="[postTypeEnabled, thumbnailEnabled].every(isTrue)">
 			<div class="jgb_item-type">{{itemData.post_type}}</div>
 		</div>
 		<div class="jgb_item-body">
-			<div class="jgb_item-type-wrap" v-if="postTypeEnabled && !thumbnailEnabled">
+			<div class="jgb_item-type-wrap" v-if="[postTypeEnabled, !thumbnailEnabled].every(isTrue)">
 				<div class="jgb_item-type">{{itemData.post_type}}</div>
 			</div>
 			<productStarsRating v-if="productStarsRatingEnabled" />

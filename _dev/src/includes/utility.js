@@ -8,7 +8,9 @@ export default {
 	removeFromArray,
 	stringToArray,
 	stringToBoolean,
-	getIntermediateImageSizesUrl
+	getIntermediateImageSizesUrl,
+	getNesting,
+	decodeHtmlSpecialChars
 }
 
 export function preloadMedia(data, callback) {
@@ -141,8 +143,56 @@ export function stringToBoolean(string) {
 		return string;
 
 	switch (string.toLowerCase().trim()) {
-		case 'true': case 'yes': case '1': return true;
-		case 'false': case 'no': case '0': case null: return false;
-		default: return Boolean(string);
+		case 'true':
+		case 'yes':
+		case '1':
+			return true;
+		case 'false':
+		case 'no':
+		case '0':
+		case null:
+			return false;
+		default:
+			return Boolean(string);
 	}
+}
+
+export function getNesting(obj) {
+	const nesting = Array.from(arguments).splice(1);
+	let isNestingExist = true;
+
+	for (let key of nesting) {
+		if (!obj[key]) {
+			isNestingExist = false
+			break;
+		}
+
+		obj = obj[key];
+	}
+
+	return isNestingExist ? obj : false;
+}
+
+export function decodeHtmlSpecialChars(text) {
+	if (typeof text !== 'string')
+		return text;
+
+	const map = {
+		'&amp;': '&',
+		'&#038;': "&",
+		'&lt;': '<',
+		'&gt;': '>',
+		'&quot;': '"',
+		'&#039;': "'",
+		'&#8217;': "’",
+		'&#8216;': "‘",
+		'&#8211;': "–",
+		'&#8212;': "—",
+		'&#8230;': "…",
+		'&#8221;': '”'
+	};
+
+	return text.replace(/\&[\w\d\#]{2,5}\;/g, function(m) {
+		return map[m];
+	});
 }

@@ -13,7 +13,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 class Api {
 	
-	public $api_namespace = '/posts-grid-builder/v1';
+	public $api_namespace = 'posts-grid-builder/v1';
 	private $_endpoints = null;
 	
 	// Here initialize our namespace and resource name.
@@ -62,8 +62,9 @@ class Api {
 		foreach ( $endpoints as $endpoint ) {
 			
 			$args = array(
-				'methods'  => 'GET',
-				'callback' => array( $endpoint, 'callback' ),
+				'methods'             => 'GET',
+				'callback'            => array( $endpoint, 'callback' ),
+				'permission_callback' => '__return_true'
 			);
 
 			if ( ! empty( $endpoint->get_args() ) ) {

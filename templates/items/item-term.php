@@ -10,11 +10,11 @@
 	>
 		<a class="jgb_item-permalink" :href="itemData.permalink"></a>
 		<item-thumbnail v-if="thumbnailEnabled" />
-		<div class="jgb_item-type-wrap" v-if="termTaxonomyEnabled && thumbnailEnabled">
+		<div class="jgb_item-type-wrap" v-if="[termTaxonomyEnabled, thumbnailEnabled].every(isTrue)">
 			<div class="jgb_item-type">{{itemData.term_taxonomy}}</div>
 		</div>
 		<div class="jgb_item-body">
-			<div class="jgb_item-type-wrap" v-if="termTaxonomyEnabled && !thumbnailEnabled">
+			<div class="jgb_item-type-wrap" v-if="[termTaxonomyEnabled, !thumbnailEnabled].every(isTrue)">
 				<div class="jgb_item-type">{{itemData.term_taxonomy}}</div>
 			</div>
 			<div class="jgb_item-title" v-if="titleEnabled">{{itemData.term_title}}</div>

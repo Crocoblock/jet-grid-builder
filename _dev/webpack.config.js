@@ -6,11 +6,11 @@ module.exports = {
 	entry: {
 		'js/admin.js': './src/includes/admin.js',
 		'js/polyfills.js': './src/includes/polyfills.js',
-		'js/editor.js': './src/editor/index.js',
-		'js/posts-grid-builder-front.js': './src/widgets/posts-grid-builder/front/index.js',
-		'js/posts-grid-builder-editor.js': './src/widgets/posts-grid-builder/editor/index.js',
-		'js/terms-grid-builder-front.js': './src/widgets/terms-grid-builder/front/index.js',
-		'js/terms-grid-builder-editor.js': './src/widgets/terms-grid-builder/editor/index.js'
+		'js/editor.js': './src/grid-builder/editor/index.js',
+		'js/widgets-grid-builder-editor.js': './src/widgets/index-editor.js',
+		'js/widgets-grid-builder-front.js': './src/widgets/index-front.js',
+		'js/blocks-grid-builder-editor.js': './src/blocks/index-editor.js',
+		'js/blocks-grid-builder-front.js': './src/blocks/index-front.js'
 	},
 	output: {
 		path: path.resolve(__dirname, '../assets'),
@@ -69,8 +69,7 @@ module.exports = {
 		{
 			test: /\.(png|jpg|gif|svg)$/,
 			loader: 'url-loader?limit=10000'
-		}
-		]
+		}]
 	},
 
 	resolve: {

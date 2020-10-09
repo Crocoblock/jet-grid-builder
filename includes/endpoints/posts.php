@@ -132,6 +132,8 @@ class Posts extends Base {
 		$posts = $query->posts;
 
 		foreach ( $posts as &$post ) {
+			setup_postdata( $GLOBALS['post'] = $post );
+
 			if ( $post->post_type === 'product' ) {
 				if ( $args['woo_items_type'] === 'jet_woo_builder_archive' ) {
 					$prepared_post = $this->prepare_jet_woo_builder_listing_post( $post );
@@ -150,6 +152,8 @@ class Posts extends Base {
 
 			$post = apply_filters( 'posts-grid-builder/post-data', $prepared_post );
 		}
+
+		wp_reset_postdata();
 
 		return rest_ensure_response( array(
 			'page'  => (int)$query_args['paged'],
@@ -214,8 +218,10 @@ class Posts extends Base {
 
 		if ( get_post_meta( $post_id, '_elementor_edit_mode', true ) ) {
 			ob_start();
+
 			Plugin::instance()->print_elementor_post_inline_css( $post_id );
 			echo Elementor::instance()->frontend->get_builder_content_for_display( $post_id );
+
 			$content = ob_get_clean();
 		} else {
 			$content = do_blocks( $post->post_content );
@@ -251,8 +257,16 @@ class Posts extends Base {
 
 		setup_postdata( $post );
 
+		jet_woo_builder_integration_woocommerce()->maybe_enqueue_single_template_css();
+
 		ob_start();
+
+		if ( ! $this->jet_woo_builder_inline_css_added ) {
+			Plugin::instance()->print_elementor_post_inline_css( $this->jet_woo_builder_archive_id );
+			$this->jet_woo_builder_inline_css_added = true;
+		}
 		echo jet_woo_builder()->parser->get_template_content( $this->jet_woo_builder_archive_id );
+
 		$content = ob_get_clean();
 
 		$prepared_post = array(

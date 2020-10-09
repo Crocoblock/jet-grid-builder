@@ -25,7 +25,7 @@ class Grid_Builder_Terms extends \Elementor\Widget_Base {
 	}
 
 	public function get_script_depends() {
-		return array( 'jgb-terms-grid-builder-script' );
+		return array( 'jgb-widgets-grid-builder-script' );
 	}
 
 	public function get_style_depends() {
@@ -43,7 +43,7 @@ class Grid_Builder_Terms extends \Elementor\Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'layout-data',
+			'layout_data',
 			[
 				'type'        => \Elementor\Controls_Manager::HIDDEN,
 				'render_type' => 'none'
@@ -178,54 +178,6 @@ class Grid_Builder_Terms extends \Elementor\Widget_Base {
 
 	}
 
-	public function get_grid_settings() {
-
-		$settings = $this->get_settings();
-		$result   = array();
-
-		// grid settings
-		$result['terms']                               = isset( $settings['terms'] ) ? $settings['terms'] : '';
-		$result['layout-data']                         = isset( $settings['layout-data'] ) ? $settings['layout-data'] : '';
-		$result['layout-data_tablet']                  = isset( $settings['layout-data_tablet'] ) ? $settings['layout-data_tablet'] : '';
-		$result['layout-data_mobile']                  = isset( $settings['layout-data_mobile'] ) ? $settings['layout-data_mobile'] : '';
-		$result['colNum']                              = isset( $settings['colNum'] ) ? $settings['colNum'] : 24;
-		$result['gutter']                              = isset( $settings['gutter'] ) ? $settings['gutter'] : 10;
-		$result['gutter_tablet']                       = isset( $settings['gutter_tablet'] ) ? $settings['gutter_tablet'] : '';
-		$result['gutter_mobile']                       = isset( $settings['gutter_mobile'] ) ? $settings['gutter_mobile'] : '';
-		$result['vertical_compact']                    = isset( $settings['vertical_compact'] ) ? $settings['vertical_compact'] : 'no';
-		$result['items_type']                          = isset( $settings['items_type'] ) ? $settings['items_type'] : 'default';
-		$result['jetengine_listing_id']                = isset( $settings['jetengine_listing_id'] ) && 'jetengine_listing' === $settings['items_type'] ? esc_attr( $settings['jetengine_listing_id'] ) : false;
-		$result['loading_spinner']                     = isset( $settings['loading_spinner'] ) ? $settings['loading_spinner'] : 'true';
-		$result['loading_spinner_media']               = isset( $settings['loading_spinner_media'] ) ? $settings['loading_spinner_media'] : '';
-
-		// item settings
-		$result['item_thumbnail']                      = isset( $settings['item_thumbnail'] ) ? $settings['item_thumbnail'] : 'true';
-		$result['item_thumbnail_size']                 = isset( $settings['item_thumbnail_size'] ) ? $settings['item_thumbnail_size'] : 'large';
-		$result['item_term_taxonomy']                  = isset( $settings['item_term_taxonomy'] ) ? $settings['item_term_taxonomy'] : 'true';
-		$result['item_title']                          = isset( $settings['item_title'] ) ? $settings['item_title'] : 'true';
-		$result['item_description']                    = isset( $settings['item_description'] ) ? $settings['item_description'] : 'true';
-		$result['item_description_words_count']        = isset( $settings['item_description_words_count'] ) ? $settings['item_description_words_count'] : 15;
-		$result['item_description_words_count_tablet'] = isset( $settings['item_description_words_count_tablet'] ) ? $settings['item_description_words_count_tablet'] : 15;
-		$result['item_description_words_count_mobile'] = isset( $settings['item_description_words_count_mobile'] ) ? $settings['item_description_words_count_mobile'] : 15;
-		$result['item_post_count']                     = isset( $settings['item_post_count'] ) ? $settings['item_post_count'] : 'true';
-		$result['item_posts_count_prefix']             = isset( $settings['item_posts_count_prefix'] ) ? $settings['item_posts_count_prefix'] : '';
-		$result['item_divider']                        = isset( $settings['item_divider'] ) ? $settings['item_divider'] : 'true';
-
-		$result = apply_filters( 'terms-grid-builder/data-settings', $result );
-
-		return json_encode( $result );
-
-		if ( $items_type === 'jetengine_listing' && !$settings['jetengine_listing_id'] ) {
-			printf(
-				'<div class="jgb_notice">%s</div>',
-				__( 'Please choose JetEngine listing', 'jet-grid-builder' )
-			);
-
-			return;
-		}
-
-	}
-
 	protected function render() {
 
 		$settings        = $this->get_settings();
@@ -249,7 +201,9 @@ class Grid_Builder_Terms extends \Elementor\Widget_Base {
 
 		echo "<div class='$container_class'>";
 			Plugin::instance()->include_item_template_by_type( $items_type, 'term' );
-			include Plugin::instance()->get_template( 'widgets/terms-grid-builder.php' );
+
+			echo '<div class="terms-grid-builder" id="inst_' . esc_attr( $this->get_id() ) . '" data-settings="' . htmlspecialchars( Plugin::instance()->get_grid_builder_terms_settings( $settings ) ) .'"></div>';
+
 			if ( $loading_spinner ) include Plugin::instance()->get_template( 'common-elements/loading-spinner.php' );
 		echo "</div>";
 

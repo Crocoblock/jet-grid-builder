@@ -84,6 +84,7 @@ class Plugin {
 		$this->api       = new Api();
 		$this->assets    = new Assets();
 		$this->elementor = new Elementor_Manager();
+		$this->gutenberg = new Gutenberg_Manager();
 
 		do_action( 'posts-grid-builder/init' );
 
@@ -427,6 +428,95 @@ class Plugin {
 		if ( ! empty( $css ) ) {
 			$css_file->print_css();
 		}
+
+	}
+
+	public function get_grid_builder_settings( $settings ) {
+
+		$result   = array();
+
+		// grid settings
+		$result['posts']                               = isset( $settings['posts'] ) ? $settings['posts'] : '';
+		$result['layout_data']                         = isset( $settings['layout_data'] ) ? $settings['layout_data'] : '';
+		$result['layout_data_tablet']                  = isset( $settings['layout_data_tablet'] ) ? $settings['layout_data_tablet'] : '';
+		$result['layout_data_mobile']                  = isset( $settings['layout_data_mobile'] ) ? $settings['layout_data_mobile'] : '';
+		$result['colNum']                              = isset( $settings['colNum'] ) ? $settings['colNum'] : 24;
+		$result['gutter']                              = isset( $settings['gutter'] ) ? $settings['gutter'] : 10;
+		$result['gutter_tablet']                       = isset( $settings['gutter_tablet'] ) ? $settings['gutter_tablet'] : '';
+		$result['gutter_mobile']                       = isset( $settings['gutter_mobile'] ) ? $settings['gutter_mobile'] : '';
+		$result['vertical_compact']                    = isset( $settings['vertical_compact'] ) ? $settings['vertical_compact'] : false;
+		$result['items_type']                          = isset( $settings['items_type'] ) ? $settings['items_type'] : 'default';
+		$result['woo_items_type']                      = isset( $settings['woo_items_type'] ) ? $settings['woo_items_type'] : 'default';
+		$result['jetengine_listing_id']                = isset( $settings['jetengine_listing_id'] ) && 'jetengine_listing' === $settings['items_type'] ? esc_attr( $settings['jetengine_listing_id'] ) : false;
+		$result['jet_woo_builder_archive_id']          = isset( $settings['jet_woo_builder_archive_id'] ) && 'jet_woo_builder_archive' === $settings['woo_items_type'] ? esc_attr( $settings['jet_woo_builder_archive_id'] ) : false;
+		$result['loading_spinner']                     = isset( $settings['loading_spinner'] ) ? $settings['loading_spinner'] : true;
+		$result['loading_spinner_media']               = isset( $settings['loading_spinner_media'] ) ? $settings['loading_spinner_media'] : '';
+
+		// item settings
+		$result['item_style']                          = isset( $settings['item_style'] ) ? $settings['item_style'] : 'default';
+		$result['item_thumbnail']                      = isset( $settings['item_thumbnail'] ) ? $settings['item_thumbnail'] : true;
+		$result['item_thumbnail_size']                 = isset( $settings['item_thumbnail_size'] ) ? $settings['item_thumbnail_size'] : 'large';
+		$result['item_post_type']                      = isset( $settings['item_post_type'] ) ? $settings['item_post_type'] : true;
+		$result['item_title']                          = isset( $settings['item_title'] ) ? $settings['item_title'] : true;
+		$result['item_description']                    = isset( $settings['item_description'] ) ? $settings['item_description'] : true;
+		$result['item_description_words_count']        = isset( $settings['item_description_words_count'] ) ? $settings['item_description_words_count'] : 15;
+		$result['item_description_words_count_tablet'] = isset( $settings['item_description_words_count_tablet'] ) ? $settings['item_description_words_count_tablet'] : 15;
+		$result['item_description_words_count_mobile'] = isset( $settings['item_description_words_count_mobile'] ) ? $settings['item_description_words_count_mobile'] : 15;
+		$result['item_post_author']                    = isset( $settings['item_post_author'] ) ? $settings['item_post_author'] : true;
+		$result['item_post_author_prefix']             = isset( $settings['item_post_author_prefix'] ) ? $settings['item_post_author_prefix'] : '';
+		$result['item_post_date']                      = isset( $settings['item_post_date'] ) ? $settings['item_post_date'] : true;
+		$result['item_post_date_prefix']               = isset( $settings['item_post_date_prefix'] ) ? $settings['item_post_date_prefix'] : '';
+		$result['item_post_date_format']               = isset( $settings['item_post_date_format'] ) ? $settings['item_post_date_format'] : 'F, j';
+		$result['item_divider']                        = isset( $settings['item_divider'] ) ? $settings['item_divider'] : true;
+
+		// Woocommerce product settings
+		$result['woocommerce_item_stars_rating']       = isset( $settings['woocommerce_item_stars_rating'] ) ? $settings['woocommerce_item_stars_rating'] : true;
+		$result['woocommerce_item_categories']         = isset( $settings['woocommerce_item_categories'] ) ? $settings['woocommerce_item_categories'] : true;
+		$result['woocommerce_item_price']              = isset( $settings['woocommerce_item_price'] ) ? $settings['woocommerce_item_price'] : true;
+		$result['woocommerce_item_add_to_cart']        = isset( $settings['woocommerce_item_add_to_cart'] ) ? $settings['woocommerce_item_add_to_cart'] : true;
+		$result['woocommerce_item_add_to_cart_text']   = isset( $settings['woocommerce_item_add_to_cart_text'] ) ? esc_attr( $settings['woocommerce_item_add_to_cart_text'] ) : 'Add to cart';
+
+		$result = apply_filters( 'posts-grid-builder/data-settings', $result );
+
+		return json_encode( $result );
+
+	}
+
+	public function get_grid_builder_terms_settings( $settings ) {
+
+		$result   = array();
+
+		// grid settings
+		$result['terms']                               = isset( $settings['terms'] ) ? $settings['terms'] : '';
+		$result['layout_data']                         = isset( $settings['layout_data'] ) ? $settings['layout_data'] : '';
+		$result['layout_data_tablet']                  = isset( $settings['layout_data_tablet'] ) ? $settings['layout_data_tablet'] : '';
+		$result['layout_data_mobile']                  = isset( $settings['layout_data_mobile'] ) ? $settings['layout_data_mobile'] : '';
+		$result['colNum']                              = isset( $settings['colNum'] ) ? $settings['colNum'] : 24;
+		$result['gutter']                              = isset( $settings['gutter'] ) ? $settings['gutter'] : 10;
+		$result['gutter_tablet']                       = isset( $settings['gutter_tablet'] ) ? $settings['gutter_tablet'] : '';
+		$result['gutter_mobile']                       = isset( $settings['gutter_mobile'] ) ? $settings['gutter_mobile'] : '';
+		$result['vertical_compact']                    = isset( $settings['vertical_compact'] ) ? $settings['vertical_compact'] : false;
+		$result['items_type']                          = isset( $settings['items_type'] ) ? $settings['items_type'] : 'default';
+		$result['jetengine_listing_id']                = isset( $settings['jetengine_listing_id'] ) && 'jetengine_listing' === $settings['items_type'] ? esc_attr( $settings['jetengine_listing_id'] ) : false;
+		$result['loading_spinner']                     = isset( $settings['loading_spinner'] ) ? $settings['loading_spinner'] : true;
+		$result['loading_spinner_media']               = isset( $settings['loading_spinner_media'] ) ? $settings['loading_spinner_media'] : '';
+
+		// item settings
+		$result['item_thumbnail']                      = isset( $settings['item_thumbnail'] ) ? $settings['item_thumbnail'] : true;
+		$result['item_thumbnail_size']                 = isset( $settings['item_thumbnail_size'] ) ? $settings['item_thumbnail_size'] : 'large';
+		$result['item_term_taxonomy']                  = isset( $settings['item_term_taxonomy'] ) ? $settings['item_term_taxonomy'] : true;
+		$result['item_title']                          = isset( $settings['item_title'] ) ? $settings['item_title'] : true;
+		$result['item_description']                    = isset( $settings['item_description'] ) ? $settings['item_description'] : true;
+		$result['item_description_words_count']        = isset( $settings['item_description_words_count'] ) ? $settings['item_description_words_count'] : 15;
+		$result['item_description_words_count_tablet'] = isset( $settings['item_description_words_count_tablet'] ) ? $settings['item_description_words_count_tablet'] : 15;
+		$result['item_description_words_count_mobile'] = isset( $settings['item_description_words_count_mobile'] ) ? $settings['item_description_words_count_mobile'] : 15;
+		$result['item_post_count']                     = isset( $settings['item_post_count'] ) ? $settings['item_post_count'] : true;
+		$result['item_posts_count_prefix']             = isset( $settings['item_posts_count_prefix'] ) ? $settings['item_posts_count_prefix'] : '';
+		$result['item_divider']                        = isset( $settings['item_divider'] ) ? $settings['item_divider'] : true;
+
+		$result = apply_filters( 'terms-grid-builder/data-settings', $result );
+
+		return json_encode( $result );
 
 	}
 

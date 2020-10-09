@@ -21,7 +21,8 @@
 		left: 0;
 		z-index: 9;
 
-		.elementor-editor-active & {
+		.elementor-editor-active &,
+		.block-editor-page & {
 			visibility: hidden;
 			width: 0;
 			height: 0;
@@ -96,6 +97,9 @@
 
 		&-separator {
 			display: inline-block;
+			width: 100%;
+			border-top-style: solid;
+			border-top-width: 1px;
 			border-top-color: rgba(#eee, 0.35);
 		}
 	}

@@ -3,7 +3,7 @@
  * Loading spinner template
  */
 
-$loading_spinner_type = $this->get_settings()['loading_spinner_type'];
+$loading_spinner_type = $settings['loading_spinner_type'];
 $spinners_structure = array(
 	'circle-clip-growing' => 'custom',
 	'circle-clip'         => 1,

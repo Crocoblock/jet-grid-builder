@@ -1,7 +1,17 @@
-.elementor-editor-active {
+.elementor-editor-active,
+.block-editor-page {
 	.jgb_grid-builder {
 		.jgb_grid-container {
 			overflow: visible;
+
+			.backing-grid {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				left: 0;
+				background-repeat: round repeat;
+			}
 		}
 
 		.jgb_grid {
@@ -21,6 +31,7 @@
 				&.dragging,
 				&.resizing,
 				&:hover {
+
 					.resize-handle,
 					.jgb_overlay {
 						display: block;
@@ -194,26 +205,110 @@
 				}
 			}
 		}
+	}
 
-		.elementor-button {
-			padding: 6.5px 15px;
-			font-family: $font-family;
-			color: #fff;
-			font-size: 12px;
-			line-height: normal;
-			letter-spacing: 0.5px;
-			font-weight: 500;
-			text-transform: uppercase;
-			outline: none;
-			border: none;
-			border-radius: 3px;
-			background-color: #a4afb7;
-			transition: background-color $hover-transitions, box-shadow $hover-transitions;
+	.jgb_button {
+		padding: 6.5px 15px;
+		font-family: $font-family;
+		color: #fff;
+		font-size: 12px;
+		line-height: normal;
+		letter-spacing: 0.5px;
+		font-weight: 500;
+		text-transform: uppercase;
+		height: auto;
+		outline: none;
+		border: none;
+		border-radius: 3px;
+		background-color: #a4afb7;
+		transition: background-color $hover-transitions, box-shadow $hover-transitions;
 
-			&:hover {
-				background-color: #6d7882;
-				box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
+		&:hover {
+			background-color: #6d7882;
+			box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	.components-panel .jgb_button {
+		margin-bottom: 24px;
+	}
+}
+
+.elementor-editor-active {
+	.jgb_grid-builder {
+		.jgb_overlay {
+			&-toolset {
+
+				&-edit,
+				&-remove {
+					i {
+						font-family: eicons;
+						font-style: normal;
+					}
+				}
+
+				&-edit {
+					i {
+						&:before {
+							content: '\e89a';
+						}
+					}
+				}
+
+				&-remove {
+					i {
+						margin-left: 3px;
+
+						&:before {
+							content: '\e89c';
+						}
+					}
+				}
 			}
 		}
+	}
+}
+
+.block-editor-page {
+	.jgb_overlay {
+		&-toolset {
+
+			&-edit,
+			&-remove {
+				i {
+					font-family: dashicons;
+					font-style: normal;
+				}
+			}
+
+			&-edit {
+				i {
+					font-size: 18px;
+
+					&:before {
+						content: '\f464';
+					}
+				}
+			}
+
+			&-remove {
+				i {
+					margin-left: 3px;
+					font-size: 16px;
+
+					&:before {
+						content: '\f182';
+					}
+				}
+			}
+		}
+	}
+}
+
+.jgb_item.jgb_item-jet-listing,
+.jgb_item.jgb_item-jet-woo-builder,
+.block-editor-page .jgb_item {
+	a {
+		pointer-events: none;
 	}
 }

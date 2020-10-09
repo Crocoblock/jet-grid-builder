@@ -25,7 +25,7 @@ class Grid_Builder extends \Elementor\Widget_Base {
 	}
 
 	public function get_script_depends() {
-		return array( 'jgb-posts-grid-builder-script' );
+		return array( 'jgb-widgets-grid-builder-script' );
 	}
 
 	public function get_style_depends() {
@@ -42,7 +42,7 @@ class Grid_Builder extends \Elementor\Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'layout-data',
+			'layout_data',
 			[
 				'type'        => \Elementor\Controls_Manager::HIDDEN,
 				'render_type' => 'none'
@@ -243,58 +243,6 @@ class Grid_Builder extends \Elementor\Widget_Base {
 
 	}
 
-	public function get_grid_settings() {
-
-		$settings = $this->get_settings();
-		$result   = array();
-
-		// grid settings
-		$result['posts']                               = isset( $settings['posts'] ) ? $settings['posts'] : '';
-		$result['layout-data']                         = isset( $settings['layout-data'] ) ? $settings['layout-data'] : '';
-		$result['layout-data_tablet']                  = isset( $settings['layout-data_tablet'] ) ? $settings['layout-data_tablet'] : '';
-		$result['layout-data_mobile']                  = isset( $settings['layout-data_mobile'] ) ? $settings['layout-data_mobile'] : '';
-		$result['colNum']                              = isset( $settings['colNum'] ) ? $settings['colNum'] : 24;
-		$result['gutter']                              = isset( $settings['gutter'] ) ? $settings['gutter'] : 10;
-		$result['gutter_tablet']                       = isset( $settings['gutter_tablet'] ) ? $settings['gutter_tablet'] : '';
-		$result['gutter_mobile']                       = isset( $settings['gutter_mobile'] ) ? $settings['gutter_mobile'] : '';
-		$result['vertical_compact']                    = isset( $settings['vertical_compact'] ) ? $settings['vertical_compact'] : 'no';
-		$result['items_type']                          = isset( $settings['items_type'] ) ? $settings['items_type'] : 'default';
-		$result['woo_items_type']                      = isset( $settings['woo_items_type'] ) ? $settings['woo_items_type'] : 'default';
-		$result['jetengine_listing_id']                = isset( $settings['jetengine_listing_id'] ) && 'jetengine_listing' === $settings['items_type'] ? esc_attr( $settings['jetengine_listing_id'] ) : false;
-		$result['jet_woo_builder_archive_id']          = isset( $settings['jet_woo_builder_archive_id'] ) && 'jet_woo_builder_archive' === $settings['woo_items_type'] ? esc_attr( $settings['jet_woo_builder_archive_id'] ) : false;
-		$result['loading_spinner']                     = isset( $settings['loading_spinner'] ) ? $settings['loading_spinner'] : 'true';
-		$result['loading_spinner_media']               = isset( $settings['loading_spinner_media'] ) ? $settings['loading_spinner_media'] : '';
-
-		// item settings
-		$result['item_style']                          = isset( $settings['item_style'] ) ? $settings['item_style'] : 'default';
-		$result['item_thumbnail']                      = isset( $settings['item_thumbnail'] ) ? $settings['item_thumbnail'] : 'true';
-		$result['item_thumbnail_size']                 = isset( $settings['item_thumbnail_size'] ) ? $settings['item_thumbnail_size'] : 'large';
-		$result['item_post_type']                      = isset( $settings['item_post_type'] ) ? $settings['item_post_type'] : 'true';
-		$result['item_title']                          = isset( $settings['item_title'] ) ? $settings['item_title'] : 'true';
-		$result['item_description']                    = isset( $settings['item_description'] ) ? $settings['item_description'] : 'true';
-		$result['item_description_words_count']        = isset( $settings['item_description_words_count'] ) ? $settings['item_description_words_count'] : 15;
-		$result['item_description_words_count_tablet'] = isset( $settings['item_description_words_count_tablet'] ) ? $settings['item_description_words_count_tablet'] : 15;
-		$result['item_description_words_count_mobile'] = isset( $settings['item_description_words_count_mobile'] ) ? $settings['item_description_words_count_mobile'] : 15;
-		$result['item_post_author']                    = isset( $settings['item_post_author'] ) ? $settings['item_post_author'] : 'true';
-		$result['item_post_author_prefix']             = isset( $settings['item_post_author_prefix'] ) ? $settings['item_post_author_prefix'] : '';
-		$result['item_post_date']                      = isset( $settings['item_post_date'] ) ? $settings['item_post_date'] : 'true';
-		$result['item_post_date_prefix']               = isset( $settings['item_post_date_prefix'] ) ? $settings['item_post_date_prefix'] : '';
-		$result['item_post_date_format']               = isset( $settings['item_post_date_format'] ) ? $settings['item_post_date_format'] : 'F, j';
-		$result['item_divider']                        = isset( $settings['item_divider'] ) ? $settings['item_divider'] : 'true';
-
-		// Woocommerce product settings
-		$result['woocommerce_item_stars_rating']       = isset( $settings['woocommerce_item_stars_rating'] ) ? $settings['woocommerce_item_stars_rating'] : 'true';
-		$result['woocommerce_item_categories']         = isset( $settings['woocommerce_item_categories'] ) ? $settings['woocommerce_item_categories'] : 'true';
-		$result['woocommerce_item_price']              = isset( $settings['woocommerce_item_price'] ) ? $settings['woocommerce_item_price'] : 'true';
-		$result['woocommerce_item_add_to_cart']        = isset( $settings['woocommerce_item_add_to_cart'] ) ? $settings['woocommerce_item_add_to_cart'] : 'true';
-		$result['woocommerce_item_add_to_cart_text']   = isset( $settings['woocommerce_item_add_to_cart_text'] ) ? esc_attr( $settings['woocommerce_item_add_to_cart_text'] ) : 'Add to cart';
-
-		$result = apply_filters( 'posts-grid-builder/data-settings', $result );
-
-		return json_encode( $result );
-
-	}
-
 	protected function render() {
 
 		$settings        = $this->get_settings();
@@ -332,7 +280,9 @@ class Grid_Builder extends \Elementor\Widget_Base {
 
 			Plugin::instance()->include_item_template_by_type( $items_type, $item_style );
 			Plugin::instance()->include_woo_item_template_by_type( $woo_items_type, $woo_item_style );
-			include Plugin::instance()->get_template( 'widgets/posts-grid-builder-widget.php' );
+
+			echo '<div class="posts-grid-builder" id="inst_' . esc_attr( $this->get_id() ) . '" data-settings="' . htmlspecialchars( Plugin::instance()->get_grid_builder_settings( $settings ) ) .'"></div>';
+
 			if ( $loading_spinner ) {
 				include Plugin::instance()->get_template( 'common-elements/loading-spinner.php' );
 			}

@@ -18,6 +18,7 @@ class Assets {
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'plugin_assets' ) );
 		add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'editor_assets' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'block_editor_assets' ) );
 
 	}
 
@@ -28,21 +29,14 @@ class Assets {
 	 */
 	public function plugin_assets() {
 
-		if ( !class_exists( '\Elementor\Plugin' ) )
-			return;
-
 		// enqueue script polyfills for IE
 		global $is_IE;
-		if ($is_IE)
-			wp_enqueue_script(
-				'jgb-polyfills',
-				Plugin::instance()->assets_url( 'js/polyfills.js' ),
-				array(),
-				JET_GRID_BUILDER_VERSION
-			);
-
-		// enqueue dashicons
-		wp_enqueue_style( 'dashicons' );
+		wp_register_script(
+			'jgb-polyfills',
+			$is_IE ? Plugin::instance()->assets_url( 'js/polyfills.js' ) : false,
+			array(),
+			JET_GRID_BUILDER_VERSION
+		);
 
 		wp_register_style(
 			'jgb-styles',
@@ -52,41 +46,47 @@ class Assets {
 		);
 
 		wp_register_script(
-			'vue',
+			'jgb-vue',
 			Plugin::instance()->assets_url( 'js/vendors/vue.min.js' ),
 			array(),
 			'2.5.17',
 			true
 		);
 
+		if ( class_exists( '\Elementor\Plugin' ) ) {
+			wp_register_script(
+				'jgb-widgets-grid-builder-script',
+				\Elementor\Plugin::$instance->preview->is_preview_mode()
+					? Plugin::instance()->assets_url( 'js/widgets-grid-builder-editor.js' )
+					: Plugin::instance()->assets_url( 'js/widgets-grid-builder-front.js' ),
+				array(
+					'elementor-frontend',
+					'jgb-vue'
+				),
+				JET_GRID_BUILDER_VERSION,
+				true
+			);
+
+			if ( class_exists( 'Jet_Engine' ) ) {
+				wp_enqueue_script( 'jquery-slick' );
+				wp_enqueue_script( 'imagesloaded' );
+			}
+		}
+
 		wp_register_script(
-			'jgb-posts-grid-builder-script',
-			\Elementor\Plugin::$instance->preview->is_preview_mode()
-				? Plugin::instance()->assets_url( 'js/posts-grid-builder-editor.js' )
-				: Plugin::instance()->assets_url( 'js/posts-grid-builder-front.js' ),
+			'jgb-blocks-grid-builder-script',
+			Plugin::instance()->assets_url( 'js/blocks-grid-builder-front.js' ),
 			array(
-				'elementor-frontend',
-				'vue'
+				'wp-blocks',
+				'wp-editor',
+				'jgb-polyfills',
+				'jgb-vue',
 			),
 			JET_GRID_BUILDER_VERSION,
 			true
 		);
 
-		wp_register_script(
-			'jgb-terms-grid-builder-script',
-			\Elementor\Plugin::$instance->preview->is_preview_mode()
-				? Plugin::instance()->assets_url( 'js/terms-grid-builder-editor.js' )
-				: Plugin::instance()->assets_url( 'js/terms-grid-builder-front.js' ),
-			array(
-				'elementor-frontend',
-				'vue',
-				'swiper'
-			),
-			JET_GRID_BUILDER_VERSION,
-			true
-		);
-
-		wp_localize_script( 'vue', 'jgbSettings', array(
+		wp_localize_script( 'jgb-vue', 'jgbSettings', array(
 			'api' => array(
 				'endpoints' => Plugin::instance()->api->get_endpoints_urls(),
 			),
@@ -101,13 +101,64 @@ class Assets {
 	 */
 	public function editor_assets() {
 
+		wp_enqueue_style(
+			'jgb-editor-styles',
+			Plugin::instance()->assets_url( 'css/jgb-editor-styles.css' ),
+			false,
+			JET_GRID_BUILDER_VERSION
+		);
+
 		wp_register_script(
-			'vue',
+			'jgb-vue',
 			Plugin::instance()->assets_url( 'js/vendors/vue.min.js' ),
 			array(),
 			'2.5.17',
 			true
 		);
+
+		wp_enqueue_script(
+			'jgb-editor',
+			Plugin::instance()->assets_url( 'js/editor.js' ),
+			array(
+				'elementor-editor',
+				'jgb-vue'
+			),
+			JET_GRID_BUILDER_VERSION,
+			true
+		);
+
+		wp_localize_script( 'jgb-vue', 'jgbSettings', array(
+			'api' => array(
+				'endpoints' => Plugin::instance()->api->get_endpoints_urls(),
+			),
+		) );
+
+	}
+
+	/**
+	 * Register blocks assets
+	 *
+	 * @return false
+	 */
+	public function block_editor_assets() {
+
+		if ( Plugin::instance()->has_elementor() ) {
+			$direction_suffix = is_rtl() ? '-rtl' : '';
+
+			wp_enqueue_style(
+				'elementor-frontend-legacy',
+				ELEMENTOR_ASSETS_URL . 'css/frontend-legacy' . $direction_suffix . '.min.css',
+				false,
+				ELEMENTOR_VERSION
+			);
+
+			wp_enqueue_style(
+				'elementor-frontend',
+				ELEMENTOR_ASSETS_URL . 'css/frontend' . $direction_suffix . '.min.css',
+				false,
+				ELEMENTOR_VERSION
+			);
+		}
 
 		wp_enqueue_style(
 			'jgb-editor-styles',
@@ -116,22 +167,54 @@ class Assets {
 			JET_GRID_BUILDER_VERSION
 		);
 
+		wp_enqueue_style(
+			'jgb-styles',
+			Plugin::instance()->assets_url( 'css/jgb-styles.css' ),
+			false,
+			JET_GRID_BUILDER_VERSION
+		);
+
+		wp_register_script(
+			'jgb-vue',
+			Plugin::instance()->assets_url( 'js/vendors/vue.min.js' ),
+			array(),
+			'2.5.17',
+			true
+		);
+
 		wp_enqueue_script(
-			'jgb-editor',
-			Plugin::instance()->assets_url( 'js/editor.js' ),
-			array(
-				'elementor-editor',
-				'vue'
-			),
+			'jgb-blocks-grid-builder-script',
+			Plugin::instance()->assets_url( 'js/blocks-grid-builder-editor.js' ),
+			array('wp-blocks','wp-editor', 'wp-components', 'wp-i18n', 'jgb-vue'),
 			JET_GRID_BUILDER_VERSION,
 			true
 		);
 
-		wp_localize_script( 'jgb-editor', 'jgbSettings', array(
+		$localized_data = array(
 			'api' => array(
 				'endpoints' => Plugin::instance()->api->get_endpoints_urls(),
 			),
-		) );
+			'plugins_exist' => array(
+				'jetengine'     => class_exists( 'Jet_Engine' ),
+				'woocommerce'   => class_exists( 'WooCommerce' ),
+				'jetwoobuilder' => class_exists( 'Jet_Woo_Builder' ),
+			),
+			'blocks_options' => array(
+				'items_type'      => Plugin::instance()->get_items_type_options(),
+				'thumbnail_sizes' => Plugin::instance()->get_img_sizes()
+			)
+		);
+
+		if ( class_exists( 'Jet_Engine' ) ) {
+			$localized_data['blocks_options']['jetengine_listings'] = Plugin::instance()->get_jet_engine_listings_options();
+		}
+
+		if ( Plugin::instance()->has_elementor() && class_exists( 'WooCommerce' ) && class_exists( 'Jet_Woo_Builder' ) ) {
+			$localized_data['blocks_options']['woo_items_types'] = Plugin::instance()->get_woo_items_type_options();
+			$localized_data['blocks_options']['jetwoobuilder_listings'] = Plugin::instance()->get_jet_woo_builder_archive_options();
+		}
+
+		wp_localize_script( 'jgb-vue', 'jgbSettings', $localized_data );
 
 	}
 
