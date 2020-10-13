@@ -422,7 +422,7 @@ registerBlockType('jet-grid-builder/posts-grid-builder', {
 											this.updateAttribute('item_post_date_format', newValue);
 										}}
 									/>
-									
+
 								)}
 								<ToggleControl
 									label={__('Divider')}

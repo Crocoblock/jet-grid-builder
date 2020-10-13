@@ -33,7 +33,8 @@ import widgetPreloaderChangeStyle from 'includes/widget-preloader-change-style.j
 
 			elementor.channels.editor.on('jgb:post:add', controlView => {
 				if (controlView.elementSettingsModel.cid === elementSettingsModel.cid) {
-					postsGridBuilder.addItems();
+					if (postsGridBuilder.addItems)
+						postsGridBuilder.addItems();
 				}
 			});
 
