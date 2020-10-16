@@ -11,10 +11,16 @@ if ( ! defined( 'WPINC' ) ) {
  */
 class Assets {
 
+	public $script_suffix = '.min';
+
 	/**
 	 * Constructor for the class
 	 */
 	public function __construct() {
+
+		if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+			$script_suffix = '';
+		}
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'plugin_assets' ) );
 		add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'editor_assets' ) );
@@ -46,10 +52,10 @@ class Assets {
 		);
 
 		wp_register_script(
-			'jgb-vue',
-			Plugin::instance()->assets_url( 'js/vendors/vue.min.js' ),
+			'cx-vue',
+			Plugin::instance()->assets_url( 'js/vendors/vue' . $this->script_suffix . '.js' ),
 			array(),
-			'2.5.17',
+			'2.6.10',
 			true
 		);
 
@@ -61,7 +67,7 @@ class Assets {
 					: Plugin::instance()->assets_url( 'js/widgets-grid-builder-front.js' ),
 				array(
 					'elementor-frontend',
-					'jgb-vue'
+					'cx-vue'
 				),
 				JET_GRID_BUILDER_VERSION,
 				true
@@ -71,6 +77,12 @@ class Assets {
 				wp_enqueue_script( 'jquery-slick' );
 				wp_enqueue_script( 'imagesloaded' );
 			}
+
+			wp_localize_script( 'jgb-widgets-grid-builder-script', 'jgbSettings', array(
+				'api' => array(
+					'endpoints' => Plugin::instance()->api->get_endpoints_urls(),
+				),
+			) );
 		}
 
 		wp_register_script(
@@ -80,13 +92,13 @@ class Assets {
 				'wp-blocks',
 				'wp-editor',
 				'jgb-polyfills',
-				'jgb-vue',
+				'cx-vue',
 			),
 			JET_GRID_BUILDER_VERSION,
 			true
 		);
 
-		wp_localize_script( 'jgb-vue', 'jgbSettings', array(
+		wp_localize_script( 'jgb-blocks-grid-builder-script', 'jgbSettings', array(
 			'api' => array(
 				'endpoints' => Plugin::instance()->api->get_endpoints_urls(),
 			),
@@ -109,10 +121,10 @@ class Assets {
 		);
 
 		wp_register_script(
-			'jgb-vue',
-			Plugin::instance()->assets_url( 'js/vendors/vue.min.js' ),
+			'cx-vue',
+			Plugin::instance()->assets_url( 'js/vendors/vue' . $this->script_suffix . '.js' ),
 			array(),
-			'2.5.17',
+			'2.6.10',
 			true
 		);
 
@@ -121,13 +133,13 @@ class Assets {
 			Plugin::instance()->assets_url( 'js/editor.js' ),
 			array(
 				'elementor-editor',
-				'jgb-vue'
+				'cx-vue'
 			),
 			JET_GRID_BUILDER_VERSION,
 			true
 		);
 
-		wp_localize_script( 'jgb-vue', 'jgbSettings', array(
+		wp_localize_script( 'jgb-editor', 'jgbSettings', array(
 			'api' => array(
 				'endpoints' => Plugin::instance()->api->get_endpoints_urls(),
 			),
@@ -175,17 +187,17 @@ class Assets {
 		);
 
 		wp_register_script(
-			'jgb-vue',
-			Plugin::instance()->assets_url( 'js/vendors/vue.min.js' ),
+			'cx-vue',
+			Plugin::instance()->assets_url( 'js/vendors/vue' . $this->script_suffix . '.js' ),
 			array(),
-			'2.5.17',
+			'2.6.10',
 			true
 		);
 
 		wp_enqueue_script(
 			'jgb-blocks-grid-builder-script',
 			Plugin::instance()->assets_url( 'js/blocks-grid-builder-editor.js' ),
-			array('wp-blocks','wp-editor', 'wp-components', 'wp-i18n', 'jgb-vue'),
+			array('wp-blocks','wp-editor', 'wp-components', 'wp-i18n', 'cx-vue'),
 			JET_GRID_BUILDER_VERSION,
 			true
 		);
@@ -214,7 +226,7 @@ class Assets {
 			$localized_data['blocks_options']['jetwoobuilder_listings'] = Plugin::instance()->get_jet_woo_builder_archive_options();
 		}
 
-		wp_localize_script( 'jgb-vue', 'jgbSettings', $localized_data );
+		wp_localize_script( 'jgb-blocks-grid-builder-script', 'jgbSettings', $localized_data );
 
 	}
 
