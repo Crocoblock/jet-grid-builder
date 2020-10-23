@@ -76,6 +76,11 @@
 				type: Boolean,
 				required: false,
 				default: true
+			},
+			isRTL: {
+				type: Boolean,
+				required: false,
+				default: false
 			}
 		},
 		watch: {
@@ -159,18 +164,23 @@
 			getPixelPositionById(id) {
 				if (this.dragging.boxLayout && this.dragging.boxLayout.id === id) {
 					let pixels = utils.positionToPixels(this.dragging.boxLayout.position, this.cellSize, this.margin, this.outerMargin)
-					pixels.x += this.dragging.offset.x
+					// RTL fix
+					pixels.x = this.invertForRTL(pixels.x) + this.dragging.offset.x
 					pixels.y += this.dragging.offset.y
 					return pixels
 				}
 				if (this.resizing.boxLayout && this.resizing.boxLayout.id === id) {
 					let pixels = utils.positionToPixels(this.resizing.boxLayout.position, this.cellSize, this.margin, this.outerMargin)
-					pixels.w += this.resizing.offset.x
+					// RTL fix
+					pixels.x = this.invertForRTL(pixels.x)
+					pixels.w = pixels.w + this.invertForRTL(this.resizing.offset.x)
 					pixels.h += this.resizing.offset.y
 					return pixels
 				}
 				var boxLayout = this.getBoxLayoutById(id)
-				return utils.positionToPixels(boxLayout.position, this.cellSize, this.margin, this.outerMargin)
+				let pixels = utils.positionToPixels(boxLayout.position, this.cellSize, this.margin, this.outerMargin)
+				pixels.x = this.invertForRTL(pixels.x)
+				return pixels;
 			},
 			isBoxVisible(id) {
 				var boxLayout = this.getBoxLayoutById(id)
@@ -178,7 +188,7 @@
 			},
 			getPositionByPixel(x, y) {
 				return {
-					x: Math.round(x / (this.cellSize.w + this.margin)),
+					x: this.invertForRTL(Math.round(x / (this.cellSize.w + this.margin))),
 					y: Math.round(y / (this.cellSize.h + this.margin))
 				}
 			},
@@ -194,6 +204,11 @@
 			},
 			unregisterBox(box) {
 			},
+
+			invertForRTL(value) {
+				return this.isRTL ? (value * -1) : value;
+			},
+
 			enableDragging(box) {
 				var initialLayout
 				var isDragging = false

@@ -140,12 +140,6 @@
 	-moz-osx-font-smoothing: grayscale
 }
 
-
-
-
-
-
-
 // Grid indent
 @mixin grid-indent($indent: 15px, $child-indent-type: 'padding', $child-selector: '> *') {
 	margin-left: - $indent;

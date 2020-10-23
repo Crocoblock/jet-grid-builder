@@ -31,6 +31,7 @@
 		                    :margin="gutter"
 		                    :bubbleUp="verticalCompact"
 		                    :backingGrid="backingGrid"
+		                    :isRTL="isRTL"
 		                    @update:layout="layoutUpdated">
 			<dnd-grid-box v-for="item in items"
 			              :key="item.id"

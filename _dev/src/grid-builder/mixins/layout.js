@@ -1,6 +1,7 @@
 export default {
 	data() {
 		return {
+			isRTL: document.body.classList.contains('rtl'),
 			layoutData: {
 				desktop: []
 			}

@@ -12,3 +12,45 @@
 
 // Modules
 @import "modules/index";
+
+// RTL
+body.rtl {
+	.psm-search-form {
+		position: relative;
+		&-field {
+			padding: 5px 10px 5px 25px;
+		}
+		&-icon {
+			right: initial;
+			left: 3px;
+		}
+	}
+
+	.elementor-control-title_align,
+	.elementor-control-description_align,
+	.elementor-control-meta_align,
+	.elementor-control-divider_align,
+	.elementor-control-post_type_align,
+	.elementor-control-posts_count_align,
+	.elementor-control-term_type_align,
+	.elementor-control-woocommerce_stars_rating_align,
+	.elementor-control-woocommerce_categories_align ,
+	.elementor-control-woocommerce_price_align,
+	.elementor-control-woocommerce_add_to_cart_align {
+		.elementor-choices {
+			flex-direction: row-reverse;
+
+			.elementor-choices-label {
+				&:nth-child(2) {
+					border-left: 1px solid $editor-lightest;
+					border-radius: 3px 0 0 3px;
+				}
+
+				&:last-child {
+					border-left: none;
+					border-radius: 0 3px 3px 0;
+				}
+			}
+		}
+	}
+}

@@ -94,6 +94,9 @@ box.computed = {
 	style() {
 		const pixelPosition = this.$parent.getPixelPositionById(this.boxId);
 
+		if (this.$parent.isRTL)
+			pixelPosition.x = pixelPosition.x * -1;
+
 		return {
 			width: pixelPosition.w + 'px',
 			height: pixelPosition.h + 'px',

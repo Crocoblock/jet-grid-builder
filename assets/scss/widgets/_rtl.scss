@@ -1,0 +1,65 @@
+// RTL
+body.rtl {
+	.jgb_grid-builder {
+		.jgb_grid-box {
+			.resize-handle {
+				cursor: ne-resize;
+				right: initial;
+				left: 0;
+				transform: rotate(90deg);
+			}
+		}
+
+		.jgb_toolbar {
+			&-backinggrid {
+				margin: 8px auto 2px 20px;
+			}
+		}
+
+		.jgb_overlay {
+			// Tools holder
+			&-toolset {
+				li {
+					&:hover {
+						&:first-child:before {
+							border-left-color: #10bcf2;
+						}
+
+						&:last-child::after {
+							border-right-color: #10bcf2;
+						}
+					}
+
+					&:first-child {
+						margin-right: initial;
+						margin-left: 1px;
+						&::before {
+							border-left-color: #71d7f7;
+							border-width: 0 0 24px 12px;
+							right: initial;
+							left: 100%
+						}
+					}
+
+					&:last-child {
+						margin-left: initial;
+						margin-right: 1px;
+						&::after {
+							border-right-color: #71d7f7;
+							border-width: 0 12px 24px 0;
+							left: initial;
+							right: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.jgb_checkbox {
+		&-checkmark {
+			margin-right: initial;
+			margin-left: 8px;
+		}
+	}
+}
