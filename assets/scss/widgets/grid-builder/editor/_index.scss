@@ -31,7 +31,6 @@
 				&.dragging,
 				&.resizing,
 				&:hover {
-
 					.resize-handle,
 					.jgb_overlay {
 						display: block;
@@ -232,13 +231,20 @@
 	.components-panel .jgb_button {
 		margin-bottom: 24px;
 	}
+
+	.jgb_item.jgb_item-jet-listing,
+	.jgb_item.jgb_item-jet-woo-builder,
+	.jgb_item {
+		a {
+			pointer-events: none;
+		}
+	}
 }
 
 .elementor-editor-active {
 	.jgb_grid-builder {
 		.jgb_overlay {
 			&-toolset {
-
 				&-edit,
 				&-remove {
 					i {
@@ -250,7 +256,7 @@
 				&-edit {
 					i {
 						&:before {
-							content: '\e89a';
+							content: "\e89a";
 						}
 					}
 				}
@@ -260,7 +266,7 @@
 						margin-left: 3px;
 
 						&:before {
-							content: '\e89c';
+							content: "\e89c";
 						}
 					}
 				}
@@ -272,7 +278,6 @@
 .block-editor-page {
 	.jgb_overlay {
 		&-toolset {
-
 			&-edit,
 			&-remove {
 				i {
@@ -286,7 +291,7 @@
 					font-size: 18px;
 
 					&:before {
-						content: '\f464';
+						content: "\f464";
 					}
 				}
 			}
@@ -297,18 +302,10 @@
 					font-size: 16px;
 
 					&:before {
-						content: '\f182';
+						content: "\f182";
 					}
 				}
 			}
 		}
-	}
-}
-
-.jgb_item.jgb_item-jet-listing,
-.jgb_item.jgb_item-jet-woo-builder,
-.block-editor-page .jgb_item {
-	a {
-		pointer-events: none;
 	}
 }
