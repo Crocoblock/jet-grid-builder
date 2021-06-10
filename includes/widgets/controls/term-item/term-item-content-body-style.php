@@ -67,8 +67,8 @@ $this->add_group_control(
 		'fields_options' => [
 			'color' => [
 				'scheme' => [
-					'type'  => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_2,
+					'type'  => \Elementor\Core\Schemes\Color::get_type(),
+					'value' => \Elementor\Core\Schemes\Color::COLOR_2,
 				],
 			],
 		],
