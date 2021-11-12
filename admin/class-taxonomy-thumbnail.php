@@ -112,12 +112,12 @@ class Taxonomy_Thumbnail {
 					</th>
 					<td>
 						<div id="thumbnail-field">
-							<input id="thumbnail" class="hidden" type="number" name="jgb_term_thumbnail_id" value="<?php echo $thumbnail_id; ?>" autocomplete="off" title="<?php esc_attr_e( 'Indicate an image ID', 'jet-grid-builder' ); ?>" />
+							<input id="thumbnail" class="hidden" type="number" name="jgb_term_thumbnail_id" value="<?php echo absint( $thumbnail_id ); ?>" autocomplete="off" title="<?php esc_attr_e( 'Indicate an image ID', 'jet-grid-builder' ); ?>" />
 							<div class="attachment">
 								<div class="attachment-preview">
 									<div class="thumbnail">
 										<div class="centered">
-											<img src="<?php echo $thumbnail_url; ?>" draggable="false" alt="">
+											<img src="<?php echo esc_url( $thumbnail_url ); ?>" draggable="false" alt="">
 										</div>
 									</div>
 								</div>

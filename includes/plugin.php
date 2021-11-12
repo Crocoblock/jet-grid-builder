@@ -447,8 +447,8 @@ class Plugin {
 		$result['vertical_compact']                    = isset( $settings['vertical_compact'] ) ? $settings['vertical_compact'] : false;
 		$result['items_type']                          = isset( $settings['items_type'] ) ? $settings['items_type'] : 'default';
 		$result['woo_items_type']                      = isset( $settings['woo_items_type'] ) ? $settings['woo_items_type'] : 'default';
-		$result['jetengine_listing_id']                = isset( $settings['jetengine_listing_id'] ) && 'jetengine_listing' === $settings['items_type'] ? esc_attr( $settings['jetengine_listing_id'] ) : false;
-		$result['jet_woo_builder_archive_id']          = isset( $settings['jet_woo_builder_archive_id'] ) && 'jet_woo_builder_archive' === $settings['woo_items_type'] ? esc_attr( $settings['jet_woo_builder_archive_id'] ) : false;
+		$result['jetengine_listing_id']                = isset( $settings['jetengine_listing_id'] ) && 'jetengine_listing' === $settings['items_type'] ? absint( $settings['jetengine_listing_id'] ) : false;
+		$result['jet_woo_builder_archive_id']          = isset( $settings['jet_woo_builder_archive_id'] ) && 'jet_woo_builder_archive' === $settings['woo_items_type'] ? absint( $settings['jet_woo_builder_archive_id'] ) : false;
 		$result['loading_spinner']                     = isset( $settings['loading_spinner'] ) ? $settings['loading_spinner'] : true;
 		$result['loading_spinner_media']               = isset( $settings['loading_spinner_media'] ) ? $settings['loading_spinner_media'] : '';
 
@@ -474,7 +474,7 @@ class Plugin {
 		$result['woocommerce_item_categories']         = isset( $settings['woocommerce_item_categories'] ) ? $settings['woocommerce_item_categories'] : true;
 		$result['woocommerce_item_price']              = isset( $settings['woocommerce_item_price'] ) ? $settings['woocommerce_item_price'] : true;
 		$result['woocommerce_item_add_to_cart']        = isset( $settings['woocommerce_item_add_to_cart'] ) ? $settings['woocommerce_item_add_to_cart'] : true;
-		$result['woocommerce_item_add_to_cart_text']   = isset( $settings['woocommerce_item_add_to_cart_text'] ) ? esc_attr( $settings['woocommerce_item_add_to_cart_text'] ) : 'Add to cart';
+		$result['woocommerce_item_add_to_cart_text']   = isset( $settings['woocommerce_item_add_to_cart_text'] ) ? wp_kses_post( $settings['woocommerce_item_add_to_cart_text'] ) : 'Add to cart';
 
 		$result = apply_filters( 'posts-grid-builder/data-settings', $result );
 
