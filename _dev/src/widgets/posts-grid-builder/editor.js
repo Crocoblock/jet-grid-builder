@@ -7,6 +7,8 @@ import widgetPreloaderChangeStyle from 'includes/widget-preloader-change-style.j
 
 	const postsGridBuilderEditorInit = () => {
 		elementorFrontend.hooks.addAction('frontend/element_ready/posts-grid-builder.default', $scope => {
+			if (!$scope.data('model-cid'))
+				return;
 
 			const elementId = $scope.data('model-cid'),
 				elementSettingsModel = elementorFrontend.config.elements.data[elementId],
@@ -40,7 +42,7 @@ import widgetPreloaderChangeStyle from 'includes/widget-preloader-change-style.j
 
 			window.parent.jgb.initPostsSelector();
 		});
-	}
+	};
 
 	$(window).on('elementor/frontend/init', postsGridBuilderEditorInit);
 
