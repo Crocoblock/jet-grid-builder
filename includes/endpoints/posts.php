@@ -265,7 +265,7 @@ class Posts extends Base {
 			Plugin::instance()->print_elementor_post_inline_css( $this->jet_woo_builder_archive_id );
 			$this->jet_woo_builder_inline_css_added = true;
 		}
-		echo jet_woo_builder()->parser->get_template_content( $this->jet_woo_builder_archive_id );
+		echo jet_woo_builder()->parser->get_template_content( $this->jet_woo_builder_archive_id, false, $post );
 
 		$content = ob_get_clean();
 
