@@ -3,7 +3,7 @@
  * Plugin Name: JetGridBuilder
  * Description: Addon for creating wow-grids on your website
  * Plugin URI:  https://crocoblock.com/plugins/jetgridbuilder/
- * Version:     1.1.1
+ * Version:     1.1.2
  * Author:      Crocoblock
  * Author URI:  https://crocoblock.com/
  * Text Domain: jet-grid-builder
@@ -17,7 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die();
 }
 
-define( 'JET_GRID_BUILDER_VERSION', '1.1.1' );
+define( 'JET_GRID_BUILDER_VERSION', '1.1.2' );
 define( 'JET_GRID_BUILDER__FILE__', __FILE__ );
 define( 'JET_GRID_BUILDER_PLUGIN_BASE', plugin_basename( JET_GRID_BUILDER__FILE__ ) );
 define( 'JET_GRID_BUILDER_PATH', plugin_dir_path( JET_GRID_BUILDER__FILE__ ) );
