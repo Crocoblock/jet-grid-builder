@@ -276,6 +276,10 @@ class Grid_Builder extends \Elementor\Widget_Base {
 			return;
 		}
 
+		// Sanitize items styles
+		$item_style = in_array( $item_style, [ 'content-overlay', 'default', 'term' ] ) ? $item_style : 'default';
+		$woo_item_style = in_array( $woo_item_style, [ 'content-overlay', 'default', 'jet-woo-builder' ] ) ? $woo_item_style : 'default';
+
 		echo "<div class='$container_class'>";
 
 			Plugin::instance()->include_item_template_by_type( $items_type, $item_style );

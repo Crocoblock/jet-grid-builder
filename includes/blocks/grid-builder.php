@@ -195,6 +195,10 @@ class Grid_Builder {
 		$loading_spinner = $settings['loading_spinner'];
 		$container_class = 'jgb_posts-grid-builder-container jgb_block';
 
+		// Sanitize items styles
+		$item_style = in_array( $item_style, [ 'content-overlay', 'default', 'term' ] ) ? $item_style : 'default';
+		$woo_item_style = in_array( $woo_item_style, [ 'content-overlay', 'default', 'jet-woo-builder' ] ) ? $woo_item_style : 'default';
+
 		ob_start();
 
 		if ( ( $items_type === 'jetengine_listing' && !$settings['jetengine_listing_id'] ) || ( $woo_items_type === 'jet_woo_builder_archive' && $settings['jet_woo_builder_archive_id'] ) ) {

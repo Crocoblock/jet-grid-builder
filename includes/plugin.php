@@ -386,8 +386,11 @@ class Plugin {
 				break;
 			
 			default:
-				// default item template
-				include $this->get_template( 'items/item-' . $style . '.php' );
+
+				if ( in_array( $style, [ 'content-overlay', 'default', 'term' ] ) ) {
+					// default item template
+					include $this->get_template( 'items/item-' . $style . '.php' );
+				}
 
 				break;
 
@@ -409,8 +412,10 @@ class Plugin {
 				break;
 
 			default:
-				// default woo item template
-				include $this->get_template( 'items/woocommerce-item-' . $woo_style . '.php' );
+				if ( in_array( $woo_style, [ 'content-overlay', 'default', 'jet-woo-builder' ] ) ) {
+					// default woo item template
+					include $this->get_template( 'items/woocommerce-item-' . $woo_style . '.php' );
+				}
 
 				break;
 		}
