@@ -1,12 +1,12 @@
 <template>
 	<div class="jgb_grid-builder jgb_grid-builder-posts"
-	     :class="{'jgb_loading': !loaded}">
+		 :class="{ 'jgb_loading': !loaded }">
 		<div class="jgb_grid-container"
-		     :style="containerStyle">
+			 :style="containerStyle">
 			<box class="jgb_grid-box"
-			     v-for="item in items"
-			     :key="item.id"
-			     :boxId="item.id">
+				 v-for="item in items"
+				 :key="item.id"
+				 :boxId="item.id">
 				<item :itemData="item" />
 			</box>
 		</div>
@@ -14,37 +14,37 @@
 </template>
 
 <script>
-	import request from 'includes/request-actions';
+import request from '@/includes/request-actions';
 
-	// main mixin
-	import gridBuilderFront from 'grid-builder/mixins/grid-builder-front.js';
+// main mixin
+import gridBuilderFront from '@/grid-builder/mixins/grid-builder-front.js';
 
-	export default {
-		mixins: [gridBuilderFront],
+export default {
+	mixins: [gridBuilderFront],
 
-		methods: {
-			loadContent() {
-				let postsIDs = this.getSettingValue('posts');
+	methods: {
+		loadContent() {
+			let postsIDs = this.getSettingValue('posts');
 
-				if (!postsIDs) {
-					this.loaded = true;
-					this.removePreloader();
+			if (!postsIDs) {
+				this.loaded = true;
+				this.removePreloader();
 
-					return;
-				}
-
-				const requestArgs = this.getRequestArgs({
-					post_type: 'any',
-					post__in: postsIDs,
-				});
-
-				request.getPosts(requestArgs,
-					response => {
-						this.contentLoaded(response.posts);
-					}
-				);
+				return;
 			}
+
+			const requestArgs = this.getRequestArgs({
+				post_type: 'any',
+				post__in: postsIDs,
+			});
+
+			request.getPosts(requestArgs,
+				response => {
+					this.contentLoaded(response.posts);
+				}
+			);
 		}
 	}
+}
 
 </script>

@@ -1,5 +1,5 @@
-import postsGridBuilderEditor from 'grid-builder/posts-grid-builder/editor/posts-grid-builder-editor.vue';
-import widgetPreloaderChangeStyle from 'includes/widget-preloader-change-style.js';
+import postsGridBuilderEditor from '@/grid-builder/posts-grid-builder/editor/posts-grid-builder-editor.vue';
+import widgetPreloaderChangeStyle from '@/includes/widget-preloader-change-style.js';
 
 (function ($) {
 

@@ -1,6 +1,6 @@
-import options from 'blocks/editor/options';
-import termsGridBuilderEditor from 'grid-builder/terms-grid-builder/editor/terms-grid-builder-editor.vue';
-import TemplateRender from 'blocks/editor/controls/templateRender';
+import options from '@/blocks/editor/options';
+import termsGridBuilderEditor from '@/grid-builder/terms-grid-builder/editor/terms-grid-builder-editor.vue';
+import TemplateRender from '@/blocks/editor/controls/templateRender';
 
 const { __ } = wp.i18n;
 
@@ -151,7 +151,7 @@ registerBlockType('jet-grid-builder/terms-grid-builder', {
 			const {
 				attributes,
 				isSelected
-			} = this.props
+			} = this.props;
 
 			return [
 				isSelected && (
@@ -339,9 +339,9 @@ registerBlockType('jet-grid-builder/terms-grid-builder', {
 						'item_divider',
 						'item_term_taxonomy'
 					]}
-					onSuccess={() => { this.layoutUpdate() }}
+					onSuccess={() => { this.layoutUpdate(); }}
 				/>
-			]
+			];
 		}
 	},
 	save: () => {

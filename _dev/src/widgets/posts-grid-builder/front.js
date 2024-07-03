@@ -1,4 +1,4 @@
-import postsGridBuilderFront from 'grid-builder/posts-grid-builder/front/posts-grid-builder-front.vue';
+import postsGridBuilderFront from '@/grid-builder/posts-grid-builder/front/posts-grid-builder-front.vue';
 
 (function ($) {
 
@@ -17,7 +17,7 @@ import postsGridBuilderFront from 'grid-builder/posts-grid-builder/front/posts-g
 				render: h => h(postsGridBuilderFront)
 			});
 		});
-	}
+	};
 
 	$(window).on('elementor/frontend/init', postsGridBuilderFrontInit);
 

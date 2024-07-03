@@ -1,6 +1,6 @@
 import {
 	getNesting
-} from 'includes/utility';
+} from '@/includes/utility';
 
 const { __ } = wp.i18n;
 
@@ -173,4 +173,4 @@ export default {
 	wooItemStyles,
 	termsItemsType,
 	pluginsExist
-}
+};

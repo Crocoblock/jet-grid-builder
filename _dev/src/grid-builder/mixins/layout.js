@@ -5,7 +5,7 @@ export default {
 			layoutData: {
 				desktop: []
 			}
-		}
+		};
 	},
 
 	computed: {
@@ -15,11 +15,11 @@ export default {
 		},
 
 		layoutMap() {
-			const map = new Map()
+			const map = new Map();
 			this.layout.forEach(boxLayout => {
-				map.set(boxLayout.id, boxLayout)
-			})
-			return map
+				map.set(boxLayout.id, boxLayout);
+			});
+			return map;
 		},
 
 		availableBreakpoint() {
@@ -55,7 +55,7 @@ export default {
 			return {
 				w: wSize,
 				h: wSize
-			}
+			};
 		}
 	},
 

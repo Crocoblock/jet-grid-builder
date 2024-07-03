@@ -6,4 +6,4 @@ export {
 	selectionModal,
 	postsSelectionModal,
 	termsSelectionModal
-}
+};

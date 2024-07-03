@@ -1,18 +1,18 @@
 // utils
-import * as localStorage from 'includes/local-storage.js';
-import { preloadMedia, getIntermediateImageSizesUrl, stringToBoolean } from 'includes/utility.js';
+import * as localStorage from '@/includes/local-storage.js';
+import { preloadMedia, getIntermediateImageSizesUrl, stringToBoolean } from '@/includes/utility.js';
 
 // components
-import { dndGridContainer, dndGridBox, dndGridUtils } from 'grid-builder/modules/dnd-grid';
-import item from 'grid-builder/common-elements/item.vue';
-import checkbox from 'grid-builder/components/controls/checkbox/checkbox.vue';
+import { dndGridContainer, dndGridBox, dndGridUtils } from '@/grid-builder/modules/dnd-grid';
+import item from '@/grid-builder/common-elements/item.vue';
+import checkbox from '@/grid-builder/components/controls/checkbox/checkbox.vue';
 
 // mixins
-import breakpointsMixin from 'grid-builder/mixins/breakpoints.js';
-import settingsMixin from 'grid-builder/mixins/settings.js';
+import breakpointsMixin from '@/grid-builder/mixins/breakpoints.js';
+import settingsMixin from '@/grid-builder/mixins/settings.js';
 
 // main mixin
-import gridBuilderLayout from 'grid-builder/mixins/layout.js';
+import gridBuilderLayout from '@/grid-builder/mixins/layout.js';
 
 export default {
 	mixins: [breakpointsMixin, settingsMixin, gridBuilderLayout],
@@ -31,7 +31,7 @@ export default {
 			mainEl: null,
 			loaded: false,
 			backingGrid: false
-		}
+		};
 	},
 
 	computed: {
@@ -41,7 +41,7 @@ export default {
 
 		itemsIDs() {
 			return this.items.map(item => {
-				return item.id
+				return item.id;
 			});
 		},
 
@@ -119,6 +119,7 @@ export default {
 		 # Events Methods
 		-------------------------------*/
 		mouseDownEvent(e) {
+			e.preventDefault();
 			e.stopPropagation();
 		},
 
@@ -144,7 +145,7 @@ export default {
 					layoutHeight = newBreakpointLayout.reduce((height, boxLayout) => {
 						return boxLayout.hidden
 							? height
-							: Math.max(height, boxLayout.position.y + boxLayout.position.h)
+							: Math.max(height, boxLayout.position.y + boxLayout.position.h);
 					}, 0),
 					column = 0,
 					itemY = layoutHeight,
@@ -177,7 +178,7 @@ export default {
 								h: itemHeight
 							}
 						}
-					)
+					);
 
 					switch (breakpoint) {
 						case 'desktop':
@@ -192,9 +193,9 @@ export default {
 					if (column === 0)
 						itemY = itemY + itemHeight;
 
-				})
+				});
 
-				this.layoutData[breakpoint] = newBreakpointLayout
+				this.layoutData[breakpoint] = newBreakpointLayout;
 			}
 
 			// add to items
@@ -232,7 +233,7 @@ export default {
 
 			this.setItems('remove', removeItemID);
 			this.setLayoutData();
-			
+
 			if (this.verticalCompact) {
 				this.layoutUpdated(dndGridUtils.layoutBubbleUp(this.layout));
 			}
@@ -319,4 +320,4 @@ export default {
 			}
 		}
 	}
-}
+};

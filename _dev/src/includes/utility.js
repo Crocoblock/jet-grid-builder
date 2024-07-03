@@ -11,7 +11,7 @@ export default {
 	getIntermediateImageSizesUrl,
 	getNesting,
 	decodeHtmlSpecialChars
-}
+};
 
 export function preloadMedia(data, callback) {
 	let total = 0,
@@ -29,11 +29,11 @@ export function preloadMedia(data, callback) {
 			image.src = item.thumbnail_data.file;
 			image.onload = () => {
 				itemLoaded();
-			}
+			};
 			image.onerror = () => {
 				data[index].thumbnail_data = false;
 				itemLoaded();
-			}
+			};
 		}
 	});
 
@@ -56,7 +56,7 @@ export function absoluteCoords(el) {
 	return {
 		top: rect.top + scrollTop,
 		left: rect.left + scrollLeft
-	}
+	};
 }
 
 export function relativeCoords(el) {
@@ -66,7 +66,7 @@ export function relativeCoords(el) {
 	return {
 		top: elRect.top - parentRect.top,
 		left: elRect.left - parentRect.left
-	}
+	};
 }
 
 export function mergeArraysOfObjects(mergeArrays) {
@@ -163,7 +163,7 @@ export function getNesting(obj) {
 
 	for (let key of nesting) {
 		if (!obj[key]) {
-			isNestingExist = false
+			isNestingExist = false;
 			break;
 		}
 
@@ -192,7 +192,7 @@ export function decodeHtmlSpecialChars(text) {
 		'&#8221;': '”'
 	};
 
-	return text.replace(/\&[\w\d\#]{2,5}\;/g, function(m) {
+	return text.replace(/\&[\w\d\#]{2,5}\;/g, function (m) {
 		return map[m];
 	});
 }

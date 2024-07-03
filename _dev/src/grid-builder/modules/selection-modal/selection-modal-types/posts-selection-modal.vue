@@ -1,77 +1,77 @@
 <template>
 	<selection-modal class="jgb-modal-posts-selection"
-	                 :menu="postsMenu"
-	                 :data="postsData"
-	                 :paged="paged"
-	                 :totalPage="totalPage"
-	                 :orderby="orderby"
-	                 :order="order"
-	                 @getData="updateData"
-	                 ref="modal" />
+					 :menu="postsMenu"
+					 :data="postsData"
+					 :paged="paged"
+					 :totalPage="totalPage"
+					 :orderby="orderby"
+					 :order="order"
+					 @getData="updateData"
+					 ref="modal" />
 </template>
 
 <script>
-	import selectionModal from '../selection-modal.vue';
+import selectionModal from '../selection-modal.vue';
 
-	export default {
-		components: {
-			selectionModal
+export default {
+	components: {
+		selectionModal
+	},
+
+	props: {
+		cid: {
+			type: String,
+			default: ''
+		}
+	},
+
+	data() {
+		return {
+			currentPostType: 'post'
+		};
+	},
+
+	computed: {
+		postsMenu() {
+			return this.$store.getters.postTypeList.map(item => {
+				return Object.assign({
+					active: item.slug === this.currentPostType ? true : false
+				}, item);
+			});
 		},
 
-		props: {
-			cid: {
-				type: String,
-				default: ''
-			}
+		postsData() {
+			return this.$store.getters.postsSelectionData(this.cid).posts;
 		},
 
-		data() {
-			return {
-				currentPostType: 'post'
-			}
+		paged() {
+			return this.$store.getters.postsSelectionData(this.cid).currentPage;
 		},
 
-		computed: {
-			postsMenu() {
-				return this.$store.getters.postTypeList.map(item => {
-					return Object.assign({
-						active: item.slug === this.currentPostType ? true : false
-					}, item);
-				});
-			},
-
-			postsData() {
-				return this.$store.getters.postsSelectionData(this.cid).posts;
-			},
-
-			paged() {
-				return this.$store.getters.postsSelectionData(this.cid).currentPage;
-			},
-
-			totalPage() {
-				return this.$store.getters.postsSelectionData(this.cid).totalPages;
-			},
-
-			orderby() {
-				return this.$store.getters.postsSelectionData(this.cid).orderby;
-			},
-
-			order() {
-				return this.$store.getters.postsSelectionData(this.cid).order;
-			}
+		totalPage() {
+			return this.$store.getters.postsSelectionData(this.cid).totalPages;
 		},
 
-		methods: {
-			open(props = {}) {
-				return this.$refs.modal.open(props);
-			},
+		orderby() {
+			return this.$store.getters.postsSelectionData(this.cid).orderby;
+		},
 
-			updateData(params) {
-				if (params.post_type)
-					this.currentPostType = params.post_type;
+		order() {
+			return this.$store.getters.postsSelectionData(this.cid).order;
+		}
+	},
 
-				this.$store.dispatch('getPostsSelectionData', { cid: this.cid, postsSelectionParams: params });
-			}
+	methods: {
+		open(props = {}) {
+			return this.$refs.modal.open(props);
+		},
+
+		updateData(params) {
+			if (params.post_type)
+				this.currentPostType = params.post_type;
+
+			this.$store.dispatch('getPostsSelectionData', { cid: this.cid, postsSelectionParams: params });
 		}
 	}
+};
 </script>

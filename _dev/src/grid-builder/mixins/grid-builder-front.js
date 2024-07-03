@@ -1,16 +1,16 @@
 // utils
-import { getLayoutSize, positionToPixels } from 'grid-builder/modules/dnd-grid/utils';
-import { preloadMedia } from 'includes/utility.js';
+import { getLayoutSize, positionToPixels } from '@/grid-builder/modules/dnd-grid/utils';
+import { preloadMedia } from '@/includes/utility.js';
 
 // components
-import item from "grid-builder/common-elements/item.vue";
+import item from '@/grid-builder/common-elements/item.vue';
 
 // mixins
-import breakpointsMixin from 'grid-builder/mixins/breakpoints.js';
-import settingsMixin from 'grid-builder/mixins/settings.js';
+import breakpointsMixin from '@/grid-builder/mixins/breakpoints.js';
+import settingsMixin from '@/grid-builder/mixins/settings.js';
 
 // main mixin
-import gridBuilderLayout from 'grid-builder/mixins/layout.js';
+import gridBuilderLayout from '@/grid-builder/mixins/layout.js';
 
 const box = {};
 
@@ -26,7 +26,7 @@ export default {
 		return {
 			loaded: false,
 			items: []
-		}
+		};
 	},
 
 	computed: {
@@ -38,7 +38,7 @@ export default {
 					(layoutSize.h * this.cellSize.h) +
 					((layoutSize.h - 1) * this.gutter)
 				) + 'px'
-			}
+			};
 		}
 	},
 
@@ -81,7 +81,7 @@ export default {
 			return positionToPixels(boxLayout.position, this.cellSize, this.gutter);
 		}
 	}
-}
+};
 
 //box component
 box.template = `<div :style="style"><slot></slot></div>`;
@@ -101,6 +101,6 @@ box.computed = {
 			width: pixelPosition.w + 'px',
 			height: pixelPosition.h + 'px',
 			transform: `translate(${pixelPosition.x}px, ${pixelPosition.y}px)`
-		}
+		};
 	}
-}
+};

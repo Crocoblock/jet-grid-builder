@@ -1,4 +1,4 @@
-import { getNesting } from 'includes/utility.js';
+import { getNesting } from '@/includes/utility.js';
 
 export default {
 	data() {
@@ -13,11 +13,11 @@ export default {
 			breakpointsNames: ['desktop', 'tablet', 'mobile'],
 
 			clientWidth: 0
-		}
+		};
 	},
 
 	mounted() {
-		this.breakpointsNames = Object.keys(this.breakpoints).sort((a, b) => { return this.breakpoints[a] + this.breakpoints[b] });
+		this.breakpointsNames = Object.keys(this.breakpoints).sort((a, b) => { return this.breakpoints[a] + this.breakpoints[b]; });
 
 		//add resize event
 		window.addEventListener('resize', this.resizeFrame);
@@ -45,7 +45,7 @@ export default {
 					return {
 						...accumulator,
 						[key]: this.layoutData[key]
-					}
+					};
 				}
 				return accumulator;
 			}, {});
@@ -65,9 +65,9 @@ export default {
 
 			this.breakpointsNames.forEach(breakpoint => {
 				if (window.innerWidth < this.breakpoints[breakpoint])
-					currentBreakpoint = breakpoint
+					currentBreakpoint = breakpoint;
 			});
-			this.currentBreakpoint = currentBreakpoint
+			this.currentBreakpoint = currentBreakpoint;
 		},
 
 		// resize event

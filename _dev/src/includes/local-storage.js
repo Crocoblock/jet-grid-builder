@@ -1,7 +1,7 @@
 export default {
 	setLocalStorageItem,
 	getLocalStorageItem
-}
+};
 
 export function setLocalStorageItem(name, value) {
 	if (typeof (Storage) !== "undefined") {

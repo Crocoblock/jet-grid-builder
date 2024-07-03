@@ -1,6 +1,6 @@
-import options from 'blocks/editor/options';
-import postsGridBuilderEditor from 'grid-builder/posts-grid-builder/editor/posts-grid-builder-editor.vue';
-import TemplateRender from 'blocks/editor/controls/templateRender';
+import options from '@/blocks/editor/options';
+import postsGridBuilderEditor from '@/grid-builder/posts-grid-builder/editor/posts-grid-builder-editor.vue';
+import TemplateRender from '@/blocks/editor/controls/templateRender';
 
 const { __ } = wp.i18n;
 
@@ -201,7 +201,7 @@ registerBlockType('jet-grid-builder/posts-grid-builder', {
 			const {
 				attributes,
 				isSelected
-			} = this.props
+			} = this.props;
 
 			return [
 				isSelected && (
@@ -529,9 +529,9 @@ registerBlockType('jet-grid-builder/posts-grid-builder', {
 						'woocommerce_item_add_to_cart',
 						'woocommerce_item_add_to_cart_text',
 					]}
-					onSuccess={() => { this.layoutUpdate() }}
+					onSuccess={() => { this.layoutUpdate(); }}
 				/>
-			]
+			];
 		}
 	},
 	save: () => {

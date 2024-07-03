@@ -22,7 +22,7 @@ const {
 } = wp.components;
 
 export default class TemplateRender extends Component {
-	constructor (props) {
+	constructor(props) {
 		super(props);
 
 		this.state = {
@@ -74,7 +74,7 @@ export default class TemplateRender extends Component {
 		const path = this.rendererPath();
 		const {
 			onError = () => { }
-		} = this.props
+		} = this.props;
 
 		// Store the latest fetch request so that when we process it, we can
 		// check if it is the current request, to avoid race conditions on slow networks.
@@ -123,7 +123,7 @@ export default class TemplateRender extends Component {
 			<Placeholder>
 				{__('Block rendered as empty.')}
 			</Placeholder>
-		)
+		);
 	}
 
 	ErrorResponsePlaceholder(response) {
@@ -156,7 +156,7 @@ export default class TemplateRender extends Component {
 
 		const {
 			onSuccess = () => { }
-		} = this.props
+		} = this.props;
 
 		if (response === '') {
 			return (

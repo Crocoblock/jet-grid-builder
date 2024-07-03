@@ -25,7 +25,7 @@ export default {
 				});
 			}
 
-			return settingValue
+			return settingValue;
 		},
 
 		eachResponsiveSetting(setting, callback) {

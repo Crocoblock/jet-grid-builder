@@ -1,4 +1,4 @@
-import termsGridBuilderFront from 'grid-builder/terms-grid-builder/front/terms-grid-builder-front.vue';
+import termsGridBuilderFront from '@/grid-builder/terms-grid-builder/front/terms-grid-builder-front.vue';
 
 (function ($) {
 
@@ -17,7 +17,7 @@ import termsGridBuilderFront from 'grid-builder/terms-grid-builder/front/terms-g
 				render: h => h(termsGridBuilderFront)
 			});
 		});
-	}
+	};
 
 	$(window).on('elementor/frontend/init', termsGridBuilderFrontInit);
 

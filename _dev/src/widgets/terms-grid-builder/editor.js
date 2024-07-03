@@ -1,5 +1,5 @@
-import termsGridBuilderEditor from 'grid-builder/terms-grid-builder/editor/terms-grid-builder-editor.vue';
-import widgetPreloaderChangeStyle from 'includes/widget-preloader-change-style.js';
+import termsGridBuilderEditor from '@/grid-builder/terms-grid-builder/editor/terms-grid-builder-editor.vue';
+import widgetPreloaderChangeStyle from '@/includes/widget-preloader-change-style.js';
 
 (function ($) {
 
@@ -39,7 +39,7 @@ import widgetPreloaderChangeStyle from 'includes/widget-preloader-change-style.j
 
 			window.parent.jgb.initTermsSelector();
 		});
-	}
+	};
 
 	$(window).on('elementor/frontend/init', termsGridBuilderEditorInit);
 

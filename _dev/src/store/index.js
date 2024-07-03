@@ -1,5 +1,5 @@
 import Vuex from 'vuex';
-import request from 'includes/request-actions';
+import request from '@/includes/request-actions';
 
 Vue.use(Vuex);
 

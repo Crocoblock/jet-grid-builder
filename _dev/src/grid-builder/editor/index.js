@@ -1,5 +1,5 @@
-import store from 'store';
-import { postsSelectionModal, termsSelectionModal } from 'grid-builder/modules/selection-modal';
+import store from '@/store';
+import { postsSelectionModal, termsSelectionModal } from '@/grid-builder/modules/selection-modal';
 
 (function ($) {
 
@@ -56,7 +56,7 @@ import { postsSelectionModal, termsSelectionModal } from 'grid-builder/modules/s
 				ref: 'modal'
 			})
 		});
-	}
+	};
 
 	// Terms Selector Init Function
 	window.jgb.initTermsSelector = () => {
@@ -82,6 +82,6 @@ import { postsSelectionModal, termsSelectionModal } from 'grid-builder/modules/s
 				ref: 'modal'
 			})
 		});
-	}
+	};
 
 }(jQuery));
