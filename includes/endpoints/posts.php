@@ -257,7 +257,7 @@ class Posts extends Base {
 
 		setup_postdata( $post );
 
-		jet_woo_builder_integration_woocommerce()->maybe_enqueue_single_template_css();
+		jet_woo_builder()->elementor_views->maybe_enqueue_single_template_css();
 
 		ob_start();
 
