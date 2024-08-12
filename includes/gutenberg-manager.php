@@ -18,7 +18,7 @@ class Gutenberg_Manager {
 	 */
 	public function __construct() {
 
-		$this->register_block_types();
+		add_action( 'init', array( $this, 'register_block_types' ) );
 
 	}
 
