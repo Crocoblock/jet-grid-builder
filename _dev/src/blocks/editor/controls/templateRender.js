@@ -1,9 +1,7 @@
-const { __ } = wp.i18n;
+import isEqual from 'lodash/isEqual';
+import debounce from 'lodash/debounce';
 
-const {
-	isEqual,
-	debounce
-} = lodash;
+const { __ } = wp.i18n;
 
 const {
 	addQueryArgs
@@ -28,6 +26,8 @@ export default class TemplateRender extends Component {
 		this.state = {
 			response: null,
 		};
+
+		this.$createElemen = () => { };
 	}
 
 	componentDidMount() {
@@ -118,59 +118,37 @@ export default class TemplateRender extends Component {
 		});
 	}
 
-	EmptyResponsePlaceholder() {
-		return (
-			<Placeholder>
-				{__('Block rendered as empty.')}
-			</Placeholder>
-		);
-	}
-
-	ErrorResponsePlaceholder(response) {
-		const errorMessage = sprintf(
-			// translators: %s: error message describing the problem
-			__('Error loading block: %s'),
-			response.errorMsg
-		);
-		return (
-			<Placeholder>{errorMessage}</Placeholder>
-		);
-	}
-
-	LoadingResponsePlaceholder() {
-		return (
-			<Placeholder>
-				<Spinner />
-			</Placeholder>
-		);
-	}
-
 	render() {
 		const response = this.state.response;
-
-		const {
-			EmptyResponsePlaceholder,
-			ErrorResponsePlaceholder,
-			LoadingResponsePlaceholder
-		} = this;
 
 		const {
 			onSuccess = () => { }
 		} = this.props;
 
 		if (response === '') {
+			// empty response placeholder
 			return (
-				<EmptyResponsePlaceholder />
+				<Placeholder>
+					{__('Block rendered as empty.')}
+				</Placeholder>
 			);
 		} else if (!response) {
+			// loading response placeholder
 			return (
-				<LoadingResponsePlaceholder />
+				<Placeholder>
+					<Spinner />
+				</Placeholder>
 			);
 		} else if (response.error) {
+			// error response placeholder
+			const errorMessage = sprintf(
+				// translators: %s: error message describing the problem
+				__('Error loading block: %s'),
+				response.errorMsg
+			);
+
 			return (
-				<ErrorResponsePlaceholder
-					response={response}
-				/>
+				<Placeholder>{errorMessage}</Placeholder>
 			);
 		}
 
