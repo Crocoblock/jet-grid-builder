@@ -80,6 +80,9 @@ export default {
 				dividerEnabled() {
 					return this.getSetting('item_divider');
 				},
+				productСlickabilityEnabled() {
+					return this.getSetting('woocommerce_item_clickable');
+				},
 				productStarsRatingEnabled() {
 					return this.getSetting('woocommerce_item_stars_rating');
 				},

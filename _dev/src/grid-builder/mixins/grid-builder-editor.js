@@ -119,8 +119,10 @@ export default {
 		 # Events Methods
 		-------------------------------*/
 		mouseDownEvent(e) {
-			e.preventDefault();
-			e.stopPropagation();
+			if (window.elementor) {
+				e.preventDefault();
+				e.stopPropagation();
+			}
 		},
 
 		changeBackingGrid(checked) {

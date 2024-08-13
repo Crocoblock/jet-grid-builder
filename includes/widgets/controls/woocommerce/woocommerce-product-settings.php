@@ -15,6 +15,19 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	$this->add_control(
+		'woocommerce_item_clickable',
+		[
+			'label'        => esc_html__( 'Make Item Clickable', 'jet-grid-builder' ),
+			'type'         => \Elementor\Controls_Manager::SWITCHER,
+			'label_on'     => esc_html__( 'Yes', 'jet-grid-builder' ),
+			'label_off'    => esc_html__( 'No', 'jet-grid-builder' ),
+			'return_value' => 'true',
+			'default'      => '',
+			'render_type'  => 'none'
+		]
+	);
+
+	$this->add_control(
 		'woocommerce_item_stars_rating',
 		[
 			'label'        => esc_html__( 'Stars Rating', 'jet-grid-builder' ),

@@ -475,6 +475,7 @@ class Plugin {
 		$result['item_divider']                        = isset( $settings['item_divider'] ) ? $settings['item_divider'] : true;
 
 		// Woocommerce product settings
+		$result['woocommerce_item_clickable']          = isset( $settings['woocommerce_item_clickable'] ) ? $settings['woocommerce_item_clickable'] : false;
 		$result['woocommerce_item_stars_rating']       = isset( $settings['woocommerce_item_stars_rating'] ) ? $settings['woocommerce_item_stars_rating'] : true;
 		$result['woocommerce_item_categories']         = isset( $settings['woocommerce_item_categories'] ) ? $settings['woocommerce_item_categories'] : true;
 		$result['woocommerce_item_price']              = isset( $settings['woocommerce_item_price'] ) ? $settings['woocommerce_item_price'] : true;

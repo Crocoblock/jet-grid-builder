@@ -8,6 +8,7 @@
 	<div class="jgb_woocommerce-item jgb_item jgb_item-default"
 		:class="{'jgb_no-thumbnail':!thumbnailEnabled}"
 	>
+		<a class="jgb_item-permalink" v-if="productСlickabilityEnabled" :href="itemData.permalink"></a>
 		<item-thumbnail v-if="thumbnailEnabled" :link="true" />
 		<div class="jgb_item-type-wrap" v-if="[postTypeEnabled, thumbnailEnabled].every(isTrue)">
 			<div class="jgb_item-type">{{itemData.post_type}}</div>

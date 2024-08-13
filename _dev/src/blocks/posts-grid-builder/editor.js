@@ -126,6 +126,10 @@ registerBlockType('jet-grid-builder/posts-grid-builder', {
 			default: '',
 		},
 		// Woocommerce settings
+		woocommerce_item_clickable: {
+			type: 'boolean',
+			default: false,
+		},
 		woocommerce_item_stars_rating: {
 			type: 'boolean',
 			default: true,
@@ -462,6 +466,13 @@ registerBlockType('jet-grid-builder/posts-grid-builder', {
 						{options.pluginsExist.woocommerce && attributes.woo_items_type === 'default' && (
 							<PanelBody title={__('Woocommerce Product')} initialOpen={false}>
 								<ToggleControl
+									label={__('Make Item Clickable')}
+									checked={attributes.woocommerce_item_clickable}
+									onChange={newValue => {
+										this.updateAttribute('woocommerce_item_clickable', newValue);
+									}}
+								/>
+								<ToggleControl
 									label={__('Stars Rating')}
 									checked={attributes.woocommerce_item_stars_rating}
 									onChange={newValue => {
@@ -523,6 +534,7 @@ registerBlockType('jet-grid-builder/posts-grid-builder', {
 						'item_post_date_prefix',
 						'item_divider',
 						'item_post_type',
+						'woocommerce_item_clickable',
 						'woocommerce_item_stars_rating',
 						'woocommerce_item_categories',
 						'woocommerce_item_price',

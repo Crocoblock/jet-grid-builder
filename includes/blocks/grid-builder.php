@@ -134,6 +134,10 @@ class Grid_Builder {
 				'default' => '',
 			),
 			// Woocommerce settings
+			'woocommerce_item_clickable' => array(
+				'type'    => 'boolean',
+				'default' => false,
+			),
 			'woocommerce_item_stars_rating' => array(
 				'type'    => 'boolean',
 				'default' => true,
