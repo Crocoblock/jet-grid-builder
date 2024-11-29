@@ -2,7 +2,7 @@
 Contributors: crocoblock
 Tags: posts grid, custom post grid, grid, masonry layout, justify layout, elementor, elementor widget, elementor addon, gutenberg, blocks, block, gutenberg blocks
 Requires at least: 5.4
-Tested up to: 6.5.5
+Tested up to: 6.7.1
 Requires PHP: 7.2
 Stable tag: 1.1.5
 License: GPLv2 or later
