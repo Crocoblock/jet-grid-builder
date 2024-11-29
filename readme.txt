@@ -4,7 +4,7 @@ Tags: posts grid, custom post grid, grid, masonry layout, justify layout, elemen
 Requires at least: 5.4
 Tested up to: 6.5.5
 Requires PHP: 7.2
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  

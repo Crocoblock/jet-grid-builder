@@ -42,9 +42,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 		[
 			'label'  => esc_html__( 'Title Color', 'jet-grid-builder' ),
 			'type'   => \Elementor\Controls_Manager::COLOR,
-			'scheme' => [
-				'type'  => \Elementor\Core\Schemes\Color::get_type(),
-				'value' => \Elementor\Core\Schemes\Color::COLOR_1,
+			'global' => [
+				'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
 			],
 			'selectors' => [
 				'{{WRAPPER}} .jgb_woocommerce-item .jgb_item-title a' => 'color: {{VALUE}};',
@@ -216,9 +215,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 		[
 			'label'  => esc_html__( 'Color', 'jet-grid-builder' ),
 			'type'   => \Elementor\Controls_Manager::COLOR,
-			'scheme' => [
-				'type'  => \Elementor\Core\Schemes\Color::get_type(),
-				'value' => \Elementor\Core\Schemes\Color::COLOR_1,
+			'global' => [
+				'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
 			],
 			'selectors' => [
 				'{{WRAPPER}} .jgb_product-category:hover' => 'color: {{VALUE}};',
@@ -427,9 +425,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 		[
 			'label'  => esc_html__( 'Background Color', 'jet-grid-builder' ),
 			'type'   => \Elementor\Controls_Manager::COLOR,
-			'scheme' => [
-				'type'  => \Elementor\Core\Schemes\Color::get_type(),
-				'value' => \Elementor\Core\Schemes\Color::COLOR_1,
+			'global' => [
+				'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
 			],
 			'selectors' => [
 				'{{WRAPPER}}  .jgb_product-add-to-cart .add_to_cart_button' => 'background-color: {{VALUE}};',
@@ -451,9 +448,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 		[
 			'label'  => esc_html__( 'Text Color', 'jet-grid-builder' ),
 			'type'   => \Elementor\Controls_Manager::COLOR,
-			'scheme' => [
-				'type'  => \Elementor\Core\Schemes\Color::get_type(),
-				'value' => \Elementor\Core\Schemes\Color::COLOR_1,
+			'global' => [
+				'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
 			],
 			'selectors' => [
 				'{{WRAPPER}} .jgb_product-add-to-cart .add_to_cart_button:hover' => 'color: {{VALUE}};',

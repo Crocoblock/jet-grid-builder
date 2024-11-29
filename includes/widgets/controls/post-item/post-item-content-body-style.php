@@ -66,9 +66,8 @@ $this->add_group_control(
 		'types'          => [ 'classic', 'gradient' ],
 		'fields_options' => [
 			'color' => [
-				'scheme' => [
-					'type'  => \Elementor\Core\Schemes\Color::get_type(),
-					'value' => \Elementor\Core\Schemes\Color::COLOR_2,
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
 				],
 			],
 		],

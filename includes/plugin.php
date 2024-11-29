@@ -27,6 +27,7 @@ class Plugin {
 	public $api;
 	public $assets;
 	public $elementor;
+	public $gutenberg;
 
 	/**
 	 * Plugin constructor.

@@ -64,9 +64,8 @@ $this->add_control(
 	[
 		'label'  => esc_html__( 'Background Color', 'jet-grid-builder' ),
 		'type'   => \Elementor\Controls_Manager::COLOR,
-		'scheme' => [
-			'type'  => \Elementor\Core\Schemes\Color::get_type(),
-			'value' => \Elementor\Core\Schemes\Color::COLOR_1,
+		'global' => [
+			'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
 		],
 		'selectors' => [
 			'{{WRAPPER}} .jgb_item-type' => 'background-color: {{VALUE}};',
